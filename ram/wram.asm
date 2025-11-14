@@ -1538,7 +1538,7 @@ wMonHBackSprite:: dw
 wMonHMoves:: ds NUM_MOVES
 wMonHGrowthRate:: db
 wMonHLearnset:: flag_array NUM_TMS + NUM_HMS
-	ds 1
+wMonHPicBank:: db
 wMonHeaderEnd::
 
 ; saved at the start of a battle and then written back at the end of the battle
@@ -2044,7 +2044,7 @@ wCGBBasePalPointers:: ds NUM_ACTIVE_PALS * 2 ; 8 bytes
 wCGBPal:: ds PAL_SIZE ; 8 bytes
 wLastBGP::db
 wLastOBP0::db
-wLastOBP1::db 
+wLastOBP1::db
 wBGPPalsBuffer:: ds (NUM_ACTIVE_PALS + 1) * PAL_SIZE ; 32 bytes
 wdef4:: db
 
