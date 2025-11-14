@@ -148,6 +148,9 @@ SECTION "Battle Engine 3", ROMX
 
 INCLUDE "engine/battle/print_type.asm"
 INCLUDE "engine/battle/save_trainer_name.asm"
+
+SECTION "Battle Engine NEW Focus Energy", ROMX
+
 INCLUDE "engine/battle/move_effects/focus_energy.asm"
 
 
@@ -172,9 +175,13 @@ INCLUDE "engine/battle/move_effects/mist.asm"
 INCLUDE "engine/battle/move_effects/one_hit_ko.asm"
 
 
-SECTION "Slot Machines", ROMX
+SECTION "Title 2", ROMX
 
 INCLUDE "engine/movie/title2.asm"
+
+
+SECTION "Slot Machines", ROMX
+
 INCLUDE "engine/battle/link_battle_versus_text.asm"
 INCLUDE "engine/slots/slot_machine.asm"
 INCLUDE "engine/events/pewter_guys.asm"
