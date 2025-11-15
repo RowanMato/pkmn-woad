@@ -7,7 +7,7 @@ DefaultNamesPlayerList:
 
 DefaultNamesRivalList:
 	db "NEW NAME@"
-	db "BLUE@"
+	db "GREEN@"
 	db "GARY@"
 	db "JOHN@"
 ENDC
@@ -24,4 +24,18 @@ DefaultNamesRivalList:
 	db "RED@"
 	db "ASH@"
 	db "JACK@"
+ENDC
+
+IF DEF(_GREEN)
+DefaultNamesPlayerList:
+	db "NEW NAME@"
+	db "GREEN@"
+	db "ROWAN@"
+	db "MATO@"
+
+DefaultNamesRivalList:
+	db "NEW NAME@"
+	db "BLUE@"
+	db "JAMES@"
+	db "JACOB@"
 ENDC

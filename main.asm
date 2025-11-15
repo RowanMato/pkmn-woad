@@ -38,6 +38,8 @@ INCLUDE "engine/menus/players_pc.asm"
 INCLUDE "engine/pokemon/remove_mon.asm"
 INCLUDE "engine/events/display_pokedex.asm"
 
+;INCLUDE "engine/func_gamma.asm" ; Shin Pokemon color filter
+
 
 SECTION "bank3", ROMX
 
@@ -321,7 +323,6 @@ SECTION "bank1C", ROMX
 INCLUDE "engine/overworld/healing_machine.asm"
 INCLUDE "engine/overworld/player_animations.asm"
 INCLUDE "engine/battle/ghost_marowak_anim.asm"
-INCLUDE "engine/battle/battle_transitions.asm"
 INCLUDE "engine/items/town_map.asm"
 INCLUDE "engine/gfx/mon_icons.asm"
 INCLUDE "engine/events/in_game_trades.asm"
@@ -367,6 +368,7 @@ SECTION "Splash Animation", ROMX
 ; moved from bank1C
 INCLUDE "engine/movie/splash.asm"
 INCLUDE "engine/movie/hall_of_fame.asm"
+INCLUDE "engine/battle/battle_transitions.asm"
 
 
 SECTION "CGB Mode Code", ROMX

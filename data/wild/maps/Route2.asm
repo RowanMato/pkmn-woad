@@ -19,6 +19,13 @@ IF DEF(_BLUE)
 	db  4, CATERPIE
 	db  5, CATERPIE
 ENDC
+IF DEF(_GREEN)
+	db  3, CATERPIE
+	db  2, RATTATA
+	db  5, RATTATA
+	db  4, CATERPIE
+	db  5, CATERPIE
+ENDC
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate

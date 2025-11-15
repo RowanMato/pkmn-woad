@@ -15,6 +15,9 @@ ENDC
 IF DEF(_BLUE)
 	db NIDORINO
 ENDC
+IF DEF(_GREEN)
+	db NIDORINO
+ENDC
 	db "@"
 
 PrizeMenuMon1Cost:
@@ -23,6 +26,10 @@ IF DEF(_RED)
 	bcd2 500
 ENDC
 IF DEF(_BLUE)
+	bcd2 120
+	bcd2 750
+ENDC
+IF DEF(_GREEN)
 	bcd2 120
 	bcd2 750
 ENDC
@@ -38,6 +45,10 @@ IF DEF(_BLUE)
 	db PINSIR
 	db DRATINI
 ENDC
+IF DEF(_GREEN)
+	db PINSIR
+	db DRATINI
+ENDC
 	db PORYGON
 	db "@"
 
@@ -48,6 +59,11 @@ IF DEF(_RED)
 	bcd2 9999
 ENDC
 IF DEF(_BLUE)
+	bcd2 2500
+	bcd2 4600
+	bcd2 6500
+ENDC
+IF DEF(_GREEN)
 	bcd2 2500
 	bcd2 4600
 	bcd2 6500

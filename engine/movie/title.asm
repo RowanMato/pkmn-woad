@@ -59,16 +59,21 @@ DisplayTitleScreen:
 	ld bc, $10 tiles
 	ld a, BANK(PokemonLogoGraphics)
 	call FarCopyData2          ; second chunk
-	ld hl, Version_GFX
-	ld de, vChars2 tile $60 + (10 tiles - (Version_GFXEnd - Version_GFX) * 2) / 2
-	ld bc, Version_GFXEnd - Version_GFX
-	ld a, BANK(Version_GFX)
+	ld hl, WorldAdventures_GFX
+	ld de, vChars2 tile $60 + (16 tiles - (WorldAdventures_GFXEnd - WorldAdventures_GFX) * 2) / 2
+	ld bc, WorldAdventures_GFXEnd - WorldAdventures_GFX
+	ld a, BANK(WorldAdventures_GFX)
+	call FarCopyDataDouble
+	ld hl, PocketMonsters_GFX
+	ld de, vChars2 tile $50 + (16 tiles - (PocketMonsters_GFXEnd - PocketMonsters_GFX) * 2) / 2
+	ld bc, PocketMonsters_GFXEnd - PocketMonsters_GFX
+	ld a, BANK(PocketMonsters_GFX)
 	call FarCopyDataDouble
 	call ClearBothBGMaps
 
 ; place tiles for pokemon logo (except for the last row)
 	hlcoord 2, 1
-	ld a, $80
+	ld a, $80;width of logo
 	ld de, SCREEN_WIDTH
 	ld c, 6
 .pokemonLogoTileLoop
@@ -85,7 +90,7 @@ DisplayTitleScreen:
 	jr nz, .pokemonLogoTileLoop
 
 ; place tiles for the last row of the pokemon logo
-	hlcoord 2, 7
+	hlcoord 2, 7 ; coords for the bottom-left of the POKEMON logo, after it's in place
 	ld a, $31
 	ld b, $10
 .pokemonLogoLastTileRowLoop
@@ -123,10 +128,13 @@ DisplayTitleScreen:
 	call EnableLCD
 
 IF DEF(_RED)
-	ld a, STARTER1 ; which Pokemon to show first on the title screen
+	ld a, CHARMELEON ; which Pokemon to show first on the title screen
 ENDC
 IF DEF(_BLUE)
-	ld a, STARTER2 ; which Pokemon to show first on the title screen
+	ld a, WARTORTLE ; which Pokemon to show first on the title screen
+ENDC
+IF DEF(_GREEN)
+	ld a, IVYSAUR ; which Pokemon to show first on the title screen
 ENDC
 	ld [wTitleMonSpecies], a
 	call LoadTitleMonSprite
@@ -408,18 +416,19 @@ INCLUDE "data/pokemon/title_mons.asm"
 
 ; prints version text (red, blue)
 PrintGameVersionOnTitleScreen:
-	hlcoord 7, 8
+	hlcoord 2, 9
 	ld de, VersionOnTitleScreenText
 	jp PlaceString
 
 ; these point to special tiles specifically loaded for that purpose and are not usual text
 VersionOnTitleScreenText:
-IF DEF(_RED)
-	db $60,$61,$7F,$65,$66,$67,$68,$69,"@" ; "Red Version"
-ENDC
-IF DEF(_BLUE)
-	db $61,$62,$63,$64,$65,$66,$67,$68,"@" ; "Blue Version"
-ENDC
+	db $60,$61,$62,$63,$64,$65,$66,$67,$68,$69,$6A,$6B,$6C,$6D,$6E,$6F,"@" ; "WORLD ADVENTURES"
+;IF DEF(_RED)
+;	db $60,$61,$7F,$65,$66,$67,$68,$69,"@" ; "Red Version"
+;ENDC
+;IF DEF(_BLUE)
+;	db $61,$62,$63,$64,$65,$66,$67,$68,"@" ; "Blue Version"
+;ENDC
 
 DebugNewGamePlayerName:
 	db "NINTEN@"

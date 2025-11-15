@@ -20,7 +20,7 @@ TitleScroll:
 	ld a, d
 
 	ld bc, TitleScroll_In
-	ld d, $88
+	ld d, $88 ; bottom of the Mon sprite
 	ld e, 0 ; don't animate titleball
 
 	and a
@@ -49,11 +49,11 @@ _TitleScroll:
 
 .loop
 	ld h, d
-	ld l, $48
+	ld l, $50;$48
 	call .ScrollBetween
 
 	ld h, $00
-	ld l, $88
+	ld l, $88 ; bottom of the Mon sprite
 	call .ScrollBetween
 
 	ld a, d
@@ -89,14 +89,15 @@ TitleBallYTable:
 
 TitleScreenAnimateBallIfStarterOut:
 ; Animate the TitleBall if a starter just got scrolled out.
-	ld a, [wTitleMonSpecies]
-	cp STARTER1
-	jr z, .ok
-	cp STARTER2
-	jr z, .ok
-	cp STARTER3
-	ret nz
-.ok
+;	ld a, [wTitleMonSpecies]
+;	cp STARTER1
+;	jr z, .ok
+;	cp STARTER2
+;	jr z, .ok
+;	cp STARTER3
+;	ret nz
+;.ok
+	; I want the ball to always animate :)
 	ld e, 1 ; animate titleball
 	ld bc, TitleScroll_WaitBall
 	ld d, 0
