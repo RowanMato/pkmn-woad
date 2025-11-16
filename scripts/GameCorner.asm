@@ -13,7 +13,7 @@ GameCornerSelectLuckySlotMachine:
 	ret z
 	call Random
 	ldh a, [hRandomAdd]
-	cp $7
+	cp $8 ; was $7, which resulted in an off-by-1 error, rolling a non-existant machine
 	jr nc, .not_max
 	ld a, $8
 .not_max

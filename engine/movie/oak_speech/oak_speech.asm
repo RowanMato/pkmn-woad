@@ -79,21 +79,21 @@ OakSpeech:
 	ld [wCurPartySpecies], a
 	call GetMonHeader
 	hlcoord 6, 4
-	call LoadFlippedFrontSpriteByMonIndex	
+	call LoadFlippedFrontSpriteByMonIndex
 	ld a, %11100100
 	ld [rBGP], a
-	call UpdateCGBPal_BGP	
+	call UpdateCGBPal_BGP
 	push af
 	push bc
 	push hl
 	push de
 	ld d, CONVERT_BGP
 	ld e, 0
-	callfar TransferMonPal 
+	callfar TransferMonPal
 	pop de
 	pop hl
 	pop bc
-	pop af	
+	pop af
 	call MovePicLeft_NoPalUpdate
 	ld hl, OakSpeechText2
 	call PrintText
@@ -182,7 +182,7 @@ OakSpeechText1:
 OakSpeechText2:
 	text_far _OakSpeechText2A
 	; BUG: The cry played does not match the sprite displayed.
-	sound_cry_nidorina
+	sound_cry_nidorino
 	text_far _OakSpeechText2B
 	text_end
 IntroducePlayerText:
