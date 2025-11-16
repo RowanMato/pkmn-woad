@@ -1328,7 +1328,7 @@ CheckForTilePairCollisions::
 	jr .retry
 .currentTileMatchesFirstInPair
 	inc hl
-	ld a, [hl]
+	ld a, [hli]
 	cp c
 	jr z, .foundMatch
 	jr .tilePairCollisionLoop
@@ -1895,7 +1895,7 @@ CollisionCheckOnWater::
 	ld d, a
 	ld a, [wSpritePlayerStateData1CollisionData]
 	and d ; check if a sprite is in the direction the player is trying to go
-	jr nz, .checkIfNextTileIsPassable ; bug?
+	jr nz, .collision
 	ld hl, TilePairCollisionsWater
 	call CheckForJumpingAndTilePairCollisions
 	jr c, .collision
