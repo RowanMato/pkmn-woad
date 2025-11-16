@@ -2934,6 +2934,8 @@ CheckMapForMon:
 	ld a, c
 	ld [de], a
 	inc de
+	inc hl	; fixes non-vanilla ">30 encounters found" overflow
+	ret			; fixes non-vanilla ">30 encounters found" overflow
 .nextEntry
 	inc hl
 	inc hl
