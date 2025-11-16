@@ -58,7 +58,7 @@ SleepEffect:
 .setSleepCounter
 ; set target's sleep counter to a random number between 1 and 7
 	call BattleRandom
-	and $7
+	and $7 ; forces the roll to be 0-7
 	jr z, .setSleepCounter
 	ld [de], a
 	call PlayCurrentMoveAnimation2
