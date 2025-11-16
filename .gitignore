@@ -1,6 +1,9 @@
 # compiled objects
 *.o
 
+# resources
+/RESOURCES/
+
 # compiled graphics
 *.1bpp
 *.2bpp
