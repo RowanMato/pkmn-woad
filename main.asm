@@ -164,10 +164,8 @@ INCLUDE "engine/battle/move_effects/leech_seed.asm"
 SECTION "Battle Engine 5", ROMX
 
 INCLUDE "engine/battle/display_effectiveness.asm"
-INCLUDE "gfx/trainer_card.asm"
 INCLUDE "engine/items/tmhm.asm"
 INCLUDE "engine/battle/scale_sprites.asm"
-INCLUDE "engine/battle/move_effects/pay_day.asm"
 INCLUDE "engine/slots/game_corner_slots2.asm"
 
 
@@ -175,6 +173,8 @@ SECTION "Battle Engine 6", ROMX
 
 INCLUDE "engine/battle/move_effects/mist.asm"
 INCLUDE "engine/battle/move_effects/one_hit_ko.asm"
+INCLUDE "gfx/trainer_card.asm"
+INCLUDE "engine/battle/move_effects/pay_day.asm"
 
 
 SECTION "Title 2", ROMX
