@@ -2,7 +2,12 @@ _CeladonMart3FClerkTM18PreReceiveText::
 	text "Oh, hi! I finally"
 	line "finished #MON!"
 
-	para "Not done yet?"
+	para "Come back after"
+	line "you roll credits"
+	cont "and I'll sell you"
+	cont "some great TMs!"
+
+	para "For now, here."
 	line "This might be"
 	cont "useful!"
 	prompt
@@ -19,6 +24,11 @@ _CeladonMart3FClerkTM18ExplanationText::
 	line "Not like the one"
 	cont "I'm leaning on,"
 	cont "mind you!"
+
+	para "Come back after"
+	line "you roll credits"
+	cont "and I'll sell you"
+	cont "some great TMs!"
 	done
 
 _CeladonMart3FClerkTM18NoRoomText::

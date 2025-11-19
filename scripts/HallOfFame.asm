@@ -97,9 +97,17 @@ HallOfFameOakCongratulationsScript:
 	call DisplayTextID
 	ld a, PAD_BUTTONS | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
+	; Open Unknown Dungeon
 	ld a, HS_CERULEAN_CAVE_GUY
 	ld [wMissableObjectIndex], a
 	predef HideObject
+	; Open post-game TM Shops
+	ld a, HS_CELADON_MART_3F_COUNTER
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld a, HS_CELADON_MART_3F_GOOD_TMS
+	ld [wMissableObjectIndex], a
+	predef ShowObject
 	ld a, SCRIPT_HALLOFFAME_RESET_EVENTS_AND_SAVE
 	ld [wHallOfFameCurScript], a
 	ret
