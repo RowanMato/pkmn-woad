@@ -7,3 +7,9 @@ _CinnabarLabTradeRoomSuperNerdText::
 	line "rare, prehistoric"
 	cont "#MON!"
 	done
+
+_CinnabarLabTradeRoomNoHitmonYetText::
+	text "I trained at the"
+	line "DOJO in SAFFRON"
+	cont "when I was young."
+	done

@@ -245,9 +245,12 @@ InGameTrade_TrainerString:
 InGameTradeTextPointers:
 ; entries correspond to TRADE_DIALOGSET_* constants
 	table_width 2
-	dw TradeTextPointers1
-	dw TradeTextPointers2
-	dw TradeTextPointers3
+	dw TradeTextPointers1;Casual
+	dw TradeTextPointers2;Evolution
+	dw TradeTextPointers3;Happy
+	dw TradeTextPointers4;Dad
+	dw TradeTextPointers5;Sailor
+	dw TradeTextPointers6;Fisher
 	assert_table_length NUM_TRADE_DIALOGSETS
 
 TradeTextPointers1:
@@ -269,6 +272,9 @@ TradeTextPointers2:
 	assert_table_length NUM_TRADE_TEXTS
 
 TradeTextPointers3:
+TradeTextPointers4:
+TradeTextPointers5:
+TradeTextPointers6:
 	table_width 2
 	dw WannaTrade3Text
 	dw NoTrade3Text

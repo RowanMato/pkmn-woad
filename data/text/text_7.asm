@@ -68,7 +68,7 @@ _TradedForText::
 	text "!@"
 	text_end
 
-_WannaTrade1Text::
+_WannaTrade1Text:: ; CASUAL
 	text "I'm looking for"
 	line "@"
 	text_ram wInGameTradeGiveMonName
@@ -80,12 +80,12 @@ _WannaTrade1Text::
 	text "? "
 	done
 
-_NoTrade1Text::
+_NoTrade1Text:: ; CASUAL
 	text "Awww!"
 	line "Oh well..."
 	done
 
-_WrongMon1Text::
+_WrongMon1Text:: ; CASUAL
 	text "What? That's not"
 	line "@"
 	text_ram wInGameTradeGiveMonName
@@ -95,18 +95,18 @@ _WrongMon1Text::
 	line "come back here!"
 	done
 
-_Thanks1Text::
+_Thanks1Text:: ; CASUAL
 	text "Hey thanks!"
 	done
 
-_AfterTrade1Text::
+_AfterTrade1Text:: ; CASUAL
 	text "Isn't my old"
 	line "@"
 	text_ram wInGameTradeReceiveMonName
 	text " great?"
 	done
 
-_WannaTrade2Text::
+_WannaTrade2Text:: ; EVOLUTION
 	text "Hello there! Do"
 	line "you want to trade"
 
@@ -118,12 +118,12 @@ _WannaTrade2Text::
 	text "?"
 	done
 
-_NoTrade2Text::
+_NoTrade2Text:: ; EVOLUTION
 	text "Well, if you"
 	line "don't want to..."
 	done
 
-_WrongMon2Text::
+_WrongMon2Text:: ; EVOLUTION
 	text "Hmmm? This isn't"
 	line "@"
 	text_ram wInGameTradeGiveMonName
@@ -133,19 +133,20 @@ _WrongMon2Text::
 	line "you get one."
 	done
 
-_Thanks2Text::
+_Thanks2Text:: ; EVOLUTION
 	text "Thanks!"
 	done
 
-_AfterTrade2Text::
-	text "Hello there! Your"
-	line "old @"
+_AfterTrade2Text:: ; EVOLUTION
+	text "The @"
 	text_ram wInGameTradeGiveMonName
-	text " is"
-	line "magnificent!"
+	text " you"
+	line "traded to me"
+
+	para "went and evolved!"
 	done
 
-_WannaTrade3Text::
+_WannaTrade3Text:: ; HAPPY
 	text "Hi! Do you have"
 	line "@"
 	text_ram wInGameTradeGiveMonName
@@ -157,11 +158,11 @@ _WannaTrade3Text::
 	text "?"
 	done
 
-_NoTrade3Text::
+_NoTrade3Text:: ; HAPPY
 	text "That's too bad."
 	done
 
-_WrongMon3Text::
+_WrongMon3Text:: ; HAPPY
 	text "...This is no"
 	line "@"
 	text_ram wInGameTradeGiveMonName
@@ -171,11 +172,11 @@ _WrongMon3Text::
 	line "trade it with me!"
 	done
 
-_Thanks3Text::
+_Thanks3Text:: ; HAPPY
 	text "Thanks pal!"
 	done
 
-_AfterTrade3Text::
+_AfterTrade3Text:: ; HAPPY
 	text "How is my old"
 	line "@"
 	text_ram wInGameTradeReceiveMonName

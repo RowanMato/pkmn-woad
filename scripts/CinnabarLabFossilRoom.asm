@@ -98,9 +98,9 @@ CinnabarLabFossilRoomScientist1Text:
 	text_far _CinnabarLabFossilRoomScientist1FossilIsBackToLifeText
 	text_end
 
-CinnabarLabFossilRoomScientist2Text:
+CinnabarLabFossilRoomScientist2Text: ; TODO replace this with the Tradeback NPC
 	text_asm
-	ld a, TRADE_FOR_SAILOR
+	ld a, TRADE_FOR_16
 	ld [wWhichTrade], a
 	predef DoInGameTradeDialogue
 	jp TextScriptEnd
