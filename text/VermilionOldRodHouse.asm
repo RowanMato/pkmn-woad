@@ -1,15 +1,19 @@
-_VermilionOldRodHouseFishingGuruDoYouLikeToFishText::
+_VermilionGoodRodHouseFishingGuruText::
 	text "I'm the FISHING"
-	line "GURU!"
+	line "GURU's older"
+	cont "brother!"
 
-	para "I simply Looove"
+	para "I simply looove"
 	line "fishing!"
+
+	para "My young brother"
+	line "is just a novice."
 
 	para "Do you like to"
 	line "fish?"
 	done
 
-_VermilionOldRodHouseFishingGuruTakeThisText::
+_VermilionGoodRodHouseFishingGuruReceivedGoodRodText::
 	text "Grand! I like"
 	line "your style!"
 
@@ -17,37 +21,42 @@ _VermilionOldRodHouseFishingGuruTakeThisText::
 	line "fish, young one!"
 
 	para "<PLAYER> received"
-	line "an @"
+	line "a @"
 	text_ram wStringBuffer
 	text "!@"
 	text_end
 
-_VermilionOldRodHouseFishingGuruFishingIsAWayOfLifeText::
+_VermilionGoodRodHouseFishingGuruFishingWayOfLifeText::;unused? Make the script function like the other two Rods.
 	text_start
 
-	para "Fishing is a way"
-	line "of life!"
+	para "That GOOD ROD is"
+	line "much better than"
+	line "an OLD ROD."
 
-	para "From the seas to"
-	line "rivers, go out"
-	cont "and land the big"
-	cont "one, young one!"
+	para "You'll reel in more"
+	line "diverse #MON"
+	cont "using that!"
 	done
 
-_VermilionOldRodHouseFishingGuruThatsSoDisappointingText::
+_VermilionGoodRodHouseFishingGuruThatsSoDisappointingText::
 	text "Oh... That's so"
 	line "disappointing..."
 	done
 
-_VermilionOldRodHouseFishingGuruHowAreTheFishBitingText::
+_VermilionGoodRodHouseFishingGuruHowAreTheFishText::
 	text "Hello there,"
 	line "<PLAYER>!"
 
-	para "How are the fish"
-	line "biting?"
+	para "How's that GOOD"
+	line "ROD I gave you?"
+
+	para "Try fishing in"
+	line "rivers and ponds,"
+	para "as well as the"
+	line "sea here in town."
 	done
 
-_VermilionOldRodHouseFishingGuruNoRoomText::
+_VermilionGoodRodHouseFishingGuruNoRoomText::
 	text "Oh no!"
 
 	para "You have no room"

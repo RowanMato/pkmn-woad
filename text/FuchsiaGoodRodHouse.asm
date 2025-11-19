@@ -1,16 +1,20 @@
-_FuchsiaGoodRodHouseFishingGuruText::
+_FuchsiaSuperRodHouseFishingGuruDoYouLikeToFishText::
 	text "I'm the FISHING"
-	line "GURU's older"
+	line "GURU's eldest"
 	cont "brother!"
 
-	para "I simply Looove"
+	para "I simply looooove"
 	line "fishing!"
+
+	para "My brothers don't"
+	line "have my level of"
+	cont "expertise."
 
 	para "Do you like to"
 	line "fish?"
 	done
 
-_FuchsiaGoodRodHouseFishingGuruReceivedGoodRodText::
+_FuchsiaSuperRodHouseFishingGuruReceivedSuperRodText::
 	text "Grand! I like"
 	line "your style!"
 
@@ -23,22 +27,52 @@ _FuchsiaGoodRodHouseFishingGuruReceivedGoodRodText::
 	text "!@"
 	text_end
 
-_FuchsiaGoodRodHouseFishingGuruThatsSoDisappointingText::
+_FuchsiaSuperRodHouseFishingGuruFishingWayOfLifeText::
+	text_start
+
+	para "That there is the"
+	line "best ROD around!"
+
+	para "I assure you, it"
+	line "can reel in all"
+	cont "kinds of #MON,"
+	cont "depending on what"
+	cont "water you cast it"
+	cont "into."
+
+	para "Try it everywhere"
+	line "you go!"
+
+	para "From the seas to"
+	line "rivers, go out"
+	cont "and land the big"
+	cont "one!"
+	done
+
+_FuchsiaSuperRodHouseFishingGuruThatsDisappointingText::
 	text "Oh... That's so"
 	line "disappointing..."
 	done
 
-_FuchsiaGoodRodHouseFishingGuruHowAreTheFishText::
+_FuchsiaSuperRodHouseFishingGuruTryFishingText::
 	text "Hello there,"
 	line "<PLAYER>!"
 
-	para "How are the fish"
-	line "biting?"
+	para "Use the SUPER ROD"
+	line "in any water!"
+
+	para "You can catch"
+	line "different kinds"
+	cont "of #MON."
+
+	para "Try fishing"
+	line "wherever you can!"
 	done
 
-_FuchsiaGoodRodHouseFishingGuruNoRoomText::
+_FuchsiaSuperRodHouseFishingGuruNoRoomText::
 	text "Oh no!"
 
-	para "You have no room"
-	line "for my gift!"
+	para "I had a gift for"
+	line "you, but you have"
+	cont "no room for it!"
 	done

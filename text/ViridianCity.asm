@@ -179,3 +179,58 @@ _ViridianCityGymLockedText::
 	text "The GYM's doors"
 	line "are locked..."
 	done
+
+_VeridianCityOldRodFishingGuruDoYouLikeToFishText::
+	text "I'm the FISHING"
+	line "GURU!"
+
+	para "I simply love"
+	line "fishing!"
+
+	para "Do you like to"
+	line "fish?"
+	prompt
+
+_VeridianCityOldRodFishingGuruTakeThisText::
+	text "No, don't even"
+	line "answer that."
+
+	para "I can tell you're"
+	line "a fishing fiend!"
+
+	para "Take this and"
+	line "fish, young one!"
+
+	para "<PLAYER> received"
+	line "an @"
+	text_ram wStringBuffer
+	text "!@"
+	text_end
+
+
+_VeridianCityOldRodFishingGuruFishingIsAWayOfLifeText::
+	text_start
+
+	para "Fishing is a way"
+	line "of life!"
+
+	para "From the seas to"
+	line "rivers, go out"
+	cont "and land the big"
+	cont "one, young one!"
+	done
+
+_VeridianCityOldRodFishingGuruHowAreTheFishBitingText::
+	text "Hello there,"
+	line "<PLAYER>!"
+
+	para "How are the fish"
+	line "biting?"
+	done
+
+_VeridianCityOldRodFishingGuruNoRoomText::
+	text "Oh no!"
+
+	para "You have no room"
+	line "for my gift!"
+	done

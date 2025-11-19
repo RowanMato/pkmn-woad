@@ -134,6 +134,7 @@ ViridianCity_TextPointers:
 	dw_const ViridianCityOldManSleepyText,                   TEXT_VIRIDIANCITY_OLD_MAN_SLEEPY
 	dw_const ViridianCityFisherText,                         TEXT_VIRIDIANCITY_FISHER
 	dw_const ViridianCityOldManText,                         TEXT_VIRIDIANCITY_OLD_MAN
+	dw_const ViridianCityFishingGuruText, 									 TEXT_VIRIDIANCITY_FISHING_GURU
 	dw_const ViridianCitySignText,                           TEXT_VIRIDIANCITY_SIGN
 	dw_const ViridianCityTrainerTips1Text,                   TEXT_VIRIDIANCITY_TRAINER_TIPS1
 	dw_const ViridianCityTrainerTips2Text,                   TEXT_VIRIDIANCITY_TRAINER_TIPS2
@@ -306,6 +307,47 @@ ViridianCityOldManText:
 
 ViridianCityOldManYouNeedToWeakenTheTargetText:
 	text_far _ViridianCityOldManYouNeedToWeakenTheTargetText
+	text_end
+
+ViridianCityFishingGuruText:
+	text_asm
+	ld a, [wStatusFlags1]
+	bit BIT_GOT_OLD_ROD, a
+	jr nz, .got_old_rod
+	ld hl, .DoYouLikeToFishText
+	call PrintText
+	lb bc, OLD_ROD, 1
+	call GiveItem
+	jr nc, .bag_full
+	ld hl, wStatusFlags1
+	set BIT_GOT_OLD_ROD, [hl]
+	ld hl, .TakeThisText
+	jr .print_text
+.bag_full
+	ld hl, .NoRoomText
+	jr .print_text
+.got_old_rod
+	ld hl, .HowAreTheFishBitingText
+.print_text
+	call PrintText
+	jp TextScriptEnd
+
+.DoYouLikeToFishText:
+	text_far _VeridianCityOldRodFishingGuruDoYouLikeToFishText
+	text_end
+
+.TakeThisText:
+	text_far _VeridianCityOldRodFishingGuruTakeThisText
+	sound_get_item_1
+	text_far _VeridianCityOldRodFishingGuruFishingIsAWayOfLifeText
+	text_end
+
+.HowAreTheFishBitingText:
+	text_far _VeridianCityOldRodFishingGuruHowAreTheFishBitingText
+	text_end
+
+.NoRoomText:
+	text_far _VeridianCityOldRodFishingGuruNoRoomText
 	text_end
 
 ViridianCitySignText:
