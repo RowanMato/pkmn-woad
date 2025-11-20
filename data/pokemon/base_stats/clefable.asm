@@ -10,7 +10,7 @@
 	INCBIN "gfx/pokemon/front/clefable.pic", 0, 1 ; sprite dimensions
 	dw ClefablePicFront, ClefablePicBack
 
-	db SING, DOUBLESLAP, MINIMIZE, METRONOME ; level 1 learnset
+	db DEFENSE_CURL, DOUBLESLAP, MINIMIZE, METRONOME ; level 1 learnset MODIFIED
 	db GROWTH_FAST ; growth rate
 
 	; tm/hm learnset

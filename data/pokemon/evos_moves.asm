@@ -278,10 +278,13 @@ VoltorbEvosMoves:
 NidokingEvosMoves:
 ; Evolutions
 	db 0
-; Learnset
-	db 8, HORN_ATTACK
+; Learnset MODIFIED for Move Relearner
+	db  2, FOCUS_ENERGY
+	db  2, FURY_ATTACK
+	db  8, HORN_ATTACK
 	db 12, DOUBLE_KICK
 	db 23, THRASH
+	db 50, HORN_DRILL
 	db 0
 
 SlowbroEvosMoves:
@@ -314,8 +317,17 @@ IvysaurEvosMoves:
 ExeggutorEvosMoves:
 ; Evolutions
 	db 0
-; Learnset
+; Learnset MODIFIED for Move Relearner
+;	sb  1, BARRAGE
+;	db  1, HYNOSIS
+	db  2, SLEEP_POWDER
+	db  2, STUN_SPORE
+	db  2, POISONPOWDER
+	db  2, LEECH_SEED
+	db  2, REFLECT
+	db  2, HYPNOSIS
 	db 28, STOMP
+	db 47, SOLARBEAM
 	db 0
 
 LickitungEvosMoves:
@@ -379,9 +391,12 @@ NidoranFEvosMoves:
 NidoqueenEvosMoves:
 ; Evolutions
 	db 0
-; Learnset
+; Learnset MODIFIED for Move Relearner
+	db  2, BITE
+	db  2, FURY_SWIPES
 	db 8, SCRATCH
 	db 12, DOUBLE_KICK
+	db 19, POISON_STING
 	db 23, BODY_SLAM
 	db 0
 
@@ -428,7 +443,9 @@ LaprasEvosMoves:
 ArcanineEvosMoves:
 ; Evolutions
 	db 0
-; Learnset
+; Learnset MODIFIED for Move Relearner
+	db  2, AGILITY
+	db 50, FLAMETHROWER
 	db 0
 
 MewEvosMoves:
@@ -1093,7 +1110,11 @@ VulpixEvosMoves:
 NinetalesEvosMoves:
 ; Evolutions
 	db 0
-; Learnset
+; Learnset MODIFIED for Move Relearner
+	db  2, ROAR
+	db  2, CONFUSE_RAY
+	db 39, FLAMETHROWER
+	db 46, FIRE_SPIN
 	db 0
 
 PikachuEvosMoves:
@@ -1115,7 +1136,15 @@ PikachuEvosMoves:
 RaichuEvosMoves:
 ; Evolutions
 	db 0
-; Learnset
+; Learnset MODIFIED for Move Relearner
+	db  2, TAIL_WHIP
+	db  2, QUICK_ATTACK
+	db  2, DOUBLE_TEAM
+	db  2, SLAM
+	db  2, THUNDERBOLT
+	db 36, AGILITY
+	db 44, THUNDER
+	db 52, LIGHT_SCREEN
 	db 0
 
 MissingNo56EvosMoves:
@@ -1272,6 +1301,10 @@ WigglytuffEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 13, SING
+;	db 29, REST ; Can be TMed. Too strong for Relearner.
+	db 41, BODY_SLAM
+	db 48, DOUBLE_EDGE
 	db 0
 
 EeveeEvosMoves:
@@ -1396,9 +1429,9 @@ PoliwhirlEvosMoves:
 PoliwrathEvosMoves:
 ; Evolutions
 	db 0
-; Learnset
-	db 16, HYPNOSIS
-	db 19, WATER_GUN
+; Learnset MODIFIED for Move Relearner
+	db 44, AMNESIA
+	db 51, HYDRO_PUMP
 	db 0
 
 WeedleEvosMoves:
@@ -1686,7 +1719,9 @@ ElectrodeEvosMoves:
 ClefableEvosMoves:
 ; Evolutions
 	db 0
-; Learnset
+; Learnset MODIFIED for Move Relearner
+	db  2, SING
+	db 51, LIGHT_SCREEN
 	db 0
 
 WeezingEvosMoves:
@@ -2147,10 +2182,13 @@ GloomEvosMoves:
 VileplumeEvosMoves:
 ; Evolutions
 	db 0
-; Learnset
-	db 15, POISONPOWDER
-	db 17, STUN_SPORE
-	db 19, SLEEP_POWDER
+; Learnset MODIFIED for Move Relearner
+;	db  1, ACID
+;	db  1, STUN_SPORE
+;	db  1, SLEEP_POWDER
+	db  2, POISONPOWDER
+	db 39, PETAL_DANCE
+	db 51, SOLARBEAM
 	db 0
 
 BellsproutEvosMoves:
@@ -2184,8 +2222,12 @@ WeepinbellEvosMoves:
 VictreebelEvosMoves:
 ; Evolutions
 	db 0
-; Learnset
-	db 13, WRAP
-	db 15, POISONPOWDER
-	db 18, SLEEP_POWDER
+; Learnset MODIFIED for Move Relearner
+;	db  1, SLEEP_POWDER
+;	db  1, STUN_SPORE
+;	db  1, ACID
+;	db  1, RAZOR_LEAF
+	db  2, WRAP
+	db  2, POISONPOWDER
+	db 46, SLAM
 	db 0
