@@ -37,20 +37,20 @@ MtMoonPokecenterMagikarpSalesmanText:
 	jp nz, .choseNo
 	ldh [hMoney], a
 	ldh [hMoney + 2], a
-	ld a, $5
+	ld a, $50; plus 2 zero digits for some reason
 	ldh [hMoney + 1], a
 	call HasEnoughMoney
 	jr nc, .enoughMoney
 	ld hl, .NoMoneyText
 	jr .printText
 .enoughMoney
-	lb bc, MAGIKARP, 5
+	lb bc, DRATINI, 5
 	call GivePokemon
 	jr nc, .done
 	xor a
 	ld [wPriceTemp], a
 	ld [wPriceTemp + 2], a
-	ld a, $5
+	ld a, $50; plus 2 zero digits for some reason
 	ld [wPriceTemp + 1], a
 	ld hl, wPriceTemp + 2
 	ld de, wPlayerMoney + 2
