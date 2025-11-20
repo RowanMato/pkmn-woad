@@ -476,9 +476,8 @@ ShellderEvosMoves:
 ; Learnset MODIFIED
 ;	db  1, TACKLE
 ;	db  1, WITHDRAW
-	db  9, SUPERSONIC
-	db 19, CLAMP
-	db 26, PROTECT
+	db 14, SUPERSONIC
+	db 23, CLAMP
 	db 31, AURORA_BEAM
 	db 39, LEER
 	db 50, ICE_BEAM
@@ -1694,7 +1693,6 @@ CloysterEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset MODIFIED
-	db  2, PROTECT
 	db  2, LEER
 	db 50, SPIKE_CANNON
 	db 0
