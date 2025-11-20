@@ -73,7 +73,7 @@ YoungsterData:
 ; SS Anne 1F Rooms
 	db 21, NIDORAN_M, 0
 ; Route 11
-	db 21, EKANS, 0
+	db 21, EKANS, VENONAT, 0 ; added Venonat
 	db 19, SANDSHREW, ZUBAT, 0
 	db 17, RATTATA, RATTATA, RATICATE, 0
 	db 18, NIDORAN_M, NIDORINO, 0
@@ -95,7 +95,7 @@ BugCatcherData:
 ; Route 24
 	db 14, CATERPIE, WEEDLE, 0
 ; Route 6
-	db 16, WEEDLE, CATERPIE, WEEDLE, 0
+	db 16, WEEDLE, CATERPIE, PARAS, 0 ; replaced a Weedle
 	db 20, BUTTERFREE, 0
 ; Unused
 	db 18, METAPOD, CATERPIE, VENONAT, 0
@@ -118,7 +118,7 @@ LassData:
 	db 14, PIDGEY, NIDORAN_F, 0
 ; Route 25
 	db 15, NIDORAN_M, NIDORAN_F, 0
-	db 13, ODDISH, PIDGEY, ODDISH, 0
+	db 13, ODDISH, PIDGEY, VULPIX, 0 ; replaced an Oddish
 ; SS Anne 1F Rooms
 	db 18, PIDGEY, NIDORAN_F, 0
 ; SS Anne 2F Rooms
@@ -140,7 +140,7 @@ SailorData:
 	db 21, SHELLDER, 0
 	db 17, HORSEA, SHELLDER, TENTACOOL, 0
 	db 18, TENTACOOL, STARYU, 0
-	db 17, HORSEA, HORSEA, HORSEA, 0
+	db 17, HORSEA, HORSEA, SQUIRTLE, 0 ; replaced a 3rd Horsea
 	db 20, MACHOP, 0
 ; Vermilion Gym
 	db 21, PIKACHU, PIKACHU, 0
@@ -173,10 +173,10 @@ JrTrainerFData:
 	db 22, BULBASAUR, 0
 ; Route 9
 	db 18, ODDISH, BELLSPROUT, ODDISH, BELLSPROUT, 0
-	db 23, MEOWTH, 0
+	db 23, MEOWTH, SQUIRTLE, 0 ; added Squirtle
 ; Route 10
 	db 20, PIKACHU, CLEFAIRY, 0
-	db 21, PIDGEY, PIDGEOTTO, 0
+	db 21, PIDGEY, PSYDUCK, PIDGEOTTO, 0 ; added Psyduck
 ; Rock Tunnel B1F
 	db 21, JIGGLYPUFF, PIDGEY, MEOWTH, 0
 	db 22, ODDISH, BULBASAUR, 0
@@ -208,7 +208,7 @@ PokemaniacData:
 ; Rock Tunnel B1F
 	db 20, SLOWPOKE, SLOWPOKE, SLOWPOKE, 0
 	db 22, CHARMANDER, CUBONE, 0
-	db 25, SLOWPOKE, 0
+	db 25, SLOWPOKE, PONYTA, 0 ; added Ponyta
 ; Victory Road 2F
 	db 40, CHARMELEON, LAPRAS, LICKITUNG, 0
 ; Rock Tunnel 1F
@@ -248,7 +248,7 @@ HikerData:
 	db 19, ONIX, GRAVELER, 0
 ; Rock Tunnel B1F
 	db 21, GEODUDE, GEODUDE, GRAVELER, 0
-	db 25, GEODUDE, 0
+	db 25, GEODUDE, DIGLETT, 0 ; added Diglett
 ; Route 9/Rock Tunnel B1F
 	db 20, MACHOP, ONIX, 0
 ; Rock Tunnel 1F
@@ -315,7 +315,7 @@ UnusedJugglerData:
 
 FisherData:
 ; SS Anne 2F Rooms
-	db 17, GOLDEEN, TENTACOOL, GOLDEEN, 0
+	db 17, GOLDEEN, TENTACOOL, KRABBY, 0 ; replaced Goldeen
 ; SS Anne B1F Rooms
 	db 17, TENTACOOL, STARYU, SHELLDER, 0
 ; Route 12
@@ -344,7 +344,7 @@ SwimmerData:
 	db 27, TENTACOOL, TENTACOOL, STARYU, HORSEA, TENTACRUEL, 0
 ; Route 20
 	db 31, SHELLDER, CLOYSTER, 0
-	db 35, STARYU, 0
+	db 35, STARYU, PSYDUCK, 0 ; added Psyduck
 	db 28, HORSEA, HORSEA, SEADRA, HORSEA, 0
 ; Route 21
 	db 33, SEADRA, TENTACRUEL, 0
@@ -368,7 +368,7 @@ CueBallData:
 
 GamblerData:
 ; Route 11
-	db 18, POLIWAG, HORSEA, 0
+	db 18, POLIWAG, SEEL, 0 ; replaced Horsea
 	db 18, BELLSPROUT, ODDISH, 0
 	db 18, VOLTORB, MAGNEMITE, 0
 	db 18, GROWLITHE, VULPIX, 0
