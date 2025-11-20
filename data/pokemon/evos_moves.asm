@@ -456,10 +456,13 @@ ShellderEvosMoves:
 ; Evolutions
 	db EVOLVE_ITEM, WATER_STONE, 1, CLOYSTER
 	db 0
-; Learnset
-	db 18, SUPERSONIC
-	db 23, CLAMP
-	db 30, AURORA_BEAM
+; Learnset MODIFIED
+;	db  1, TACKLE
+;	db  1, WITHDRAW
+	db  9, SUPERSONIC
+	db 19, CLAMP
+	db 26, PROTECT
+	db 31, AURORA_BEAM
 	db 39, LEER
 	db 50, ICE_BEAM
 	db 0
@@ -505,14 +508,15 @@ StaryuEvosMoves:
 ; Evolutions
 	db EVOLVE_ITEM, WATER_STONE, 1, STARMIE
 	db 0
-; Learnset
-	db 17, WATER_GUN
-	db 22, HARDEN
-	db 27, RECOVER
-	db 32, SWIFT
-	db 37, MINIMIZE
-	db 42, LIGHT_SCREEN
-	db 47, HYDRO_PUMP
+; Learnset MODIFIED
+;	db  1, TACKLE
+;	db  1, HARDEN
+	db 10, WATER_GUN
+	db 18, RECOVER
+	db 24, SWIFT
+	db 30, MINIMIZE
+	db 36, LIGHT_SCREEN
+	db 44, HYDRO_PUMP
 	db 0
 
 BlastoiseEvosMoves:
@@ -543,15 +547,16 @@ PinsirEvosMoves:
 TangelaEvosMoves:
 ; Evolutions
 	db 0
-; Learnset
+; Learnset MODIFIED loosely based on Crystal, heavily changed!
+;	db  1, CONSTRICT
+	db 10, ABSORB
+	db 15, STUN_SPORE
+	db 19, VINE_WHIP
 	db 24, BIND
-	db 27, ABSORB
-	db 29, VINE_WHIP
-	db 32, POISONPOWDER
-	db 36, STUN_SPORE
-	db 39, SLEEP_POWDER
-	db 45, SLAM
-	db 48, GROWTH
+	db 29, SLEEP_POWDER
+	db 34, POISONPOWDER
+	db 39, SLAM
+	db 44, GROWTH
 	db 0
 
 MissingNo1FEvosMoves:
@@ -736,12 +741,14 @@ PsyduckEvosMoves:
 ; Evolutions
 	db EVOLVE_LEVEL, 33, GOLDUCK
 	db 0
-; Learnset
-	db 28, TAIL_WHIP
-	db 31, DISABLE
-	db 36, CONFUSION
-	db 43, FURY_SWIPES
-	db 52, HYDRO_PUMP
+; Learnset MODIFIED based on Crystal, but Screech is a higher level
+; db  0, SCRATCH
+	db  5, TAIL_WHIP
+	db 10, DISABLE
+	db 16, CONFUSION
+	db 29, SCREECH
+	db 40, FURY_SWIPES
+	db 50, HYDRO_PUMP
 	db 0
 
 DrowzeeEvosMoves:
@@ -807,10 +814,10 @@ ElectabuzzEvosMoves:
 MagnetonEvosMoves:
 ; Evolutions
 	db 0
-; Learnset
-	db 21, SONICBOOM
-	db 25, THUNDERSHOCK
-	db 29, SUPERSONIC
+; Learnset MODIFIED
+	db  8, THUNDERSHOCK
+	db 13, SUPERSONIC
+	db 23, SONICBOOM
 	db 38, THUNDER_WAVE
 	db 46, SWIFT
 	db 54, SCREECH
@@ -852,12 +859,14 @@ SeelEvosMoves:
 ; Evolutions
 	db EVOLVE_LEVEL, 34, DEWGONG
 	db 0
-; Learnset
-	db 30, GROWL
-	db 35, AURORA_BEAM
-	db 40, REST
-	db 45, TAKE_DOWN
-	db 50, ICE_BEAM
+; Learnset MODIFIED
+;	db  1, HEADBUTT
+	db  5, GROWL
+	db 16, LICK ; Gen 2 Egg Move
+	db 21, AURORA_BEAM
+	db 32, REST
+	db 37, TAKE_DOWN
+	db 48, ICE_BEAM
 	db 0
 
 DiglettEvosMoves:
@@ -1477,11 +1486,12 @@ DewgongEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 30, GROWL
-	db 35, AURORA_BEAM
-	db 44, REST
-	db 50, TAKE_DOWN
-	db 56, ICE_BEAM
+;	db 30, GROWL ; Lv1 already
+	db 19, LICK ; Gen 2 Egg Move
+	db 24, AURORA_BEAM
+	db 35, REST
+	db 40, TAKE_DOWN
+	db 52, ICE_BEAM
 	db 0
 
 MissingNo79EvosMoves:
@@ -1545,12 +1555,13 @@ MissingNo7FEvosMoves:
 GolduckEvosMoves:
 ; Evolutions
 	db 0
-; Learnset
-	db 28, TAIL_WHIP
-	db 31, DISABLE
-	db 39, CONFUSION
-	db 48, FURY_SWIPES
-	db 59, HYDRO_PUMP
+; Learnset MODIFIED
+	db  7, TAIL_WHIP
+	db 12, DISABLE
+	db 18, CONFUSION
+	db 30, SCREECH
+	db 45, FURY_SWIPES
+	db 56, HYDRO_PUMP
 	db 0
 
 HypnoEvosMoves:
@@ -1649,7 +1660,9 @@ KinglerEvosMoves:
 CloysterEvosMoves:
 ; Evolutions
 	db 0
-; Learnset
+; Learnset MODIFIED
+	db  2, PROTECT
+	db  2, LEER
 	db 50, SPIKE_CANNON
 	db 0
 
@@ -1774,7 +1787,12 @@ PidgeotEvosMoves:
 StarmieEvosMoves:
 ; Evolutions
 	db 0
-; Learnset
+; Learnset MODIFIED
+	db  2, RECOVER
+	db  2, SWIFT
+	db  2, MINIMIZE
+	db  2, LIGHT_SCREEN
+	db 50, HYDRO_PUMP
 	db 0
 
 BulbasaurEvosMoves:
@@ -1828,10 +1846,12 @@ GoldeenEvosMoves:
 ; Evolutions
 	db EVOLVE_LEVEL, 33, SEAKING
 	db 0
-; Learnset
-	db 19, SUPERSONIC
-	db 24, HORN_ATTACK
-	db 30, FURY_ATTACK
+; Learnset MODIFIED
+;	db  1, PECK
+;	db  1, TAIL_WHIP
+	db 10, SUPERSONIC
+	db 20, HORN_ATTACK
+	db 28, FURY_ATTACK
 	db 37, WATERFALL
 	db 45, HORN_DRILL
 	db 54, AGILITY
@@ -1840,8 +1860,8 @@ GoldeenEvosMoves:
 SeakingEvosMoves:
 ; Evolutions
 	db 0
-; Learnset
-	db 19, SUPERSONIC
+; Learnset MODIFIED
+	db 12, SUPERSONIC
 	db 24, HORN_ATTACK
 	db 30, FURY_ATTACK
 	db 39, WATERFALL
@@ -1988,10 +2008,11 @@ MagnemiteEvosMoves:
 ; Evolutions
 	db EVOLVE_LEVEL, 30, MAGNETON
 	db 0
-; Learnset
+; Learnset MODIFIED based on Crystal
+;	db  1, TACKLE
+	db  6, THUNDERSHOCK
+	db 11, SUPERSONIC
 	db 21, SONICBOOM
-	db 25, THUNDERSHOCK
-	db 29, SUPERSONIC
 	db 35, THUNDER_WAVE
 	db 41, SWIFT
 	db 47, SCREECH
