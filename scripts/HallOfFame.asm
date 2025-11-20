@@ -108,6 +108,9 @@ HallOfFameOakCongratulationsScript:
 	ld a, HS_CELADON_MART_3F_GOOD_TMS
 	ld [wMissableObjectIndex], a
 	predef ShowObject
+	ld a, HS_CERULEAN_BADGE_HOUSE_TM_SHOP
+	ld [wMissableObjectIndex], a
+	predef ShowObject
 	ld a, SCRIPT_HALLOFFAME_RESET_EVENTS_AND_SAVE
 	ld [wHallOfFameCurScript], a
 	ret

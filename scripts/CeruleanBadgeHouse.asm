@@ -8,6 +8,7 @@ CeruleanBadgeHouse_Script:
 CeruleanBadgeHouse_TextPointers:
 	def_text_pointers
 	dw_const CeruleanBadgeHouseMiddleAgedManText, TEXT_CERULEANBADGEHOUSE_MIDDLE_AGED_MAN
+	dw_const CeruleanBadgeHouseTMShopText, TEXT_CERULEANBADGEHOUSE_TM_SHOP
 
 CeruleanBadgeHouseMiddleAgedManText:
 	text_asm
