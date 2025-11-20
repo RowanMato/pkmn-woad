@@ -5,10 +5,13 @@ GameCornerPrizeRoom_TextPointers:
 	def_text_pointers
 	dw_const GameCornerPrizeRoomBaldingGuyText,  TEXT_GAMECORNERPRIZEROOM_BALDING_GUY
 	dw_const GameCornerPrizeRoomGamblerText,     TEXT_GAMECORNERPRIZEROOM_GAMBLER
-	dw_const GameCornerPRizeRoomPrizeVendorText, TEXT_GAMECORNERPRIZEROOM_PRIZE_VENDOR_1
-	dw_const GameCornerPRizeRoomPrizeVendorText, TEXT_GAMECORNERPRIZEROOM_PRIZE_VENDOR_2
-	dw_const GameCornerPRizeRoomPrizeVendorText, TEXT_GAMECORNERPRIZEROOM_PRIZE_VENDOR_3
-	EXPORT TEXT_GAMECORNERPRIZEROOM_PRIZE_VENDOR_1 ; used by engine/events/prize_menu.asm
+	dw_const GameCornerPrizeRoomGruntBlockText,  TEXT_GAMECORNERPRIZEROOM_GRUNT_BLOCK;Blocks 4th counter until post-game
+	dw_const GameCornerPrizeRoomPrizeVendorText, TEXT_GAMECORNERPRIZEROOM_FOSSIL_ROCKET;FOSSIL ROCKET
+	dw_const GameCornerPrizeRoomPrizeVendorText, TEXT_GAMECORNERPRIZEROOM_PRIZE_VENDOR_1
+	dw_const GameCornerPrizeRoomPrizeVendorText, TEXT_GAMECORNERPRIZEROOM_PRIZE_VENDOR_2
+	dw_const GameCornerPrizeRoomPrizeVendorText, TEXT_GAMECORNERPRIZEROOM_PRIZE_VENDOR_3
+	dw_const GameCornerPrizeRoomPrizeVendorText, TEXT_GAMECORNERPRIZEROOM_PRIZE_VENDOR_4;POST-GAME TMS
+	EXPORT TEXT_GAMECORNERPRIZEROOM_FOSSIL_ROCKET ; used by engine/events/prize_menu.asm
 
 GameCornerPrizeRoomBaldingGuyText:
 	text_far _GameCornerPrizeRoomBaldingGuyText
@@ -18,5 +21,9 @@ GameCornerPrizeRoomGamblerText:
 	text_far _GameCornerPrizeRoomGamblerText
 	text_end
 
-GameCornerPRizeRoomPrizeVendorText:
+GameCornerPrizeRoomGruntBlockText:
+	text_far _GameCornerPrizeRoomGruntBlockText
+	text_end
+
+GameCornerPrizeRoomPrizeVendorText:
 	script_prize_vendor

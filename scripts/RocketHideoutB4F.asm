@@ -62,6 +62,14 @@ RocketHideoutB4FBeatGiovanniScript:
 	ld a, HS_ROCKET_HIDEOUT_B4F_ITEM_4
 	ld [wMissableObjectIndex], a
 	predef ShowObject
+	; Move the Rocket Grunt in Game Corner Prize Room.
+	; He no longer blocks the 4th counter, and he now sells Fossils.
+	ld a, HS_GAME_CORNER_PRIZE_BLOCKADE
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld a, HS_GAME_CORNER_PRIZE_FOSSIL
+	ld [wMissableObjectIndex], a
+	predef ShowObject
 	call UpdateSprites
 	call GBFadeInFromBlack
 	xor a

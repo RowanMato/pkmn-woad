@@ -62,7 +62,7 @@ GetPrizeMenuId:
 ; load the three prices at wPrize1Price-wPrize3Price
 ; display the three prizes' names, distinguishing between Pokemon names and item names (specifically TMs)
 	ldh a, [hTextID]
-	sub TEXT_GAMECORNERPRIZEROOM_PRIZE_VENDOR_1
+	sub TEXT_GAMECORNERPRIZEROOM_FOSSIL_ROCKET
 	ld [wWhichPrizeWindow], a ; prize texts' relative ID (i.e. 0-2)
 	add a
 	add a
@@ -85,8 +85,10 @@ GetPrizeMenuId:
 	ld bc, 6
 	call CopyData
 	ld a, [wWhichPrizeWindow]
-	cp 2 ; is TM_menu?
-	jr nz, .putMonName
+	cp 1 ; is Pokemon
+	jr z, .putMonName
+	cp 2 ; is Pokemon
+	jr z, .putMonName
 	ld a, [wPrize1]
 	ld [wNamedObjectIndex], a
 	call GetItemName
@@ -188,8 +190,10 @@ HandlePrizeChoice:
 	ld a, [hl]
 	ld [wNamedObjectIndex], a
 	ld a, [wWhichPrizeWindow]
-	cp 2 ; is prize a TM?
-	jr nz, .getMonName
+	cp 1 ; is prize a Mon?
+	jr z, .getMonName
+	cp 2 ; is prize a Mon?
+	jr z, .getMonName
 	call GetItemName
 	jr .givePrize
 .getMonName
@@ -205,8 +209,10 @@ HandlePrizeChoice:
 	call HasEnoughCoins
 	jr c, .notEnoughCoins
 	ld a, [wWhichPrizeWindow]
-	cp 2 ; is prize a TM?
-	jr nz, .giveMon
+	cp 1 ; is prize a Mon?
+	jr z, .giveMon
+	cp 2 ; is prize a Mon?
+	jr z, .giveMon
 	ld a, [wNamedObjectIndex]
 	ld b, a
 	ld a, 1

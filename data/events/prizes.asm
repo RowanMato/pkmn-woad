@@ -1,9 +1,11 @@
 PrizeDifferentMenuPtrs:
+; Which one of these is pulled is based on the Text ID of the BG Event calling it.
+; Therefore, the BG Events need to be listed in this same order.
+	dw PrizeMenuFossilGruntEntries,  PrizeMenuFossilGruntCost
 	dw PrizeMenuMon1Entries, PrizeMenuMon1Cost
 	dw PrizeMenuMon2Entries, PrizeMenuMon2Cost
 	dw PrizeMenuTMsEntries,  PrizeMenuTMsCost
 	dw PrizeMenuPostGameTMsEntries,  PrizeMenuPostGameTMsCost
-	dw PrizeMenuFossilGruntEntries,  PrizeMenuFossilGruntCost
 
 NoThanksText:
 	db "NO THANKS@"

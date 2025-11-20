@@ -1626,8 +1626,8 @@ _RequireCoinCaseText::
 	text_end
 
 _ExchangeCoinsForPrizesText::
-	text "We exchange your"
-	line "coins for prizes."
+	text "Want to trade in"
+	line "coins for prizes?"
 	prompt
 
 _WhichPrizeText::

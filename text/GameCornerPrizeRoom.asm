@@ -10,3 +10,10 @@ _GameCornerPrizeRoomGamblerText::
 	text "I had a major"
 	line "haul today!"
 	done
+
+_GameCornerPrizeRoomGruntBlockText::
+	text "Hey, scram!"
+
+	para "I'm doing business"
+	line "here."
+	done
