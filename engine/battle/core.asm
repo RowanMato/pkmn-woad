@@ -6682,7 +6682,9 @@ CalculateModifiedStat:
 	pop bc
 	ret
 
-ApplyBadgeStatBoosts:
+ApplyBadgeStatBoosts: ; disabled this entirely
+	ret
+
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	ret z ; return if link battle
