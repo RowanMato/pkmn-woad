@@ -150,7 +150,7 @@ StartMenu_Pokemon::
 	set BIT_UNKNOWN_4_1, [hl]
 	jp StartMenu_Pokemon
 .cut
-	bit BIT_CASCADEBADGE, a
+	bit BIT_BOULDERBADGE, a
 	jp z, .newBadgeRequired
 	predef UsedCut
 	ld a, [wActionResultOrTookBattleTurn]
@@ -181,7 +181,7 @@ StartMenu_Pokemon::
 	call GBPalWhiteOutWithDelay3
 	jp .goBackToMap
 .flash
-	bit BIT_BOULDERBADGE, a
+	bit BIT_CASCADEBADGE, a
 	jp z, .newBadgeRequired
 	xor a
 	ld [wMapPalOffset], a

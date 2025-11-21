@@ -70,13 +70,27 @@ _PewterGymBrockBoulderBadgeInfoText::
 	line "#MON LEAGUE"
 	cont "BADGE!"
 
-	para "Its bearer's"
-	line "#MON become"
-	cont "more powerful!"
+	para "#MON will obey"
+	line "you up to L20."
 
-	para "The technique"
-	line "FLASH can now be"
-	cont "used any time!"
+	para "Stronger #MON"
+	line "will become wild,"
+	cont "ignoring your"
+	cont "orders in battle!"
+
+;	para "Its bearer's"
+;	line "#MON become"
+;	cont "more powerful!"
+
+	para "It also allows"
+	line "your #MON to"
+	cont "use CUT outside"
+	cont "of battle, once"
+	cont "they know how."
+
+	para "You can CUT down"
+	line "small bushes to"
+	cont "open new paths!"
 	prompt
 
 _PewterGymCooltrainerMBattleText::

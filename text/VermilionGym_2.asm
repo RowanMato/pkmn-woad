@@ -12,12 +12,16 @@ _VermilionGymLTSurgePostBattleAdviceText::
 
 _VermilionGymLTSurgeThunderBadgeInfoText::
 	text "The THUNDERBADGE"
-	line "cranks up your"
-	cont "#MON's SPEED!"
+	line "makes all #MON"
+	cont "up to L30 obey!"
 
 	para "It also lets your"
 	line "#MON FLY any"
 	cont "time, kid!"
+
+	para "Though you'll have"
+	line "to teach them how"
+	cont "with an HM first."
 
 	para "You're special,"
 	line "kid! Take this!"

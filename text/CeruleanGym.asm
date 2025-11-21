@@ -31,15 +31,14 @@ _CeruleanGymMistyCascadeBadgeInfoText::
 	cont "up to L30 obey!"
 
 	para "That includes"
-	line "even outsiders!"
+	line "#MON you got"
+	cont "in trades!"
 
-	para "There's more, you"
-	line "can now use CUT"
-	cont "any time!"
-
-	para "You can CUT down"
-	line "small bushes to"
-	cont "open new paths!"
+	para "There's more! Any"
+	line "#MON knowing"
+	cont "FLASH can now use"
+	cont "it to light up"
+	cont "dark caves."
 
 	para "You can also have"
 	line "my favorite TM!"

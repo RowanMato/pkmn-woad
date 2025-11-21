@@ -34,9 +34,13 @@ _CinnabarGymBlaineVolcanoBadgeInfoText::
 	text "Hah!"
 
 	para "The VOLCANOBADGE"
-	line "heightens the"
-	cont "SPECIAL abilities"
-	cont "of your #MON!"
+	line "will cause any"
+	cont "#MON up to L70"
+	cont "to obey you!"
+
+	para "You're a real wiz"
+	line "to have beaten me"
+	cont "so easily!"
 
 	para "Here, you can"
 	line "have this too!"
