@@ -24,17 +24,7 @@ _CeruleanBadgeHouseMiddleAgedManVisitAnyTimeText::
 	done
 
 _CeruleanBadgeHouseBoulderBadgeText::
-	text "The ATTACK of all"
-	line "#MON increases"
-	cont "a little bit."
-
-	para "It also lets you"
-	line "use FLASH any"
-	cont "time you desire."
-	prompt
-
-_CeruleanBadgeHouseCascadeBadgeText::
-	text "#MON up to L30"
+	text "#MON up to L20"
 	line "will obey you."
 
 	para "Any higher, they"
@@ -45,10 +35,24 @@ _CeruleanBadgeHouseCascadeBadgeText::
 	cont "of battle."
 	prompt
 
+_CeruleanBadgeHouseCascadeBadgeText::
+	text "#MON up to L30"
+	line "will obey you."
+
+	para "Any higher, they"
+	line "become unruly!"
+
+	para "It also lets you"
+	line "use FLASH any"
+	cont "time you desire."
+	prompt
+
 _CeruleanBadgeHouseThunderBadgeText::
-	text "The SPEED of all"
-	line "#MON increases"
-	cont "a little bit."
+	text "#MON up to L30"
+	line "will obey you."
+
+	para "Any higher, they"
+	line "become unruly!"
 
 	para "It also lets you"
 	line "use FLY outside"
@@ -56,7 +60,7 @@ _CeruleanBadgeHouseThunderBadgeText::
 	prompt
 
 _CeruleanBadgeHouseRainbowBadgeText::
-	text "#MON up to L50"
+	text "#MON up to L40"
 	line "will obey you."
 
 	para "Any higher, they"
@@ -68,9 +72,11 @@ _CeruleanBadgeHouseRainbowBadgeText::
 	prompt
 
 _CeruleanBadgeHouseSoulBadgeText::
-	text "The DEFENSE of all"
-	line "#MON increases"
-	cont "a little bit."
+	text "#MON up to L50"
+	line "will obey you."
+
+	para "Any higher, they"
+	line "become unruly!"
 
 	para "It also lets you"
 	line "use SURF outside"
@@ -78,7 +84,7 @@ _CeruleanBadgeHouseSoulBadgeText::
 	prompt
 
 _CeruleanBadgeHouseMarshBadgeText::
-	text "#MON up to L70"
+	text "#MON up to L60"
 	line "will obey you."
 
 	para "Any higher, they"
@@ -86,9 +92,11 @@ _CeruleanBadgeHouseMarshBadgeText::
 	prompt
 
 _CeruleanBadgeHouseVolcanoBadgeText::
-	text "Your #MON's"
-	line "SPECIAL abilities"
-	cont "increase a bit."
+	text "#MON up to L70"
+	line "will obey you."
+
+	para "Any higher, they"
+	line "become unruly!"
 	prompt
 
 _CeruleanBadgeHouseEarthBadgeText::
