@@ -81,14 +81,10 @@ SpecialTrainerMoves:
 	db 5, 4, SWIFT
 
 	db RIVAL2, 5 ; Ivysaur Team
-;	db 5, 1, TACKLE
-;	db 5, 2, SAND_ATTACK
 	db 5, 3, QUICK_ATTACK
 	db 5, 4, SWIFT
 
 	db RIVAL2, 6 ; Charmeleon Team
-;	db 5, 1, TACKLE
-;	db 5, 2, SAND_ATTACK
 	db 5, 3, QUICK_ATTACK
 	db 5, 4, SWIFT
 
@@ -97,12 +93,10 @@ SpecialTrainerMoves:
 	db 4, 4, SWIFT
 
 	db RIVAL2, 8 ; Venusaur Team (Silph)
-;	db 4, 3,
-;	db 4, 4,
+	db 4, 3, SWIFT ; Vaporeon has Swift instead of Bite
 
 	db RIVAL2, 9 ; Charizard Team (Silph)
-;	db 4, 3,
-;	db 4, 4,
+	db 4, 3, SWIFT ; Jolteon has Swift instead of Double Kick
 
 	db RIVAL2, 10 ; Blastoise Team (Route 22)
 ;	db 4, 1, FIRE_SPIN
@@ -111,16 +105,11 @@ SpecialTrainerMoves:
 	db 4, 4, SAND_ATTACK
 
 	db RIVAL2, 11 ; Venusaur Team (Route 22)
-;	db 4, 1,
-;	db 4, 2,
-;	db 4, 3,
-;	db 4, 4,
+	db 4, 2, WATER_GUN ; Vaporeon has Water Gun instead of Bite
+	db 4, 4, SWIFT ; Vaporeon has Swift instead of Haze
 
 	db RIVAL2, 12 ; Charizard Team (Route 22)
-;	db 4, 1,
-;	db 4, 2,
-;	db 4, 3,
-;	db 4, 4,
+	db 4, 2, SWIFT ; Jolteon has Swift instead of Double Kick
 
 ; Champion Battle
 	db RIVAL3, 1 ; Blastoise Team

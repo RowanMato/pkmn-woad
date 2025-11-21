@@ -653,13 +653,13 @@ ErikaData:
 	db $FF, 29, VICTREEBEL, 24, TANGELA, 29, VILEPLUME, 0
 
 KogaData:
-	db $FF, 37, KOFFING, 39, MUK, 37, KOFFING, 43, WEEZING, 0
+	db $FF, 37, KOFFING, 39, MUK, 37, VENOMOTH, 43, WEEZING, 0 ; replaced 2nd Koffing
 
 BlaineData:
-	db $FF, 42, GROWLITHE, 40, PONYTA, 42, RAPIDASH, 47, ARCANINE, 0
+	db $FF, 42, NINETALES, 40, PONYTA, 42, RAPIDASH, 47, ARCANINE, 0 ; replaced Growlithe
 
 SabrinaData:
-	db $FF, 38, KADABRA, 37, MR_MIME, 38, VENOMOTH, 43, ALAKAZAM, 0
+	db $FF, 38, KADABRA, 37, MR_MIME, 38, HYPNO, 43, ALAKAZAM, 0 ; replaced Venomoth
 
 GentlemanData:
 ; SS Anne 1F Rooms
