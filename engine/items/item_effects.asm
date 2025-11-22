@@ -1824,42 +1824,24 @@ CoinCaseNumCoinsText:
 ItemUseOldRod:
 	call FishingInit
 	jp c, ItemUseNotTime
-	lb bc, 5, MAGIKARP
-	ld a, $1 ; set bite
-	jr RodResponse
+	call ReadOldRodData
+	call ContinueRodData
+	ld a, e
+	jp RodResponse
 
 ItemUseGoodRod:
 	call FishingInit
 	jp c, ItemUseNotTime
-.RandomLoop
-	call Random
-	srl a
-	jr c, .SetBite
-	and %11
-	cp 2
-	jr nc, .RandomLoop
-	; choose which monster appears
-	ld hl, GoodRodMons
-	add a
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld b, [hl]
-	inc hl
-	ld c, [hl]
-	and a
-.SetBite
-	ld a, 0
-	rla
-	xor 1
-	jr RodResponse
-
-INCLUDE "data/wild/good_rod.asm"
+	call ReadGoodRodData
+	call ContinueRodData
+	ld a, e
+	jp RodResponse
 
 ItemUseSuperRod:
 	call FishingInit
 	jp c, ItemUseNotTime
 	call ReadSuperRodData
+	call ContinueRodData
 	ld a, e
 RodResponse:
 	ld [wRodResponse], a
@@ -2838,6 +2820,28 @@ IsNextTileShoreOrWater:
 
 INCLUDE "data/tilesets/water_tilesets.asm"
 
+ReadOldRodData:
+; return e = 2 if no fish on this map
+; return e = 1 if a bite, bc = level,species
+; return e = 0 if no bite
+	ld a, [wCurMap]
+	ld de, 3 ; each fishing group is three bytes wide
+	ld hl, OldRodData
+	ret
+
+INCLUDE "data/wild/old_rod.asm"
+
+ReadGoodRodData:
+; return e = 2 if no fish on this map
+; return e = 1 if a bite, bc = level,species
+; return e = 0 if no bite
+	ld a, [wCurMap]
+	ld de, 3 ; each fishing group is three bytes wide
+	ld hl, GoodRodData
+	ret
+
+INCLUDE "data/wild/good_rod.asm"
+
 ReadSuperRodData:
 ; return e = 2 if no fish on this map
 ; return e = 1 if a bite, bc = level,species
@@ -2845,6 +2849,11 @@ ReadSuperRodData:
 	ld a, [wCurMap]
 	ld de, 3 ; each fishing group is three bytes wide
 	ld hl, SuperRodData
+	ret
+
+INCLUDE "data/wild/super_rod.asm"
+
+ContinueRodData:
 	call IsInArray
 	jr c, .ReadFishingGroup
 	ld e, $2 ; $2 if no fishing groups found
@@ -2868,7 +2877,7 @@ ReadSuperRodData:
 	srl a
 	ret c ; 50% chance of no battle
 
-	and %11 ; 2-bit random number
+	and %111 ; 3-bit random number
 	cp b
 	jr nc, .RandomLoop ; if a is greater than the number of mons, regenerate
 
@@ -2882,8 +2891,6 @@ ReadSuperRodData:
 	ld c, [hl] ; species
 	ld e, $1 ; $1 if there's a bite
 	ret
-
-INCLUDE "data/wild/super_rod.asm"
 
 ; reloads map view and processes sprite data
 ; for items that cause the overworld to be displayed
