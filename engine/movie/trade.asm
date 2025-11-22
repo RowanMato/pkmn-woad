@@ -271,7 +271,7 @@ Trade_DrawOpenEndOfLinkCable:
 	call Trade_ClearTileMap
 	ld b, HIGH(vBGMap0)
 	call CopyScreenTileBufferToVRAM
-	ld b, SET_PAL_GENERIC
+	ld b, SET_PAL_PARTY_MENU;GENERIC
 	call RunPaletteCommand
 
 ; This function call is pointless. It just copies blank tiles to VRAM that was
@@ -453,7 +453,7 @@ Trade_InitGameboyTransferGfx:
 	ld a, $1
 	ldh [hAutoBGTransferEnabled], a
 	call ClearScreen
-	ld b, SET_PAL_GENERIC
+	ld b, SET_PAL_PARTY_MENU;GENERIC
 	call RunPaletteCommand
 	xor a
 	ldh [hAutoBGTransferEnabled], a
@@ -611,21 +611,29 @@ Trade_AnimCircledMon:
 	call UpdateCGBPal_BGP
 	ld hl, wShadowOAMSprite00TileID
 	ld de, $4
-	ld c, $14
-.loop
+	ld c, $4
+.mon_loop
+	ld a, [hl]
+	xor 2
+	ld [hl], a
+	add hl, de
+	dec c
+	jr nz, .mon_loop
+	ld c, $10
+.circle_loop
 	ld a, [hl]
 	xor ICONOFFSET
 	ld [hl], a
 	add hl, de
 	dec c
-	jr nz, .loop
+	jr nz, .circle_loop
 	pop hl
 	pop bc
 	pop de
 	ret
 
 Trade_WriteCircledMonOAM:
-	farcall WriteMonPartySpriteOAMBySpecies
+	farcall LoadSinglePartyMonSprite
 	call Trade_WriteCircleOAMBlock
 
 Trade_AddOffsetsToOAMCoords:

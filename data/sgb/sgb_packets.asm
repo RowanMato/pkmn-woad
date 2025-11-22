@@ -220,7 +220,7 @@ UnknownPacket_72751:
 	ds 8
 
 PalPacket_Empty:          PAL_SET 0, 0, 0, 0
-PalPacket_PartyMenu:      PAL_SET PAL_MEWMON, PAL_GREENBAR, PAL_YELLOWBAR, PAL_REDBAR
+PalPacket_PartyMenu:      PAL_SET PAL_BROWNMON, PAL_GREENBAR, PAL_YELLOWBAR, PAL_REDBAR
 PalPacket_Black:          PAL_SET PAL_BLACK, PAL_BLACK, PAL_BLACK, PAL_BLACK
 PalPacket_TownMap:        PAL_SET PAL_TOWNMAP, 0, 0, 0
 PalPacket_Pokedex:        PAL_SET PAL_BROWNMON, 0, 0, 0
