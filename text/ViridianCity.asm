@@ -1,3 +1,30 @@
+_ViridianCityReceivedPokeballsText::
+	text "Use these to"
+	line "capture wild"
+	cont "#MON."
+
+	para "<PLAYER> got 5"
+	line "# BALLs!@"
+	text_end
+
+_ViridianCityCatchingExplanationText::
+	text "Just do what I"
+	line "showed you and"
+	para "throw a ball when"
+	line "a wild #MON"
+	cont "appears."
+
+	para "This won't always"
+	line "work, though."
+
+	para "First, you need"
+	line "to weaken the"
+	cont "target #MON."
+
+	para "A healthy #MON"
+	line "could escape."
+	done
+
 _ViridianCityYoungster1Text::
 	text "Those # BALLs"
 	line "at your waist!"

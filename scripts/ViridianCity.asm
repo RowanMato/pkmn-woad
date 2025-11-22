@@ -76,7 +76,7 @@ ViridianCityOldManStartCatchTrainingScript:
 	ld [wBattleType], a
 	ld a, 5
 	ld [wCurEnemyLevel], a
-	ld a, WEEDLE
+	ld a, ODDISH; its data gets added to the Pokedex
 	ld [wCurOpponent], a
 	ld a, SCRIPT_VIRIDIANCITY_OLD_MAN_END_CATCH_TRAINING
 	ld [wViridianCityCurScript], a
@@ -95,6 +95,14 @@ ViridianCityOldManEndCatchTrainingScript:
 	call Delay3
 	xor a
 	ld [wJoyIgnore], a
+	CheckAndSetEvent EVENT_GOT_POKEBALLS_FROM_OAK
+	jr nz, .done
+	lb bc, POKE_BALL, 5
+	call GiveItem
+	ld a, TEXT_VIRIDIANCITY_OLD_MAN_GIVE_BALLS
+	ldh [hTextID], a
+	call DisplayTextID
+.done
 	ld a, TEXT_VIRIDIANCITY_OLD_MAN_YOU_NEED_TO_WEAKEN_THE_TARGET
 	ldh [hTextID], a
 	call DisplayTextID
@@ -142,7 +150,17 @@ ViridianCity_TextPointers:
 	dw_const PokeCenterSignText,                             TEXT_VIRIDIANCITY_POKECENTER_SIGN
 	dw_const ViridianCityGymSignText,                        TEXT_VIRIDIANCITY_GYM_SIGN
 	dw_const ViridianCityGymLockedText,                      TEXT_VIRIDIANCITY_GYM_LOCKED
-	dw_const ViridianCityOldManYouNeedToWeakenTheTargetText, TEXT_VIRIDIANCITY_OLD_MAN_YOU_NEED_TO_WEAKEN_THE_TARGET
+	dw_const ViridianCityCatchingExplanationText, 			 		 TEXT_VIRIDIANCITY_OLD_MAN_YOU_NEED_TO_WEAKEN_THE_TARGET
+	dw_const ViridianCityOldManGiveBallsText, 							 TEXT_VIRIDIANCITY_OLD_MAN_GIVE_BALLS
+
+ViridianCityOldManGiveBallsText:
+	text_far _ViridianCityReceivedPokeballsText
+	sound_get_key_item
+	text_end
+
+ViridianCityCatchingExplanationText:
+	text_far _ViridianCityCatchingExplanationText
+	text_end
 
 ViridianCityYoungster1Text:
 	text_far _ViridianCityYoungster1Text

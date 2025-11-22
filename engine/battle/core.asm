@@ -2241,7 +2241,7 @@ DisplayBattleMenu::
 .throwSafariBallWasSelected
 	ld a, SAFARI_BALL
 	ld [wCurItem], a
-	jr UseBagItem
+	jp UseBagItem
 
 .upperLeftMenuItemWasNotSelected ; a menu item other than the upper left item was selected
 	cp $2
@@ -2280,7 +2280,12 @@ BagWasSelected:
 	ld a, [wBattleType]
 	dec a ; is it the old man tutorial?
 	jr nz, DisplayPlayerBag ; no, it is a normal battle
-	ld hl, OldManItemList
+	ld hl, OldManItemList ; 10 Balls
+	CheckEvent EVENT_GOT_POKEBALLS_FROM_OAK
+	jr z, .first_time
+	; we already saw the tutorial, so he should have less Balls
+	ld hl, OldManItemList2 ; 4 Balls
+.first_time
 	ld a, l
 	ld [wListPointer], a
 	ld a, h
@@ -2289,7 +2294,12 @@ BagWasSelected:
 
 OldManItemList:
 	db 1 ; # items
-	db POKE_BALL, 50
+	db POKE_BALL, 10
+	db -1 ; end
+
+OldManItemList2:
+	db 1 ; # items
+	db POKE_BALL, 4 ; he threw 1, and gave you 5.
 	db -1 ; end
 
 DisplayPlayerBag:
