@@ -48,11 +48,16 @@ VermilionCityDefaultScript:
 	xor a
 	ldh [hJoyHeld], a
 	ld [wSavedCoordIndex], a ; unnecessary
+	ld a, SPRITE_FACING_LEFT
+	ldh [hSpriteFacingDirection], a
+	ld a, VERMILIONCITY_SAILOR1
+	ldh [hSpriteIndex], a
+	call SetSpriteFacingDirectionAndDelay
 	ld a, TEXT_VERMILIONCITY_SAILOR1
 	ldh [hTextID], a
 	call DisplayTextID
-	CheckEvent EVENT_SS_ANNE_LEFT
-	jr nz, .ship_departed
+;	CheckEvent EVENT_SS_ANNE_LEFT
+;	jr nz, .ship_departed
 	ld b, S_S_TICKET
 	predef GetQuantityOfItemInBag
 	ld a, b

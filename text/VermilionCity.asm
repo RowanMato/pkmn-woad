@@ -7,19 +7,20 @@ _VermilionCityBeautyText::
 	cont "toxic sludge!"
 	done
 
+_VermilionCityGambler1SSAnneDepartedText::
 _VermilionCityGambler1DidYouSeeText::
 	text "Did you see S.S."
 	line "ANNE moored in"
 	cont "the harbor?"
 	done
 
-_VermilionCityGambler1SSAnneDepartedText::
-	text "So, S.S.ANNE has"
-	line "departed!"
-
-	para "She'll be back in"
-	line "about a year."
-	done
+;_VermilionCityGambler1SSAnneDepartedText::
+;	text "So, S.S.ANNE has"
+;	line "departed!"
+;
+;	para "She'll be back in"
+;	line "about a year."
+;	done
 
 _VermilionCitySailor1WelcomeToSSAnneText::
 	text "Welcome to S.S."

@@ -8,7 +8,7 @@ VermilionDock_Script:
 	cp $1
 	ret nz
 	CheckEventReuseHL EVENT_SS_ANNE_LEFT
-	jp z, VermilionDockSSAnneLeavesScript
+;	jp z, VermilionDockSSAnneLeavesScript ; THE SS ANNE STAYS FOREVERRRRRR!!!
 	SetEventReuseHL EVENT_STARTED_WALKING_OUT_OF_DOCK
 	call Delay3
 	ld hl, wStatusFlags5

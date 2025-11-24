@@ -1,7 +1,6 @@
 _SSAnneBowSuperNerdText::
-	text "The party's over."
-	line "The ship will be"
-	cont "departing soon."
+	text "The party on this"
+	line "ship never ends!"
 	done
 
 _SSAnneBowSailor1Text::

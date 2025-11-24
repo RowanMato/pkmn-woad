@@ -25,7 +25,7 @@ _SSAnne2FRoomsGentleman5Text::
 	line "the SAFARI ZONE"
 	cont "in FUCHSIA CITY?"
 
-	para "It had many rare"
+	para "It has many rare"
 	line "kinds of #MON!!"
 	done
 
@@ -77,8 +77,8 @@ _SSAnne2FRoomsFisherAfterBattleText::
 	text "Party?"
 
 	para "The cruise ship's"
-	line "party should be"
-	cont "over by now."
+	line "party doesn't"
+	cont "stop!"
 	done
 
 _SSAnne2FRoomsGentleman2BattleText::

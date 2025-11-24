@@ -43,7 +43,7 @@ _SSAnneCaptainsRoomCaptainNotSickAnymoreText::
 
 	para "Now that I'm not"
 	line "sick any more, I"
-	cont "guess it's time."
+	cont "can relax."
 	done
 
 _SSAnneCaptainsRoomCaptainHM01NoRoomText::
