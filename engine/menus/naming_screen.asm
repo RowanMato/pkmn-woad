@@ -88,7 +88,7 @@ DisplayNamingScreen:
 	call GBPalWhiteOutWithDelay3
 	call ClearScreen
 	call UpdateSprites
-	ld b, SET_PAL_PARTY_MENU;GENERIC
+	ld b, SET_PAL_POKEDEX;GENERIC
 	call RunPaletteCommand
 	call LoadHpBarAndStatusTilePatterns
 	call LoadEDTile
