@@ -188,6 +188,148 @@ _AfterTrade3Text:: ; HAPPY
 	line "doing great!"
 	done
 
+_WannaTrade4Text:: ; DAD
+	text "My daughter wants"
+	line "a @"
+;	text "Hi! Do you have"
+;	line "@"
+	text_ram wInGameTradeGiveMonName
+	text "."
+	cont "Do you have one?"
+
+	para "Will you trade it"
+	line "for @"
+	text_ram wInGameTradeReceiveMonName
+	text "?"
+	done
+
+_NoTrade4Text:: ; DAD
+	text "Darn. Let me know"
+	line "if you find one."
+	done
+
+_WrongMon4Text:: ; DAD
+	text "No, no. She only"
+	line "wants @"
+	text_ram wInGameTradeGiveMonName
+	text "."
+
+	para "Let me know if"
+	line "you find one."
+	done
+
+_Thanks4Text:: ; DAD
+	text "Thanks pal!"
+
+	para "My daughter will"
+	line "be so happy!"
+	done
+
+_AfterTrade4Text:: ; DAD
+	text "My daughter loves"
+	line "her @"
+	text_ram wInGameTradeReceiveMonName
+	text "!"
+
+	para "Thank you for"
+	line "trading with me!"
+	done
+
+_WannaTrade5Text:: ; SAILOR
+	text "Ahoy! Do you have"
+	line "a @"
+	text_ram wInGameTradeGiveMonName
+	text "?"
+
+;	para "I want to be tough"
+;	line "like LT.SURGE!"
+
+	para "I'll trade you a"
+	line "@"
+	text_ram wInGameTradeReceiveMonName
+	text "for it."
+	done
+
+_NoTrade5Text:: ; SAILOR
+	text "Ah, but I want to"
+	line "be like LT.SURGE."
+	done
+
+_WrongMon5Text:: ; SAILOR
+	text "No, that won't do."
+	line "I'm looking for a"
+	cont "@"
+	text_ram wInGameTradeGiveMonName
+	text "."
+	done
+
+_Thanks5Text:: ; SAILOR
+	text "Thanks, kid!"
+
+	para "Now I can beat"
+	line "my crewmates!"
+	done
+
+_AfterTrade5Text:: ; SAILOR
+	text "My mates don't"
+	line "stand a chance"
+	cont "against that"
+	cont "@"
+	text_ram wInGameTradeReceiveMonName
+	text "!"
+
+	para "I hope @"
+	text_ram wInGameTradeGiveMonName
+	text_start
+	line "is doing well!"
+	done
+
+_WannaTrade6Text:: ; FISHER
+	text "I'm a fishing fan!"
+
+	para "Do you have a"
+	line "@"
+	text_ram wInGameTradeGiveMonName
+	text "?"
+
+	para "I'll give you my"
+	line "@"
+	text_ram wInGameTradeReceiveMonName
+	text "for it."
+	done
+
+_NoTrade6Text:: ; FISHER
+	text "Ah, I'll have go"
+	line "fishing again."
+	done
+
+_WrongMon6Text:: ; FISHER
+	text "Hey, that's no"
+	line "@"
+	text_ram wInGameTradeGiveMonName
+	text "."
+	done
+
+_Thanks6Text:: ; FISHER
+	text "Yes! I love this"
+	line "@"
+	text_ram wInGameTradeGiveMonName
+	text "."
+	done
+
+_AfterTrade6Text:: ; FISHER
+	text "@"
+	text_ram wInGameTradeReceiveMonName
+	line "is better than"
+	cont "what I've been"
+	cont "reeling in."
+
+	para "My ol' @"
+	text_ram wInGameTradeGiveMonName
+	text_start
+	line "is strong, eh?"
+	done
+
 _NothingToCutText::
 	text "There isn't"
 	line "anything to CUT!"

@@ -6,6 +6,7 @@ LavenderCuboneHouse_TextPointers:
 	def_text_pointers
 	dw_const LavenderCuboneHouseCuboneText,       TEXT_LAVENDERCUBONEHOUSE_CUBONE
 	dw_const LavenderCuboneHouseBrunetteGirlText, TEXT_LAVENDERCUBONEHOUSE_BRUNETTE_GIRL
+	dw_const LavenderCuboneHouseTradeText, 				TEXT_LAVENDERCUBONEHOUSE_TRADE
 
 LavenderCuboneHouseCuboneText:
 	text_far _LavenderCuboneHouseCuboneText
@@ -34,3 +35,10 @@ LavenderCuboneHouseBrunetteGirlText:
 .TheGhostIsGoneText:
 	text_far _LavenderCuboneHouseBrunetteGirlGhostIsGoneText
 	text_end
+
+LavenderCuboneHouseTradeText:
+	text_asm
+	ld a, TRADE_FOR_TOAST
+	ld [wWhichTrade], a
+	predef DoInGameTradeDialogue
+	jp TextScriptEnd

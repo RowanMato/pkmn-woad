@@ -2,6 +2,7 @@
 	const_export CELADONHOTEL_GRANNY
 	const_export CELADONHOTEL_BEAUTY
 	const_export CELADONHOTEL_SUPER_NERD
+	const_export CELADONHOTEL_TRADE
 
 CeladonHotel_Object:
 	db $0 ; border block
@@ -15,6 +16,7 @@ CeladonHotel_Object:
 	def_object_events
 	object_event  3,  1, SPRITE_GRANNY, STAY, DOWN, TEXT_CELADONHOTEL_GRANNY
 	object_event  2,  4, SPRITE_BEAUTY, STAY, NONE, TEXT_CELADONHOTEL_BEAUTY
-	object_event  8,  4, SPRITE_SUPER_NERD, WALK, LEFT_RIGHT, TEXT_CELADONHOTEL_SUPER_NERD
+	object_event 10,  5, SPRITE_SUPER_NERD, WALK, LEFT_RIGHT, TEXT_CELADONHOTEL_SUPER_NERD
+	object_event  6,  4, SPRITE_YOUNGSTER, WALK, ANY_DIR, TEXT_CELADONHOTEL_TRADE
 
 	def_warps_to CELADON_HOTEL

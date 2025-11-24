@@ -28,7 +28,7 @@ _Museum2FBrunetteGirlText::
 	line "to catch me one!"
 	done
 
-_Museum2FHikerText::
+_Museum2FHikerText::;unused, it's a trade now
 	text "Yeah, a PIKACHU"
 	line "soon, I promise!"
 	done

@@ -34,8 +34,11 @@ SSAnneBowSuperNerdText:
 	text_end
 
 SSAnneBowSailor1Text:
-	text_far _SSAnneBowSailor1Text
-	text_end
+	text_asm
+	ld a, TRADE_FOR_LUCIA
+	ld [wWhichTrade], a
+	predef DoInGameTradeDialogue
+	jp TextScriptEnd
 
 SSAnneBowCooltrainerMText:
 	text_far _SSAnneBowCooltrainerMText

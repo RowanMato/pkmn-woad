@@ -272,15 +272,39 @@ TradeTextPointers2:
 	assert_table_length NUM_TRADE_TEXTS
 
 TradeTextPointers3:
-TradeTextPointers4:
-TradeTextPointers5:
-TradeTextPointers6:
 	table_width 2
 	dw WannaTrade3Text
 	dw NoTrade3Text
 	dw WrongMon3Text
 	dw Thanks3Text
 	dw AfterTrade3Text
+	assert_table_length NUM_TRADE_TEXTS
+
+TradeTextPointers4:
+	table_width 2
+	dw WannaTrade4Text
+	dw NoTrade4Text
+	dw WrongMon4Text
+	dw Thanks4Text
+	dw AfterTrade4Text
+	assert_table_length NUM_TRADE_TEXTS
+
+TradeTextPointers5:
+	table_width 2
+	dw WannaTrade5Text
+	dw NoTrade5Text
+	dw WrongMon5Text
+	dw Thanks5Text
+	dw AfterTrade5Text
+	assert_table_length NUM_TRADE_TEXTS
+
+TradeTextPointers6:
+	table_width 2
+	dw WannaTrade6Text
+	dw NoTrade6Text
+	dw WrongMon6Text
+	dw Thanks6Text
+	dw AfterTrade6Text
 	assert_table_length NUM_TRADE_TEXTS
 
 ConnectCableText:
@@ -351,4 +375,64 @@ Thanks3Text:
 
 AfterTrade3Text:
 	text_far _AfterTrade3Text
+	text_end
+
+WannaTrade4Text:
+	text_far _WannaTrade4Text
+	text_end
+
+NoTrade4Text:
+	text_far _NoTrade4Text
+	text_end
+
+WrongMon4Text:
+	text_far _WrongMon4Text
+	text_end
+
+Thanks4Text:
+	text_far _Thanks4Text
+	text_end
+
+AfterTrade4Text:
+	text_far _AfterTrade4Text
+	text_end
+
+WannaTrade5Text:
+	text_far _WannaTrade5Text
+	text_end
+
+NoTrade5Text:
+	text_far _NoTrade5Text
+	text_end
+
+WrongMon5Text:
+	text_far _WrongMon5Text
+	text_end
+
+Thanks5Text:
+	text_far _Thanks5Text
+	text_end
+
+AfterTrade5Text:
+	text_far _AfterTrade5Text
+	text_end
+
+WannaTrade6Text:
+	text_far _WannaTrade6Text
+	text_end
+
+NoTrade6Text:
+	text_far _NoTrade6Text
+	text_end
+
+WrongMon6Text:
+	text_far _WrongMon6Text
+	text_end
+
+Thanks6Text:
+	text_far _Thanks6Text
+	text_end
+
+AfterTrade6Text:
+	text_far _AfterTrade6Text
 	text_end

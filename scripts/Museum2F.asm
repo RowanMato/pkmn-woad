@@ -28,8 +28,11 @@ Museum2FBrunetteGirlText:
 	text_end
 
 Museum2FHikerText:
-	text_far _Museum2FHikerText
-	text_end
+	text_asm
+	ld a, TRADE_FOR_BRUISER
+	ld [wWhichTrade], a
+	predef DoInGameTradeDialogue
+	jp TextScriptEnd
 
 Museum2FSpaceShuttleSignText:
 	text_far _Museum2FSpaceShuttleSignText

@@ -3,7 +3,7 @@ _SSAnneBowSuperNerdText::
 	line "ship never ends!"
 	done
 
-_SSAnneBowSailor1Text::
+_SSAnneBowSailor1Text::;unused, now a Seel trade
 	text "Scrubbing decks"
 	line "is hard work!"
 	done

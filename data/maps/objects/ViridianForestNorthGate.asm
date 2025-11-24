@@ -1,6 +1,7 @@
 	object_const_def
 	const_export VIRIDIANFORESTNORTHGATE_SUPER_NERD
 	const_export VIRIDIANFORESTNORTHGATE_GRAMPS
+	const_export VIRIDIANFORESTNORTHGATE_TRADE
 
 ViridianForestNorthGate_Object:
 	db $a ; border block
@@ -16,5 +17,6 @@ ViridianForestNorthGate_Object:
 	def_object_events
 	object_event  3,  2, SPRITE_SUPER_NERD, STAY, NONE, TEXT_VIRIDIANFORESTNORTHGATE_SUPER_NERD
 	object_event  2,  5, SPRITE_GRAMPS, STAY, NONE, TEXT_VIRIDIANFORESTNORTHGATE_GRAMPS
+	object_event  7,  3, SPRITE_GIRL, STAY, NONE, TEXT_VIRIDIANFORESTNORTHGATE_TRADE
 
 	def_warps_to VIRIDIAN_FOREST_NORTH_GATE
