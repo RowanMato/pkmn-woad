@@ -113,6 +113,8 @@
 	const_skip
 	const EVENT_GOT_TM24
 	const EVENT_BEAT_LT_SURGE
+	const_skip
+	const EVENT_BEAT_MEW
 
 ; Celadon City events
 	const_next $180

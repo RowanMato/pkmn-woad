@@ -97,7 +97,7 @@ MapHSPointers:
 	dw NoHS
 	dw NoHS
 	dw NoHS
-	dw NoHS
+	dw VermilionDockHS
 	dw NoHS
 	dw SSAnne2FHS
 	dw NoHS
@@ -580,5 +580,7 @@ GameCornerPrizeRoomHS:
 CeruleanBadgeHouseHS:
 	db CERULEAN_BADGE_HOUSE, CERULEANBADGEHOUSE_MIDDLE_AGED_MAN, SHOW
 	db CERULEAN_BADGE_HOUSE, CERULEANBADGEHOUSE_TM_SHOP, HIDE
+VermilionDockHS:
+	db VERMILION_DOCK, VERMILIONDOCK_MEW, SHOW
 	assert_table_length NUM_HS_OBJECTS
 	db -1, 1, SHOW ; end
