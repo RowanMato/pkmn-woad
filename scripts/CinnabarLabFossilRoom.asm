@@ -98,7 +98,7 @@ CinnabarLabFossilRoomScientist1Text:
 	text_far _CinnabarLabFossilRoomScientist1FossilIsBackToLifeText
 	text_end
 
-CinnabarLabFossilRoomScientist2Text: ; TODO replace this with the Tradeback NPC
+CinnabarLabFossilRoomScientist2Text:
 	text_asm
 	ld a, TRADE_WITH_SELF
 	ld [wWhichTrade], a
