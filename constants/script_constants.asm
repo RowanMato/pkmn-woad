@@ -35,7 +35,7 @@ DEF SLOTS_SOMEONESKEYS EQU $ff
 	const TRADE_FOR_NORRIS;GRIMER
 	const TRADE_FOR_BRUCE;HITMONLEE
 	const TRADE_FOR_JACKIE;HITMONCHAN
-	const TRADE_FOR_16
+	const TRADE_WITH_SELF;Tradeback NPC in Cinnabar Fossil Lab
 DEF NUM_NPC_TRADES EQU const_value
 
 ; in game trade dialog sets
@@ -47,6 +47,7 @@ DEF NUM_NPC_TRADES EQU const_value
 	const TRADE_DIALOGSET_DAD
 	const TRADE_DIALOGSET_SAILOR
 	const TRADE_DIALOGSET_FISHER
+	const TRADE_DIALOGSET_SELF
 DEF NUM_TRADE_DIALOGSETS EQU const_value
 
 ; OaksAideScript results

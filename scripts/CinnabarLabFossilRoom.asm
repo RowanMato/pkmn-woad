@@ -3,8 +3,8 @@ CinnabarLabFossilRoom_Script:
 
 CinnabarLabFossilRoom_TextPointers:
 	def_text_pointers
-	dw_const CinnabarLabFossilRoomScientist1Text, TEXT_CINNABARLABFOSSILROOM_SCIENTIST1
-	dw_const CinnabarLabFossilRoomScientist2Text, TEXT_CINNABARLABFOSSILROOM_SCIENTIST2
+	dw_const CinnabarLabFossilRoomScientist1Text, TEXT_CINNABARLABFOSSILROOM_SCIENTIST1; fossil
+	dw_const CinnabarLabFossilRoomScientist2Text, TEXT_CINNABARLABFOSSILROOM_SCIENTIST2; tradeback
 
 Lab4Script_GetFossilsInBag:
 ; construct a list of all fossils in the player's bag
@@ -100,7 +100,7 @@ CinnabarLabFossilRoomScientist1Text:
 
 CinnabarLabFossilRoomScientist2Text: ; TODO replace this with the Tradeback NPC
 	text_asm
-	ld a, TRADE_FOR_16
+	ld a, TRADE_WITH_SELF
 	ld [wWhichTrade], a
 	predef DoInGameTradeDialogue
 	jp TextScriptEnd

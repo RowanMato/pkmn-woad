@@ -330,6 +330,30 @@ _AfterTrade6Text:: ; FISHER
 	line "is strong, eh?"
 	done
 
+_WannaTrade7Text::
+	text "My new link-"
+	line "cable circuit"
+	cont "can trade your"
+	cont "own #MON back"
+	cont "to you!"
+
+	para "Some #MON will"
+	line "even evolve!"
+
+	para "Wanna trade"
+	line "with yourself?"
+	done
+
+_NoTrade7Text::
+	text "Let me know if"
+	line "you ever do."
+	done
+
+_Thanks7Text::
+	text "Tada! Wasn't that"
+	line "cool, huh?"
+	done
+
 _NothingToCutText::
 	text "There isn't"
 	line "anything to CUT!"

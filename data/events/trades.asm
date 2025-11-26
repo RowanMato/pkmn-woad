@@ -23,7 +23,7 @@ TradeMons:
 	npctrade KOFFING,    GRIMER,   	 TRADE_DIALOGSET_HAPPY,     "NORRIS" ; ✓ Cinnabar Labs
 	npctrade MACHOKE,    HITMONLEE,  TRADE_DIALOGSET_EVOLUTION, "BRUCE" ; ✓ Cinnabar Labs, if you picked Hitmonchan
 	npctrade MACHOKE,    HITMONCHAN, TRADE_DIALOGSET_EVOLUTION, "JACKIE" ; ✓ Cinnabar Labs, if you picked Hitmonlee
-	npctrade MEW,    		 MEW, 			 TRADE_DIALOGSET_EVOLUTION, "MEW" ; unused
+	npctrade NO_MON,     NO_MON, 		 TRADE_DIALOGSET_SELF, 			"dummy" ; ✓ Tradeback NPC, special handling
 	assert_table_length NUM_NPC_TRADES
 
 ; CASUAL = 		"I'm looking for… Wanna trade one for…?" 	"Isn't my old… great?"
