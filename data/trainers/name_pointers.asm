@@ -29,7 +29,7 @@ TrainerNamePointers:
 	dw .BlackbeltName
 	dw wTrainerName
 	dw .ProfOakName
-	dw .ChiefName
+	dw .BillName
 	dw .ScientistName
 	dw wTrainerName
 	dw .RocketName
@@ -68,7 +68,7 @@ TrainerNamePointers:
 .JugglerName:       db "JUGGLER@"
 .BlackbeltName:     db "BLACKBELT@"
 .ProfOakName:       db "PROF.OAK@"
-.ChiefName:         db "CHIEF@"
+.BillName:          db "BILL@"
 .ScientistName:     db "SCIENTIST@"
 .RocketName:        db "ROCKET@"
 .CooltrainerMName:  db "COOLTRAINER♂@"

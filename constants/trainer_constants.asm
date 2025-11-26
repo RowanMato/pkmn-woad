@@ -41,7 +41,7 @@ ENDM
 	trainer_const BLACKBELT      ; $18
 	trainer_const RIVAL1         ; $19
 	trainer_const PROF_OAK       ; $1A
-	trainer_const CHIEF          ; $1B
+	trainer_const BILL           ; $1B
 	trainer_const SCIENTIST      ; $1C
 	trainer_const GIOVANNI       ; $1D
 	trainer_const ROCKET         ; $1E

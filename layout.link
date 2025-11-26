@@ -101,7 +101,7 @@ ROMX $12
 ROMX $13
 	"Trainer Pics"
 	"Maps 9"
-	"Predefs"
+	"Diploma"
 ROMX $14
 	"Maps 10"
 	"Battle Engine 8"
@@ -110,7 +110,7 @@ ROMX $15
 	"Maps 11"
 	"Battle Engine 9"
 	"Maps 12"
-	"Diploma"
+	"Predefs"
 	"Trainer Sight"
 ROMX $16
 	"Maps 13"
