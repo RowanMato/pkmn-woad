@@ -4,8 +4,8 @@ CeladonMart3F_Script:
 CeladonMart3F_TextPointers:
 	def_text_pointers
 	dw_const CeladonMart3FClerkText,            TEXT_CELADONMART3F_CLERK; gives Counter
-	dw_const CeladonMart2FClerkS2Text,          TEXT_CELADONMART3F_CLERK_GOOD_TMS; post-game TMs
-	dw_const CeladonMart2FClerkS1Text,          TEXT_CELADONMART3F_CLERK_BAD_TMS; early TMs
+	dw_const CeladonMart3FClerkS2Text,          TEXT_CELADONMART3F_CLERK_GOOD_TMS; post-game TMs
+	dw_const CeladonMart3FClerkS1Text,          TEXT_CELADONMART3F_CLERK_BAD_TMS; early TMs
 	dw_const CeladonMart3FGameBoyKid1Text,      TEXT_CELADONMART3F_GAMEBOY_KID1
 	dw_const CeladonMart3FGameBoyKid2Text,      TEXT_CELADONMART3F_GAMEBOY_KID2
 	dw_const CeladonMart3FGameBoyKid3Text,      TEXT_CELADONMART3F_GAMEBOY_KID3
@@ -104,3 +104,9 @@ CeladonMart3FCurrentFloorSignText:
 CeladonMart3FPokemonPosterText:
 	text_far _CeladonMart3FPokemonPosterText
 	text_end
+
+CeladonMart3FClerkS1Text: ;	Extra TM dealer 1
+	script_mart TM_WHIRLWIND, TM_WATER_GUN, TM_PAY_DAY, TM_COUNTER, TM_SEISMIC_TOSS, TM_RAGE, TM_DIG, TM_TELEPORT, TM_MIMIC, TM_SWIFT, TM_SOFTBOILED, TM_DREAM_EATER, TM_ROCK_SLIDE
+
+CeladonMart3FClerkS2Text: ;	Post-Game TM dealer (Counter Guy, post-credits)
+	script_mart TM_SWORDS_DANCE, TM_BODY_SLAM, TM_ICE_BEAM, TM_BLIZZARD, TM_SOLARBEAM, TM_THUNDER, TM_EARTHQUAKE, TM_PSYCHIC_M, TM_METRONOME, TM_SKULL_BASH, TM_SKY_ATTACK, TM_REST, TM_THUNDER_WAVE, TM_TRI_ATTACK

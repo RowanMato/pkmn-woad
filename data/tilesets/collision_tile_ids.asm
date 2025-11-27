@@ -49,7 +49,7 @@ Interior_Coll::
 Cavern_Coll::
 	coll_tiles $05, $15, $18, $1a, $20, $21, $22, $2a, $2d, $30
 
-	coll_tiles ; unused
+;	coll_tiles ; unused
 
 Lobby_Coll::
 	coll_tiles $14, $17, $1a, $1c, $20, $38, $45

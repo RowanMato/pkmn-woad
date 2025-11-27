@@ -57,7 +57,7 @@ HiddenObjectMaps:
 	db POKEMON_MANSION_3F
 	db ROUTE_23
 	db VICTORY_ROAD_2F
-	db UNUSED_MAP_6F
+;	db UNUSED_MAP_6F
 	db BILLS_HOUSE
 	db VIRIDIAN_CITY
 	db ROUTE_15_GATE_2F
@@ -143,7 +143,7 @@ HiddenObjectPointers:
 	dw Mansion3HiddenObjects
 	dw Route23HiddenObjects
 	dw VictoryRoad2HiddenObjects
-	dw Unused6FHiddenObjects
+;	dw Unused6FHiddenObjects
 	dw BillsHouseHiddenObjects
 	dw ViridianCityHiddenObjects
 	dw Route15GateUpstairsHiddenObjects
@@ -543,9 +543,9 @@ VictoryRoad2HiddenObjects:
 	hidden_object 26,  7, FULL_RESTORE, HiddenItems
 	db -1 ; end
 
-Unused6FHiddenObjects:
-	hidden_object 14, 11, MAX_ELIXER, HiddenItems
-	db -1 ; end
+;Unused6FHiddenObjects:
+;	hidden_object 14, 11, MAX_ELIXER, HiddenItems
+;	db -1 ; end
 
 BillsHouseHiddenObjects:
 	hidden_object  1,  4, SPRITE_FACING_UP, BillsHousePC

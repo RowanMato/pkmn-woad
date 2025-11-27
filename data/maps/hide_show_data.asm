@@ -3,254 +3,254 @@
 MapHSPointers:
 ; entries correspond to map ids
 	table_width 2
-	dw PalletTownHS
-	dw ViridianCityHS
-	dw PewterCityHS
-	dw CeruleanCityHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw SaffronCityHS
-	dw NoHS
-	dw NoHS
-	dw Route2HS
-	dw NoHS
-	dw Route4HS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw Route9HS
-	dw NoHS
-	dw NoHS
-	dw Route12HS
-	dw NoHS
-	dw NoHS
-	dw Route15HS
-	dw Route16HS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw Route22HS
-	dw NoHS
-	dw Route24HS
-	dw Route25HS
-	dw NoHS
-	dw NoHS
-	dw BluesHouseHS
-	dw OaksLabHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw ViridianGymHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw ViridianForestHS
-	dw Museum1FHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw MtMoon1FHS
-	dw NoHS
-	dw MtMoonB2FHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw PowerPlantHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw BillsHouseHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw VermilionDockHS
-	dw NoHS
-	dw SSAnne2FHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw SSAnne1FRoomsHS
-	dw SSAnne2FRoomsHS
-	dw SSAnneB1FRoomsHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw VictoryRoad1FHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw ChampionsRoomHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw CeladonMart3FHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw CeladonMansionRoofHouseHS
-	dw NoHS
-	dw NoHS
-	dw GameCornerHS
-	dw NoHS
-	dw GameCornerPrizeRoomHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw PokemonTower2FHS
-	dw PokemonTower3FHS
-	dw PokemonTower4FHS
-	dw PokemonTower5FHS
-	dw PokemonTower6FHS
-	dw PokemonTower7FHS
-	dw MrFujisHouseHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw WardensHouseHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw SeafoamIslandsB1FHS
-	dw SeafoamIslandsB2FHS
-	dw SeafoamIslandsB3FHS
-	dw SeafoamIslandsB4FHS
-	dw NoHS
-	dw NoHS
-	dw PokemonMansion1FHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw FightingDojoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw SilphCo1FHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw SeafoamIslands1FHS
-	dw NoHS
-	dw VictoryRoad2FHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw VictoryRoad3FHS
-	dw RocketHideoutB1FHS
-	dw RocketHideoutB2FHS
-	dw RocketHideoutB3FHS
-	dw RocketHideoutB4FHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw SilphCo2FHS
-	dw SilphCo3FHS
-	dw SilphCo4FHS
-	dw SilphCo5FHS
-	dw SilphCo6FHS
-	dw SilphCo7FHS
-	dw SilphCo8FHS
-	dw PokemonMansion2FHS
-	dw PokemonMansion3FHS
-	dw PokemonMansionB1FHS
-	dw SafariZoneEastHS
-	dw SafariZoneNorthHS
-	dw SafariZoneWestHS
-	dw SafariZoneCenterHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw CeruleanCave2FHS
-	dw CeruleanCaveB1FHS
-	dw CeruleanCaveHS
-	dw NoHS
-	dw CeruleanBadgeHouseHS
-	dw NoHS
-	dw NoHS
-	dw SilphCo9FHS
-	dw SilphCo10FHS
-	dw SilphCo11FHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw NoHS
-	dw UnusedMapF4HS
-	dw NoHS
-	dw NoHS
-	dw NoHS
+	dw PalletTownHS; $00
+	dw ViridianCityHS; $01
+	dw PewterCityHS; $02
+	dw CeruleanCityHS; $03
+	dw NoHS; $04
+	dw NoHS; $05
+	dw NoHS; $06
+	dw NoHS; $07
+	dw NoHS; $08
+	dw NoHS; $09
+	dw SaffronCityHS; $0A
+	dw NoHS; $0B
+	dw NoHS; $0C
+	dw Route2HS; $0D
+	dw NoHS; $0E
+	dw Route4HS; $0F
+	dw NoHS; $10
+	dw NoHS; $11
+	dw NoHS; $12
+	dw NoHS; $13
+	dw Route9HS; $14
+	dw NoHS; $15
+	dw NoHS; $16
+	dw Route12HS; $17
+	dw NoHS; $18
+	dw NoHS; $19
+	dw Route15HS; $1A
+	dw Route16HS; $1B
+	dw NoHS; $1C
+	dw NoHS; $1D
+	dw NoHS; $1E
+	dw NoHS; $1F
+	dw NoHS; $20
+	dw Route22HS; $21
+	dw NoHS; $22
+	dw Route24HS; $23
+	dw Route25HS; $24
+	dw NoHS; $25
+	dw NoHS; $26
+	dw BluesHouseHS; $27
+	dw OaksLabHS; $28
+	dw NoHS; $29
+	dw NoHS; $2A
+	dw NoHS; $2B
+	dw NoHS; $2C
+	dw ViridianGymHS; $2D
+	dw NoHS; $2E
+	dw NoHS; $2F
+	dw NoHS; $30
+	dw NoHS; $31
+	dw NoHS; $32
+	dw ViridianForestHS; $33
+	dw Museum1FHS; $34
+	dw NoHS; $35
+	dw NoHS; $36
+	dw NoHS; $37
+	dw NoHS; $38
+	dw NoHS; $39
+	dw NoHS; $3A
+	dw MtMoon1FHS; $3B
+	dw NoHS; $3C
+	dw MtMoonB2FHS; $3D
+	dw NoHS; $3E
+	dw NoHS; $3F
+	dw NoHS; $40
+	dw NoHS; $41
+	dw NoHS; $42
+	dw NoHS; $43
+	dw NoHS; $44
+;	dw NoHS; $45
+	dw NoHS; $46
+	dw NoHS; $47
+	dw NoHS; $48
+	dw NoHS; $49
+	dw NoHS; $4A
+;	dw NoHS; $4B
+	dw NoHS; $4C
+	dw NoHS; $4D
+;	dw NoHS; $4E
+	dw NoHS; $4F
+	dw NoHS; $50
+	dw NoHS; $51
+	dw NoHS; $52
+	dw PowerPlantHS; $53
+	dw NoHS; $54
+	dw NoHS; $55
+	dw NoHS; $56
+	dw NoHS; $57
+	dw BillsHouseHS; $58
+	dw NoHS; $59
+	dw NoHS; $5A
+	dw NoHS; $5B
+	dw NoHS; $5C
+	dw NoHS; $5D
+	dw VermilionDockHS; $5E
+	dw NoHS; $5F
+	dw SSAnne2FHS; $60
+	dw NoHS; $61
+	dw NoHS; $62
+	dw NoHS; $63
+	dw NoHS; $64
+	dw NoHS; $65
+	dw SSAnne1FRoomsHS; $66
+	dw SSAnne2FRoomsHS; $67
+	dw SSAnneB1FRoomsHS; $68
+;	dw NoHS; $69
+;	dw NoHS; $6A
+;	dw NoHS; $6B
+	dw VictoryRoad1FHS; $6C
+;	dw NoHS; $6D
+;	dw NoHS; $6E
+;	dw NoHS; $6F
+;	dw NoHS; $70
+	dw NoHS; $71
+;	dw NoHS; $72
+;	dw NoHS; $73
+;	dw NoHS; $74
+;	dw NoHS; $75
+	dw NoHS; $76
+	dw NoHS; $77
+	dw ChampionsRoomHS; $78
+	dw NoHS; $79
+	dw NoHS; $7A
+	dw NoHS; $7B
+	dw CeladonMart3FHS; $7C
+	dw NoHS; $7D
+	dw NoHS; $7E
+	dw NoHS; $7F
+	dw NoHS; $80
+	dw NoHS; $81
+	dw NoHS; $82
+	dw NoHS; $83
+	dw CeladonMansionRoofHouseHS; $84
+	dw NoHS; $85
+	dw NoHS; $86
+	dw GameCornerHS; $87
+	dw NoHS; $88
+	dw GameCornerPrizeRoomHS; $89
+	dw NoHS; $8A
+	dw NoHS; $8B
+	dw NoHS; $8C
+	dw NoHS; $8D
+	dw NoHS; $8E
+	dw PokemonTower2FHS; $8F
+	dw PokemonTower3FHS; $90
+	dw PokemonTower4FHS; $91
+	dw PokemonTower5FHS; $92
+	dw PokemonTower6FHS; $93
+	dw PokemonTower7FHS; $94
+	dw MrFujisHouseHS; $95
+	dw NoHS; $96
+	dw NoHS; $97
+	dw NoHS; $98
+	dw NoHS; $99
+	dw NoHS; $9A
+	dw WardensHouseHS; $9B
+	dw NoHS; $9C
+	dw NoHS; $9D
+	dw NoHS; $9E
+	dw SeafoamIslandsB1FHS; $9F
+	dw SeafoamIslandsB2FHS; $A0
+	dw SeafoamIslandsB3FHS; $A1
+	dw SeafoamIslandsB4FHS; $A2
+	dw NoHS; $A3
+	dw NoHS; $A4
+	dw PokemonMansion1FHS; $A5
+	dw NoHS; $A6
+	dw NoHS; $A7
+	dw NoHS; $A8
+	dw NoHS; $A9
+	dw NoHS; $AA
+	dw NoHS; $AB
+	dw NoHS; $AC
+;	dw NoHS; $AD
+	dw NoHS; $AE
+	dw NoHS; $AF
+	dw NoHS; $B0
+	dw FightingDojoHS; $B1
+	dw NoHS; $B2
+	dw NoHS; $B3
+	dw NoHS; $B4
+	dw SilphCo1FHS; $B5
+	dw NoHS; $B6
+	dw NoHS; $B7
+	dw NoHS; $B8
+	dw NoHS; $B9
+	dw NoHS; $BA
+	dw NoHS; $BB
+	dw NoHS; $BC
+	dw NoHS; $BD
+	dw NoHS; $BE
+	dw NoHS; $BF
+	dw SeafoamIslands1FHS; $C0
+	dw NoHS; $C1
+	dw VictoryRoad2FHS; $C2
+	dw NoHS; $C3
+	dw NoHS; $C4
+	dw NoHS; $C5
+	dw VictoryRoad3FHS; $C6
+	dw RocketHideoutB1FHS; $C7
+	dw RocketHideoutB2FHS; $C8
+	dw RocketHideoutB3FHS; $C9
+	dw RocketHideoutB4FHS; $CA
+	dw NoHS; $CB
+;	dw NoHS; $CC
+;	dw NoHS; $CD
+;	dw NoHS; $CE
+	dw SilphCo2FHS; $CF
+	dw SilphCo3FHS; $D0
+	dw SilphCo4FHS; $D1
+	dw SilphCo5FHS; $D2
+	dw SilphCo6FHS; $D3
+	dw SilphCo7FHS; $D4
+	dw SilphCo8FHS; $D5
+	dw PokemonMansion2FHS; $D6
+	dw PokemonMansion3FHS; $D7
+	dw PokemonMansionB1FHS; $D8
+	dw SafariZoneEastHS; $D9
+	dw SafariZoneNorthHS; $DA
+	dw SafariZoneWestHS; $DB
+	dw SafariZoneCenterHS; $DC
+	dw NoHS; $DD
+	dw NoHS; $DE
+	dw NoHS; $DF
+	dw NoHS; $E0
+	dw NoHS; $E1
+	dw CeruleanCave2FHS; $E2
+	dw CeruleanCaveB1FHS; $E3
+	dw CeruleanCaveHS; $E4
+	dw NoHS; $E5
+	dw CeruleanBadgeHouseHS; $E6
+;	dw NoHS; $E7
+	dw NoHS; $E8
+	dw SilphCo9FHS; $E9
+	dw SilphCo10FHS; $EA
+	dw SilphCo11FHS; $EB
+	dw NoHS; $EC
+;	dw NoHS; $ED
+;	dw NoHS; $EE
+	dw NoHS; $EF
+	dw NoHS; $F0
+;	dw NoHS; $F1
+;	dw NoHS; $F2
+;	dw NoHS; $F3
+;	dw UnusedMapF4HS; $F4
+	dw NoHS; $F5
+	dw NoHS; $F6
+	dw NoHS; $F7
 	assert_table_length NUM_MAPS
 	dw -1 ; end
 
@@ -505,8 +505,8 @@ SilphCo11FHS:
 	db SILPH_CO_11F, SILPHCO11F_GIOVANNI, SHOW
 	db SILPH_CO_11F, SILPHCO11F_ROCKET1,  SHOW
 	db SILPH_CO_11F, SILPHCO11F_ROCKET2,  SHOW
-UnusedMapF4HS:
-	db UNUSED_MAP_F4, $02, SHOW ; unused
+;UnusedMapF4HS:
+;	db UNUSED_MAP_F4, $02, SHOW ; unused
 PokemonMansion2FHS:
 	db POKEMON_MANSION_2F, POKEMONMANSION2F_CALCIUM, SHOW
 PokemonMansion3FHS:

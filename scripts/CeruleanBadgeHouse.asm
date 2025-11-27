@@ -122,3 +122,6 @@ CeruleanBadgeHouseVolcanoBadgeText:
 CeruleanBadgeHouseEarthBadgeText:
 	text_far _CeruleanBadgeHouseEarthBadgeText
 	text_end
+
+CeruleanBadgeHouseTMShopText: ;	Post-Game Gym Leader TM dealer
+	script_mart TM_TOXIC, TM_BUBBLEBEAM, TM_MEGA_DRAIN, TM_THUNDERBOLT, TM_FISSURE, TM_BIDE, TM_FIRE_BLAST, TM_PSYWAVE
