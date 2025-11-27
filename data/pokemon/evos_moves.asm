@@ -278,7 +278,7 @@ VoltorbEvosMoves:
 NidokingEvosMoves:
 ; Evolutions
 	db 0
-; Learnset MODIFIED for Move Relearner
+; Learnset MODIFIED for Move Reminder
 	db  2, FOCUS_ENERGY
 	db  2, FURY_ATTACK
 	db  8, HORN_ATTACK
@@ -317,7 +317,7 @@ IvysaurEvosMoves:
 ExeggutorEvosMoves:
 ; Evolutions
 	db 0
-; Learnset MODIFIED for Move Relearner
+; Learnset MODIFIED for Move Reminder
 ;	sb  1, BARRAGE
 ;	db  1, HYNOSIS
 	db  2, SLEEP_POWDER
@@ -391,7 +391,7 @@ NidoranFEvosMoves:
 NidoqueenEvosMoves:
 ; Evolutions
 	db 0
-; Learnset MODIFIED for Move Relearner
+; Learnset MODIFIED for Move Reminder
 	db  2, BITE
 	db  2, FURY_SWIPES
 	db 8, SCRATCH
@@ -443,7 +443,7 @@ LaprasEvosMoves:
 ArcanineEvosMoves:
 ; Evolutions
 	db 0
-; Learnset MODIFIED for Move Relearner
+; Learnset MODIFIED for Move Reminder
 	db  2, AGILITY
 	db 50, FLAMETHROWER
 	db 0
@@ -1109,7 +1109,7 @@ VulpixEvosMoves:
 NinetalesEvosMoves:
 ; Evolutions
 	db 0
-; Learnset MODIFIED for Move Relearner
+; Learnset MODIFIED for Move Reminder
 	db  2, ROAR
 	db  2, CONFUSE_RAY
 	db 39, FLAMETHROWER
@@ -1135,7 +1135,7 @@ PikachuEvosMoves:
 RaichuEvosMoves:
 ; Evolutions
 	db 0
-; Learnset MODIFIED for Move Relearner
+; Learnset MODIFIED for Move Reminder
 	db  2, TAIL_WHIP
 	db  2, QUICK_ATTACK
 	db  2, DOUBLE_TEAM
@@ -1301,7 +1301,7 @@ WigglytuffEvosMoves:
 	db 0
 ; Learnset
 	db 13, SING
-;	db 29, REST ; Can be TMed. Too strong for Relearner.
+;	db 29, REST ; Can be TMed. Too strong for Reminder.
 	db 41, BODY_SLAM
 	db 48, DOUBLE_EDGE
 	db 0
@@ -1428,7 +1428,7 @@ PoliwhirlEvosMoves:
 PoliwrathEvosMoves:
 ; Evolutions
 	db 0
-; Learnset MODIFIED for Move Relearner
+; Learnset MODIFIED for Move Reminder
 	db 44, AMNESIA
 	db 51, HYDRO_PUMP
 	db 0
@@ -1717,7 +1717,7 @@ ElectrodeEvosMoves:
 ClefableEvosMoves:
 ; Evolutions
 	db 0
-; Learnset MODIFIED for Move Relearner
+; Learnset MODIFIED for Move Reminder
 	db  2, SING
 	db 51, LIGHT_SCREEN
 	db 0
@@ -2180,7 +2180,7 @@ GloomEvosMoves:
 VileplumeEvosMoves:
 ; Evolutions
 	db 0
-; Learnset MODIFIED for Move Relearner
+; Learnset MODIFIED for Move Reminder
 ;	db  1, ACID
 ;	db  1, STUN_SPORE
 ;	db  1, SLEEP_POWDER
@@ -2220,7 +2220,7 @@ WeepinbellEvosMoves:
 VictreebelEvosMoves:
 ; Evolutions
 	db 0
-; Learnset MODIFIED for Move Relearner
+; Learnset MODIFIED for Move Reminder
 ;	db  1, SLEEP_POWDER
 ;	db  1, STUN_SPORE
 ;	db  1, ACID

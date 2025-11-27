@@ -267,6 +267,8 @@ INCLUDE "data/text/text_6.asm"
 SECTION "Text 11", ROMX
 
 INCLUDE "data/text/text_7.asm"
+INCLUDE "data/text/move_deleter.asm"
+INCLUDE "data/text/move_reminder.asm"
 
 
 SECTION "Pokédex Text", ROMX
