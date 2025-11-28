@@ -12,21 +12,25 @@ CinnabarLabTradeRoomSuperNerdText:
 	text_end
 
 CinnabarLabTradeRoomGrampsText:
+	text_asm
 	CheckEvent EVENT_GOT_HITMONLEE
-	jr z, .chose_Hitmonlee
+	jr nz, .chose_Hitmonlee
 	CheckEvent EVENT_GOT_HITMONCHAN
-	jr z, .chose_Hitmonchan
+	jr nz, .chose_Hitmonchan
+	ld hl, .DefaultText
+	call PrintText
+	jp TextScriptEnd
+
+.DefaultText
 	text_far _CinnabarLabTradeRoomNoHitmonYetText
 	text_end
 
 .chose_Hitmonlee
-	text_asm
 	ld a, TRADE_FOR_JACKIE
 	ld [wWhichTrade], a
 	jr CinnabarLabTradeRoomDoTrade
 
 .chose_Hitmonchan
-	text_asm
 	ld a, TRADE_FOR_BRUCE
 	ld [wWhichTrade], a
 	jr CinnabarLabTradeRoomDoTrade
