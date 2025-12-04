@@ -900,6 +900,6 @@ IF DEF(_BLUE)
 	INCBIN "gfx/slots/blue_slots_1.2bpp"
 ENDC
 IF DEF(_GREEN)
-	INCBIN "gfx/slots/blue_slots_1.2bpp"
+	INCBIN "gfx/slots/green_slots_1.2bpp"
 ENDC
 SlotMachineTiles1End:
