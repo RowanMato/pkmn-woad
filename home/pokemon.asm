@@ -371,7 +371,7 @@ GetMonHeader::
 	ld a, [wCurSpecies]
 	ld [wPokedexNum], a
 	ld de, FossilKabutopsPic
-	ld b, $66 ; size of Kabutops fossil and Ghost sprites
+	ld b, $77 ; size of Kabutops fossil and Ghost sprites
 	cp FOSSIL_KABUTOPS ; Kabutops fossil
 	jr z, .specialID
 	ld de, GhostPic
