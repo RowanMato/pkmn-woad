@@ -6,9 +6,9 @@ PokemonTower6FWildMons:
 	db 24, GASTLY
 	db 20, GASTLY
 	db 19, GASTLY
-	db 26, HAUNTER
-	db 22, CUBONE
-	db 24, CUBONE
+	db 26, GASTLY
+	db 19, CUBONE
+	db 24, HAUNTER
 	db 28, HAUNTER
 	end_grass_wildmons
 

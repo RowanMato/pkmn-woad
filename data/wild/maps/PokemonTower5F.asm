@@ -6,10 +6,10 @@ PokemonTower5FWildMons:
 	db 23, GASTLY
 	db 19, GASTLY
 	db 18, GASTLY
-	db 25, HAUNTER
-	db 20, CUBONE
-	db 22, CUBONE
-	db 24, GASTLY
+	db 17, GASTLY
+	db 18, CUBONE
+	db 22, HAUNTER
+	db 24, HAUNTER
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate
