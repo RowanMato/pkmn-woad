@@ -774,6 +774,23 @@ DEF INDIGO_PLATEAU_EVENTS_END EQU const_value - 1
 	const_skip 8
 	const EVENT_BEAT_ARTICUNO
 
+; Post-Game events
+	const_next $9E0
+	const EVENT_PLAYER_IS_CHAMPION
+	const EVENT_BEAT_BROCK_R2
+	const EVENT_BEAT_MISTY_R2
+	const EVENT_BEAT_SURGE_R2
+	const EVENT_BEAT_ERIKA_R2
+	const EVENT_BEAT_KOGA_R2
+	const EVENT_BEAT_SABRINA_R2
+	const EVENT_BEAT_BLAINE_R2
+	const EVENT_BEAT_GIOVANNI_R2
+	; Completing the above allows the following.
+	const EVENT_BEAT_E4_R2
+	; Must clear E4 R2 before battling Oak. Re-clear E4 R2 to rematch Oak.
+	const EVENT_CAN_BATTLE_OAK
+	const EVENT_BILL_SAW_MEW ; Have to be Champ at least once, and caught Mew, to fight Bill.
+
 ; End of events
 	const_next $A00
 DEF NUM_EVENTS EQU const_value
