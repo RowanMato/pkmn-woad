@@ -95,6 +95,12 @@ HallOfFameOakCongratulationsScript:
 	ld a, TEXT_HALLOFFAME_OAK
 	ldh [hTextID], a
 	call DisplayTextID
+	call CheckE4R2
+	jr nc, .notR2text
+	ld a, TEXT_HALLOFFAME_OAK_R2
+	ldh [hTextID], a
+	call DisplayTextID
+.notR2text
 	ld a, PAD_BUTTONS | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	; Open Unknown Dungeon
@@ -111,6 +117,20 @@ HallOfFameOakCongratulationsScript:
 	ld a, HS_CERULEAN_BADGE_HOUSE_TM_SHOP
 	ld [wMissableObjectIndex], a
 	predef ShowObject
+	; Show Giovanni in his Gym again, for rematches
+	ld a, HS_VIRIDIAN_GYM_GIOVANNI
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+	; Set primary E4 beaten flag
+	SetEvent EVENT_PLAYER_IS_CHAMPION
+	; Check if this is R2, and if so
+	; set that as beaten, plus allow
+	; Oak to be battled.
+	call CheckE4R2
+	jp nc, .notR2
+	SetEvent EVENT_BEAT_E4_R2
+	SetEvent EVENT_CAN_BATTLE_OAK
+.notR2
 	ld a, SCRIPT_HALLOFFAME_RESET_EVENTS_AND_SAVE
 	ld [wHallOfFameCurScript], a
 	ret
@@ -118,7 +138,12 @@ HallOfFameOakCongratulationsScript:
 HallOfFame_TextPointers:
 	def_text_pointers
 	dw_const HallOfFameOakText, TEXT_HALLOFFAME_OAK
+	dw_const HallOfFameOakTextR2, TEXT_HALLOFFAME_OAK_R2
 
 HallOfFameOakText:
 	text_far _HallOfFameOakText
+	text_end
+
+HallOfFameOakTextR2:
+	text_far _HallOfFameOakTextR2
 	text_end
