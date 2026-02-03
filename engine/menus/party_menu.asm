@@ -197,14 +197,19 @@ RedrawPartyMenu_::
 	ld a, 1
 	ldh [hAutoBGTransferEnabled], a
 	call Delay3
+	ldh a, [hCGB]
+	and a
+	jr z, .notCGB
 	jp GBPalNormal
-;	ld a, %11100100 ; 3210
-;	ldh [rBGP], a
-;	ldh [rOBP0], a
-;	call UpdateCGBPal_BGP
-;	call UpdateCGBPal_OBP0
-;	call UpdateCGBPal_OBP1
-;	ret
+	; TODO Remove the following, and the CGB check above, once the menu icons have adjusted outlines.
+.notCGB ; The light tone is too light for outlining on GameBoy Pocket screens, so swap the light and dark tones when playing in monochrome.
+	ld a, %11100100 ; 3210
+	ldh [rBGP], a
+	ldh [rOBP0], a
+	call UpdateCGBPal_BGP
+	call UpdateCGBPal_OBP0
+	call UpdateCGBPal_OBP1
+	ret
 .printItemUseMessage
 	and $0F
 	ld hl, PartyMenuItemUseMessagePointers
