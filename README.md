@@ -1,6 +1,6 @@
-# Pocket Monsters: World Adventures [![Build Status][ci-badge]][ci]
+# Pocket Monsters: World Adventures
 
-Documentation and credits can be found at: (https://pkmn-woad.carrd.co/)[https://pkmn-woad.carrd.co/]
+Documentation and credits can be found at: https://pkmn-woad.carrd.co.
 
 This project is based on [this disassembly](https://github.com/CreamElDudJafar/pokered-yellow-colors) of Pokémon Red and Blue with GBC/Yellow Colors.
 
@@ -22,5 +22,5 @@ To set up the repository, see [**INSTALL.md**](INSTALL.md).
 
 ## See also
 
-- [**Report Issues**][issues]
-- [**Documentation**][https://pkmn-woad.carrd.co/]
+- [**Report Issues**](issues)
+- [**Documentation**](https://pkmn-woad.carrd.co/)
