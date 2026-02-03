@@ -2,7 +2,7 @@
 *.o
 
 # resources
-/RESOURCES/
+RESOURCES/
 
 # compiled graphics
 *.1bpp
