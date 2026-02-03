@@ -22,6 +22,7 @@ _AgathaBeforeBattleText::
 	cont "trainer fights!"
 	done
 
+_AgathaRematchDefeatedText::
 _AgathaEndBattleText::
 	text "Oh ho!"
 	line "You're something"
@@ -41,4 +42,18 @@ _AgathaAfterBattleText::
 _AgathasRoomAgathaDontRunAwayText::
 	text "Someone's voice:"
 	line "Don't run away!"
+	done
+
+_AgathaRematchPreBattleText::
+	text "You again, child?"
+
+	para "Maybe seeing how"
+	line "you continue to"
+	para "train and battle"
+	line "will convince OAK"
+	cont "to return."
+
+	para "In hope of that,"
+	line "I'll accept your"
+	cont "challenge!"
 	done

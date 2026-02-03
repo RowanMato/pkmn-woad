@@ -68,6 +68,10 @@ ChampionsRoomRivalReadyToBattleScript:
 	ld a, OPP_RIVAL3
 	ld [wCurOpponent], a
 
+	;	check if this is Round 2
+	call CheckE4R2
+	jp c, .Rematch
+
 	; select which team to use during the encounter
 	ld a, [wRivalStarter]
 	cp STARTER2
@@ -81,6 +85,23 @@ ChampionsRoomRivalReadyToBattleScript:
 	jr .saveTrainerId
 .NotStarter3
 	ld a, $3
+	jr .saveTrainerId
+
+.Rematch
+	ld a, [wRivalStarter]
+	cp STARTER2
+	jr nz, .NotStarter2R2
+	ld a, $4
+	jr .saveTrainerId
+.NotStarter2R2
+	cp STARTER3
+	jr nz, .NotStarter3R2
+	ld a, $5
+	jr .saveTrainerId
+.NotStarter3R2
+	ld a, $6
+	jr .saveTrainerId
+
 .saveTrainerId
 	ld [wTrainerNo], a
 

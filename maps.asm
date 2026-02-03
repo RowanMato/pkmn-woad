@@ -809,16 +809,6 @@ INCLUDE "scripts/SilphCo10F.asm"
 INCLUDE "data/maps/objects/SilphCo10F.asm"
 SilphCo10F_Blocks: INCBIN "maps/SilphCo10F.blk"
 
-INCLUDE "data/maps/headers/LancesRoom.asm"
-INCLUDE "scripts/LancesRoom.asm"
-INCLUDE "data/maps/objects/LancesRoom.asm"
-LancesRoom_Blocks: INCBIN "maps/LancesRoom.blk"
-
-INCLUDE "data/maps/headers/HallOfFame.asm"
-INCLUDE "scripts/HallOfFame.asm"
-INCLUDE "data/maps/objects/HallOfFame.asm"
-HallOfFame_Blocks: INCBIN "maps/HallOfFame.blk"
-
 
 SECTION "Maps 15", ROMX
 
@@ -1219,3 +1209,15 @@ INCLUDE "data/maps/headers/AgathasRoom.asm"
 INCLUDE "scripts/AgathasRoom.asm"
 INCLUDE "data/maps/objects/AgathasRoom.asm"
 AgathasRoom_Blocks: INCBIN "maps/AgathasRoom.blk"
+
+INCLUDE "data/maps/headers/LancesRoom.asm"
+INCLUDE "scripts/LancesRoom.asm"
+INCLUDE "data/maps/objects/LancesRoom.asm"
+LancesRoom_Blocks: INCBIN "maps/LancesRoom.blk"
+
+INCLUDE "data/maps/headers/HallOfFame.asm"
+INCLUDE "scripts/HallOfFame.asm"
+INCLUDE "data/maps/objects/HallOfFame.asm"
+HallOfFame_Blocks: INCBIN "maps/HallOfFame.blk"
+
+INCLUDE "engine/events/check_e4_r2.asm"

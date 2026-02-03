@@ -20,6 +20,7 @@ _BrunoBeforeBattleText::
 	para "Hoo hah!"
 	done
 
+_BrunoRematchDefeatedText::
 _BrunoEndBattleText::
 	text "Why?"
 	line "How could I lose?"
@@ -34,4 +35,18 @@ _BrunoAfterBattleText::
 _BrunosRoomBrunoDontRunAwayText::
 	text "Someone's voice:"
 	line "Don't run away!"
+	done
+
+_BrunoRematchPreBattleText::
+	text "Back for another"
+	line "bout, <PLAYER>?"
+
+	para "You won't beat me"
+	line "this time."
+
+	para "You're far out of"
+	line "your weightclass."
+
+	para "Show me all of"
+	line "your might!"
 	done

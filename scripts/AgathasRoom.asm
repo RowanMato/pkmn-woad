@@ -26,8 +26,11 @@ AgathaShowOrHideExitBlock:
 	predef_jump ReplaceTileBlock
 
 ResetAgathaScript:
-	xor a ; SCRIPT_AGATHASROOM_DEFAULT
+	xor a
+	ld [wJoyIgnore], a
+	ld a, SCRIPT_AGATHASROOM_NOOP
 	ld [wAgathasRoomCurScript], a
+	ld [wCurMapScript], a
 	ret
 
 AgathasRoom_ScriptPointers:
@@ -37,6 +40,7 @@ AgathasRoom_ScriptPointers:
 	dw_const AgathasRoomAgathaEndBattleScript,      SCRIPT_AGATHASROOM_AGATHA_END_BATTLE
 	dw_const AgathasRoomPlayerIsMovingScript,       SCRIPT_AGATHASROOM_PLAYER_IS_MOVING
 	dw_const AgathasRoomNoopScript,                 SCRIPT_AGATHASROOM_NOOP
+	dw_const AgathasRoomPostBattleScript,          SCRIPT_AGATHASROOM_POST_BATTLE
 
 AgathasRoomNoopScript:
 	ret
@@ -117,10 +121,20 @@ AgathasRoomAgathaEndBattleScript:
 	ld [wChampionsRoomCurScript], a
 	ret
 
+AgathasRoomPostBattleScript:
+	ld a, [wIsInBattle]
+	cp $ff
+	jp z, ResetAgathaScript
+	ld a, TEXT_AGATHASROOM_AFTER_BATTLE
+	ldh [hTextID], a
+	jp DisplayTextID
+	jp ResetAgathaScript
+
 AgathasRoom_TextPointers:
 	def_text_pointers
 	dw_const AgathasRoomAgathaText,            TEXT_AGATHASROOM_AGATHA
 	dw_const AgathasRoomAgathaDontRunAwayText, TEXT_AGATHASROOM_AGATHA_DONT_RUN_AWAY
+	dw_const AgathaAfterBattleText, 					 TEXT_AGATHASROOM_AFTER_BATTLE
 
 AgathasRoomTrainerHeaders:
 	def_trainers
@@ -130,9 +144,48 @@ AgathasRoomTrainerHeader0:
 
 AgathasRoomAgathaText:
 	text_asm
+	CheckEvent EVENT_BEAT_AGATHAS_ROOM_TRAINER_0
+	jr nz, .defeated
+	call CheckE4R2
+	jp c, .Rematch
+.defeated
 	ld hl, AgathasRoomTrainerHeader0
 	call TalkToTrainer
 	jp TextScriptEnd
+
+.Rematch
+	ld hl, .PreBattleRematchText
+	call PrintText
+	call Delay3
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	ld hl, AgathaRematchDefeatedText
+	ld de, AgathaRematchDefeatedText
+	call SaveEndBattleTextPointers
+	ldh a, [hSpriteIndex]
+	ld [wSpriteIndex], a
+	call EngageMapTrainer
+	call InitBattleEnemyParameters
+	ld a, OPP_AGATHA
+	ld [wCurOpponent], a
+	ld a, 2
+	ld [wTrainerNo], a
+	SetEvent EVENT_BEAT_AGATHAS_ROOM_TRAINER_0
+.endBattle
+	ld a, SCRIPT_AGATHASROOM_AGATHA_END_BATTLE
+	ld [wAgathasRoomCurScript], a
+	ld [wCurMapScript], a
+.done
+	jp TextScriptEnd
+
+.PreBattleRematchText:
+	text_far _AgathaRematchPreBattleText
+	text_end
+
+AgathaRematchDefeatedText:
+	text_far _AgathaRematchDefeatedText
+	text_end
 
 AgathaBeforeBattleText:
 	text_far _AgathaBeforeBattleText

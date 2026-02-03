@@ -26,8 +26,11 @@ BrunoShowOrHideExitBlock:
 	predef_jump ReplaceTileBlock
 
 ResetBrunoScript:
-	xor a ; SCRIPT_BRUNOSROOM_DEFAULT
+	xor a
+	ld [wJoyIgnore], a
+	ld a, SCRIPT_BRUNOSROOM_NOOP
 	ld [wBrunosRoomCurScript], a
+	ld [wCurMapScript], a
 	ret
 
 BrunosRoom_ScriptPointers:
@@ -37,6 +40,7 @@ BrunosRoom_ScriptPointers:
 	dw_const BrunosRoomBrunoEndBattleScript,        SCRIPT_BRUNOSROOM_BRUNO_END_BATTLE
 	dw_const BrunosRoomPlayerIsMovingScript,        SCRIPT_BRUNOSROOM_PLAYER_IS_MOVING
 	dw_const BrunosRoomNoopScript,                  SCRIPT_BRUNOSROOM_NOOP
+	dw_const BrunosRoomPostBattleScript,          SCRIPT_BRUNOSROOM_POST_BATTLE
 
 BrunosRoomNoopScript:
 	ret
@@ -114,10 +118,20 @@ BrunosRoomBrunoEndBattleScript:
 	ldh [hTextID], a
 	jp DisplayTextID
 
+BrunosRoomPostBattleScript:
+	ld a, [wIsInBattle]
+	cp $ff
+	jp z, ResetBrunoScript
+	ld a, TEXT_BRUNOSROOM_AFTER_BATTLE
+	ldh [hTextID], a
+	jp DisplayTextID
+	jp ResetBrunoScript
+
 BrunosRoom_TextPointers:
 	def_text_pointers
 	dw_const BrunosRoomBrunoText,            TEXT_BRUNOSROOM_BRUNO
 	dw_const BrunosRoomBrunoDontRunAwayText, TEXT_BRUNOSROOM_BRUNO_DONT_RUN_AWAY
+	dw_const BrunoAfterBattleText, 					 TEXT_BRUNOSROOM_AFTER_BATTLE
 
 BrunosRoomTrainerHeaders:
 	def_trainers
@@ -127,9 +141,48 @@ BrunosRoomTrainerHeader0:
 
 BrunosRoomBrunoText:
 	text_asm
+	CheckEvent EVENT_BEAT_BRUNOS_ROOM_TRAINER_0
+	jr nz, .defeated
+	call CheckE4R2
+	jp c, .Rematch
+.defeated
 	ld hl, BrunosRoomTrainerHeader0
 	call TalkToTrainer
 	jp TextScriptEnd
+
+.Rematch
+	ld hl, .PreBattleRematchText
+	call PrintText
+	call Delay3
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	ld hl, BrunoRematchDefeatedText
+	ld de, BrunoRematchDefeatedText
+	call SaveEndBattleTextPointers
+	ldh a, [hSpriteIndex]
+	ld [wSpriteIndex], a
+	call EngageMapTrainer
+	call InitBattleEnemyParameters
+	ld a, OPP_BRUNO
+	ld [wCurOpponent], a
+	ld a, 2
+	ld [wTrainerNo], a
+	SetEvent EVENT_BEAT_BRUNOS_ROOM_TRAINER_0
+.endBattle
+	ld a, SCRIPT_BRUNOSROOM_BRUNO_END_BATTLE
+	ld [wBrunosRoomCurScript], a
+	ld [wCurMapScript], a
+.done
+	jp TextScriptEnd
+
+.PreBattleRematchText:
+	text_far _BrunoRematchPreBattleText
+	text_end
+
+BrunoRematchDefeatedText:
+	text_far _BrunoRematchDefeatedText
+	text_end
 
 BrunoBeforeBattleText:
 	text_far _BrunoBeforeBattleText

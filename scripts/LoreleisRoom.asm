@@ -28,8 +28,11 @@ LoreleiShowOrHideExitBlock:
 	predef_jump ReplaceTileBlock
 
 ResetLoreleiScript:
-	xor a ; SCRIPT_LORELEISROOM_DEFAULT
+	xor a
+	ld [wJoyIgnore], a
+	ld a, SCRIPT_LORELEISROOM_NOOP
 	ld [wLoreleisRoomCurScript], a
+	ld [wCurMapScript], a
 	ret
 
 LoreleisRoom_ScriptPointers:
@@ -39,6 +42,7 @@ LoreleisRoom_ScriptPointers:
 	dw_const LoreleisRoomLoreleiEndBattleScript,    SCRIPT_LORELEISROOM_LORELEI_END_BATTLE
 	dw_const LoreleisRoomPlayerIsMovingScript,      SCRIPT_LORELEISROOM_PLAYER_IS_MOVING
 	dw_const LoreleisRoomNoopScript,                SCRIPT_LORELEISROOM_NOOP
+	dw_const LoreleisRoomPostBattleScript,          SCRIPT_LORELEISROOM_POST_BATTLE
 
 LoreleisRoomNoopScript:
 	ret
@@ -116,10 +120,20 @@ LoreleisRoomLoreleiEndBattleScript:
 	ldh [hTextID], a
 	jp DisplayTextID
 
+LoreleisRoomPostBattleScript:
+	ld a, [wIsInBattle]
+	cp $ff
+	jp z, ResetLoreleiScript
+	ld a, TEXT_LORELEISROOM_AFTER_BATTLE
+	ldh [hTextID], a
+	jp DisplayTextID
+	jp ResetLoreleiScript
+
 LoreleisRoom_TextPointers:
 	def_text_pointers
 	dw_const LoreleisRoomLoreleiText,            TEXT_LORELEISROOM_LORELEI
 	dw_const LoreleisRoomLoreleiDontRunAwayText, TEXT_LORELEISROOM_DONT_RUN_AWAY
+	dw_const LoreleisRoomLoreleiAfterBattleText, TEXT_LORELEISROOM_AFTER_BATTLE
 
 LoreleisRoomTrainerHeaders:
 	def_trainers
@@ -129,9 +143,48 @@ LoreleisRoomTrainerHeader0:
 
 LoreleisRoomLoreleiText:
 	text_asm
+	CheckEvent EVENT_BEAT_LORELEIS_ROOM_TRAINER_0
+	jr nz, .defeated
+	call CheckE4R2
+	jp c, .Rematch
+.defeated
 	ld hl, LoreleisRoomTrainerHeader0
 	call TalkToTrainer
 	jp TextScriptEnd
+
+.Rematch
+	ld hl, .PreBattleRematchText
+	call PrintText
+	call Delay3
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	ld hl, LoreleisRoomRematchDefeatedText
+	ld de, LoreleisRoomRematchDefeatedText
+	call SaveEndBattleTextPointers
+	ldh a, [hSpriteIndex]
+	ld [wSpriteIndex], a
+	call EngageMapTrainer
+	call InitBattleEnemyParameters
+	ld a, OPP_LORELEI
+	ld [wCurOpponent], a
+	ld a, 2
+	ld [wTrainerNo], a
+	SetEvent EVENT_BEAT_LORELEIS_ROOM_TRAINER_0
+.endBattle
+	ld a, SCRIPT_LORELEISROOM_LORELEI_END_BATTLE
+	ld [wLoreleisRoomCurScript], a
+	ld [wCurMapScript], a
+.done
+	jp TextScriptEnd
+
+.PreBattleRematchText:
+	text_far _LoreleisRoomRematchPreBattleText
+	text_end
+
+LoreleisRoomRematchDefeatedText:
+	text_far _LoreleisRoomRematchDefeatedText
+	text_end
 
 LoreleisRoomLoreleiBeforeBattleText:
 	text_far _LoreleisRoomLoreleiBeforeBattleText

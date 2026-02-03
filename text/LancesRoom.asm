@@ -27,6 +27,7 @@ _LancesRoomLanceBeforeBattleText::
 	cont "with me, <PLAYER>!"
 	done
 
+_LanceRematchDefeatedText::
 _LancesRoomLanceEndBattleText::
 	text "That's it!"
 
@@ -62,3 +63,17 @@ _LancesRoomLanceAfterBattleText::
 	line "#MON LEAGUE"
 	cont "champion!@"
 	text_end
+
+_LanceRematchPreBattleText::
+	text "Ah, the old champ,"
+	line "<PLAYER>."
+
+	para "I thought I'd see"
+	line "you here soon."
+
+	para "Hmm? No reason."
+
+	para "Now, let's see if"
+	line "you've kept up"
+	cont "since last time."
+	done

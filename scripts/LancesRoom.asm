@@ -36,8 +36,11 @@ LanceShowOrHideEntranceBlocks:
 	predef_jump ReplaceTileBlock
 
 ResetLanceScript:
-	xor a ; SCRIPT_LANCESROOM_DEFAULT
+	xor a
+	ld [wJoyIgnore], a
+	ld a, SCRIPT_LANCESROOM_NOOP
 	ld [wLancesRoomCurScript], a
+	ld [wCurMapScript], a
 	ret
 
 LancesRoom_ScriptPointers:
@@ -47,6 +50,7 @@ LancesRoom_ScriptPointers:
 	dw_const LancesRoomLanceEndBattleScript,        SCRIPT_LANCESROOM_LANCE_END_BATTLE
 	dw_const LancesRoomPlayerIsMovingScript,        SCRIPT_LANCESROOM_PLAYER_IS_MOVING
 	dw_const LancesRoomNoopScript,                  SCRIPT_LANCESROOM_NOOP
+	dw_const LancesRoomPostBattleScript,          SCRIPT_LANCESROOM_POST_BATTLE
 
 LancesRoomNoopScript:
 	ret
@@ -93,6 +97,15 @@ LancesRoomLanceEndBattleScript:
 	ldh [hTextID], a
 	jp DisplayTextID
 
+LancesRoomPostBattleScript:
+	ld a, [wIsInBattle]
+	cp $ff
+	jp z, ResetLanceScript
+	ld a, TEXT_LANCESROOM_AFTER_BATTLE
+	ldh [hTextID], a
+	jp DisplayTextID
+	jp ResetLanceScript
+
 WalkToLance:
 ; Moves the player down the hallway to Lance's room.
 	ld a, PAD_BUTTONS | PAD_CTRL_PAD
@@ -129,6 +142,7 @@ LancesRoomPlayerIsMovingScript:
 LancesRoom_TextPointers:
 	def_text_pointers
 	dw_const LancesRoomLanceText, TEXT_LANCESROOM_LANCE
+	dw_const LanceAfterBattleText, 					 TEXT_LANCESROOM_AFTER_BATTLE
 
 LancesRoomTrainerHeaders:
 	def_trainers
@@ -138,9 +152,48 @@ LancesRoomTrainerHeader0:
 
 LancesRoomLanceText:
 	text_asm
+	CheckEvent EVENT_BEAT_LANCES_ROOM_TRAINER_0
+	jr nz, .defeated
+	call CheckE4R2
+	jp c, .Rematch
+.defeated
 	ld hl, LancesRoomTrainerHeader0
 	call TalkToTrainer
 	jp TextScriptEnd
+
+.Rematch
+	ld hl, .PreBattleRematchText
+	call PrintText
+	call Delay3
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	ld hl, LanceRematchDefeatedText
+	ld de, LanceRematchDefeatedText
+	call SaveEndBattleTextPointers
+	ldh a, [hSpriteIndex]
+	ld [wSpriteIndex], a
+	call EngageMapTrainer
+	call InitBattleEnemyParameters
+	ld a, OPP_LANCE
+	ld [wCurOpponent], a
+	ld a, 2
+	ld [wTrainerNo], a
+	SetEvent EVENT_BEAT_LANCES_ROOM_TRAINER_0
+.endBattle
+	ld a, SCRIPT_LANCESROOM_LANCE_END_BATTLE
+	ld [wLancesRoomCurScript], a
+	ld [wCurMapScript], a
+.done
+	jp TextScriptEnd
+
+.PreBattleRematchText:
+	text_far _LanceRematchPreBattleText
+	text_end
+
+LanceRematchDefeatedText:
+	text_far _LanceRematchDefeatedText
+	text_end
 
 LancesRoomLanceBeforeBattleText:
 	text_far _LancesRoomLanceBeforeBattleText
@@ -150,6 +203,7 @@ LancesRoomLanceEndBattleText:
 	text_far _LancesRoomLanceEndBattleText
 	text_end
 
+LanceAfterBattleText:
 LancesRoomLanceAfterBattleText:
 	text_far _LancesRoomLanceAfterBattleText
 	text_asm
