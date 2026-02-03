@@ -9,6 +9,14 @@ OaksLab_Script:
 	ld a, [wOaksLabCurScript]
 	jp CallFunctionInTable
 
+ResetOaksLabScript:
+	xor a
+	ld [wJoyIgnore], a
+	ld a, SCRIPT_OAKSLAB_NOOP
+	ld [wOaksLabCurScript], a
+	ld [wCurMapScript], a
+	ret
+
 OaksLab_ScriptPointers:
 	def_script_pointers
 	dw_const OaksLabDefaultScript,                   SCRIPT_OAKSLAB_DEFAULT
@@ -30,6 +38,7 @@ OaksLab_ScriptPointers:
 	dw_const OaksLabOakGivesPokedexScript,           SCRIPT_OAKSLAB_OAK_GIVES_POKEDEX
 	dw_const OaksLabRivalLeavesWithPokedexScript,    SCRIPT_OAKSLAB_RIVAL_LEAVES_WITH_POKEDEX
 	dw_const OaksLabNoopScript,                      SCRIPT_OAKSLAB_NOOP
+	dw_const OaksLabPostBattleScript,								 SCRIPT_OAKSLAB_POST_BATTLE
 
 OaksLabDefaultScript:
 	CheckEvent EVENT_OAK_APPEARED_IN_PALLET
@@ -46,6 +55,18 @@ OaksLabDefaultScript:
 	ld a, SCRIPT_OAKSLAB_OAK_ENTERS_LAB
 	ld [wOaksLabCurScript], a
 	ret
+
+OaksLabPostBattleScript:
+	ld a, [wIsInBattle]
+	cp $ff
+	jp z, ResetOaksLabScript
+	ResetEvent EVENT_CAN_BATTLE_OAK ; beat E4 R2 again to rematch again.
+;	ld a, PAD_CTRL_PAD
+;	ld [wJoyIgnore], a
+;	ld a, TEXT_OAKSLAB_POST_BATTLE
+;	ldh [hTextID], a
+;	jp DisplayTextID
+	jp ResetOaksLabScript
 
 OaksLabOakEntersLabScript:
 	ld a, OAKSLAB_OAK2
@@ -750,6 +771,7 @@ OaksLab_TextPointers:
 	dw_const OaksLabOakGotPokedexText,            TEXT_OAKSLAB_OAK_GOT_POKEDEX
 	dw_const OaksLabOakThatWasMyDreamText,        TEXT_OAKSLAB_OAK_THAT_WAS_MY_DREAM
 	dw_const OaksLabRivalLeaveItAllToMeText,      TEXT_OAKSLAB_RIVAL_LEAVE_IT_ALL_TO_ME
+	dw_const ProfOakPostBattleText, TEXT_OAKSLAB_POST_BATTLE
 
 OaksLab_TextPointers2:
 	dw OaksLabRivalText
@@ -965,6 +987,8 @@ OaksLabLastMonText:
 
 OaksLabOak1Text:
 	text_asm
+	CheckEvent EVENT_CAN_BATTLE_OAK
+	jp nz, .OakBattle
 	CheckEvent EVENT_PALLET_AFTER_GETTING_POKEBALLS
 	jr nz, .already_got_poke_balls
 	ld hl, wPokedexOwned
@@ -1034,6 +1058,51 @@ OaksLabOak1Text:
 .done
 	jp TextScriptEnd
 
+.OakBattle:
+	ld hl, .PreBattleText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .refused
+	ld hl, .PreBattleAcceptedText
+	call PrintText
+	call Delay3
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	ld hl, ProfOakDefeatedText
+	ld de, ProfOakDefeatedText
+	call SaveEndBattleTextPointers
+	ld a, OPP_PROF_OAK
+	ld [wCurOpponent], a
+	; select which team to use during the encounter
+	ld a, [wRivalStarter]
+	cp STARTER2
+	jr nz, .NotStarter2
+	ld a, $1
+	jr .saveTrainerId
+.NotStarter2
+	cp STARTER3
+	jr nz, .NotStarter3
+	ld a, $2
+	jr .saveTrainerId
+.NotStarter3
+	ld a, $3
+	jr .saveTrainerId
+.saveTrainerId
+	ld [wTrainerNo], a
+	jr .endBattle
+.refused
+	jp .already_got_poke_balls
+	call PrintText
+	jr .done
+.endBattle
+	ld a, SCRIPT_OAKSLAB_POST_BATTLE
+	ld [wOaksLabCurScript], a
+	ld [wCurMapScript], a
+	jp .done
+
 .WhichPokemonDoYouWantText:
 	text_far _OaksLabOak1WhichPokemonDoYouWantText
 	text_end
@@ -1068,6 +1137,27 @@ OaksLabOak1Text:
 
 .HowIsYourPokedexComingText:
 	text_far _OaksLabOak1HowIsYourPokedexComingText
+	text_end
+
+.PreBattleText:
+	text_far _OakPreBattleText
+	text_end
+
+.PreBattleAcceptedText:
+	text_far _OakBattleAcceptedText
+	text_end
+
+ProfOakDefeatedText:
+	text_far _ProfOakDefeatedText
+	text_end
+
+ProfOakPostBattleText:
+	text_asm
+	ld hl, .Text
+	call PrintText
+	jp TextScriptEnd
+.Text
+	text_far _ProfOakPostBattleText
 	text_end
 
 OaksLabPokedexText:

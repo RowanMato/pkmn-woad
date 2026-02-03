@@ -26,3 +26,12 @@ _HallOfFameOakText::
 	cont "your #MON are"
 	cont "HALL OF FAMERs!"
 	done
+
+_HallOfFameOakTextR2::
+	text "OAK: You continue"
+	line "to inspire me,"
+	cont "<PLAYER>."
+
+	para "Please, visit me"
+	line "at my LAB later."
+	done

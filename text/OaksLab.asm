@@ -362,3 +362,37 @@ _OaksLabScientistText::
 	text "I study #MON as"
 	line "PROF.OAK's AIDE."
 	done
+
+_OakPreBattleText::
+	text "dummy"
+	done
+
+_OakBattleAcceptedText::
+	text "dummy"
+	done
+
+_ProfOakDefeatedText::
+	text "Wonderful!"
+	line "You're remarkable,"
+	cont "<PLAYER>!"
+
+	para "Having bested me,"
+	line "you're now the 2nd"
+	cont "strongest trainer"
+	cont "in the world!"
+
+	para "Hmm? Who's the"
+	line "strongest?"
+
+	para "I'm sure you've"
+	line "met him."
+
+	para "Maybe he'll battle"
+	line "you if you can"
+	cont "show him a rare"
+	cont "enough #MON."
+	prompt
+
+_ProfOakPostBattleText::;unused
+	text "dummy"
+	done
