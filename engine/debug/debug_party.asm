@@ -23,9 +23,9 @@ IF DEF(_DEBUG)
 ELSE
 	db MEW, 20
 ENDC
-	db JOLTEON, 56
-	db DUGTRIO, 56
-	db ARTICUNO, 57
+	db JOLTEON, 90
+	db DUGTRIO, 90
+	db ARTICUNO, 90
 IF DEF(_DEBUG)
 	db PIKACHU, 5
 ENDC
@@ -123,6 +123,27 @@ IF DEF(_DEBUG)
 	ld a, STARTER1
 	ld [hl], a
 
+	; Start in Round 2 mode (E4 defeated once)
+	SetEvent EVENT_PLAYER_IS_CHAMPION
+	; All Gym Leaders beaten, initially, preparing them for R2
+	SetEvent EVENT_BEAT_BROCK
+	SetEvent EVENT_BEAT_MISTY
+	SetEvent EVENT_BEAT_LT_SURGE
+	SetEvent EVENT_BEAT_ERIKA
+	SetEvent EVENT_BEAT_KOGA
+	SetEvent EVENT_BEAT_SABRINA
+	SetEvent EVENT_BEAT_BLAINE
+	SetEvent EVENT_BEAT_VIRIDIAN_GYM_GIOVANNI
+
+	SetEvent EVENT_BEAT_BROCK_R2
+	SetEvent EVENT_BEAT_MISTY_R2
+	SetEvent EVENT_BEAT_SURGE_R2
+	SetEvent EVENT_BEAT_ERIKA_R2
+	SetEvent EVENT_BEAT_KOGA_R2
+	SetEvent EVENT_BEAT_SABRINA_R2
+	SetEvent EVENT_BEAT_BLAINE_R2
+	SetEvent EVENT_BEAT_GIOVANNI_R2
+
 	ret
 
 DebugSetPokedexEntries:
@@ -147,6 +168,7 @@ DebugNewGameItemsList:
 	db CARD_KEY, 1
 	db S_S_TICKET, 1
 	db LIFT_KEY, 1
+	db SILPH_SCOPE, 1
 	db -1 ; end
 
 DebugUnusedList: ; unreferenced
