@@ -68,13 +68,16 @@ CreditsTextPointers:
 	assert_table_length NUM_CRED_STRINGS
 
 CredVersion:
-	db -8, "  POKEMON STAFF@"
-;IF DEF(_RED)
-;	db -8, "RED VERSION STAFF@"
-;ENDC
-;IF DEF(_BLUE)
-;	db -8, "BLUE VERSION STAFF@"
-;ENDC
+;	db -8, "  POKEMON STAFF@"
+IF DEF(_RED)
+	db -8, "RED VERSION STAFF@"
+ENDC
+IF DEF(_BLUE)
+	db -8, "BLUE VERSION STAFF@"
+ENDC
+IF DEF(_BLUE)
+	db -8, "GREEN VERSION STAFF@"
+ENDC
 CredTajiri:
 	db -6, "SATOSHI TAJIRI@"
 CredTaOota:
