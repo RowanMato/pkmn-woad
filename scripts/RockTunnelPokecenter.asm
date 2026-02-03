@@ -8,6 +8,8 @@ RockTunnelPokecenter_TextPointers:
 	dw_const RockTunnelPokecenterGentlemanText,        TEXT_ROCKTUNNELPOKECENTER_GENTLEMAN
 	dw_const RockTunnelPokecenterFisherText,           TEXT_ROCKTUNNELPOKECENTER_FISHER
 	dw_const RockTunnelPokecenterLinkReceptionistText, TEXT_ROCKTUNNELPOKECENTER_LINK_RECEPTIONIST
+	dw_const MoveReminderText, 		 TEXT_ROCKTUNNELPOKECENTER_MOVE_REMINDER
+	dw_const MoveDeleterText, 		 TEXT_ROCKTUNNELPOKECENTER_MOVE_DELETER
 
 RockTunnelPokecenterNurseText:
 	script_pokecenter_nurse

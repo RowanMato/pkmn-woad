@@ -10,6 +10,8 @@ MtMoonPokecenter_TextPointers:
 	dw_const MtMoonPokecenterMagikarpSalesmanText, TEXT_MTMOONPOKECENTER_MAGIKARP_SALESMAN
 	dw_const MtMoonPokecenterClipboardText,        TEXT_MTMOONPOKECENTER_CLIPBOARD
 	dw_const MtMoonPokecenterLinkReceptionistText, TEXT_MTMOONPOKECENTER_LINK_RECEPTIONIST
+	dw_const MoveReminderText, 		 TEXT_MTMOONPOKECENTER_MOVE_REMINDER
+	dw_const MoveDeleterText, 		 TEXT_MTMOONPOKECENTER_MOVE_DELETER
 
 MtMoonPokecenterNurseText:
 	script_pokecenter_nurse

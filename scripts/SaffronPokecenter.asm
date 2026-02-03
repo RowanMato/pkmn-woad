@@ -8,6 +8,8 @@ SaffronPokecenter_TextPointers:
 	dw_const SaffronPokecenterBeautyText,           TEXT_SAFFRONPOKECENTER_BEAUTY
 	dw_const SaffronPokecenterGentlemanText,        TEXT_SAFFRONPOKECENTER_GENTLEMAN
 	dw_const SaffronPokecenterLinkReceptionistText, TEXT_SAFFRONPOKECENTER_LINK_RECEPTIONIST
+	dw_const MoveReminderText, 		 TEXT_SAFFRONPOKECENTER_MOVE_REMINDER
+	dw_const MoveDeleterText, 		 TEXT_SAFFRONPOKECENTER_MOVE_DELETER
 
 SaffronPokecenterNurseText:
 	script_pokecenter_nurse

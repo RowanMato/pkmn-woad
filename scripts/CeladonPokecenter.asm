@@ -8,6 +8,8 @@ CeladonPokecenter_TextPointers:
 	dw_const CeladonPokecenterGentlemanText,        TEXT_CELADONPOKECENTER_GENTLEMAN
 	dw_const CeladonPokecenterBeautyText,           TEXT_CELADONPOKECENTER_BEAUTY
 	dw_const CeladonPokecenterLinkReceptionistText, TEXT_CELADONPOKECENTER_LINK_RECEPTIONIST
+	dw_const MoveReminderText, 		 TEXT_CELADONPOKECENTER_MOVE_REMINDER
+	dw_const MoveDeleterText, 		 TEXT_CELADONPOKECENTER_MOVE_DELETER
 
 CeladonPokecenterLinkReceptionistText:
 	script_cable_club_receptionist

@@ -8,6 +8,8 @@ CinnabarPokecenter_TextPointers:
 	dw_const CinnabarPokecenterCooltrainerFText,     TEXT_CINNABARPOKECENTER_COOLTRAINER_F
 	dw_const CinnabarPokecenterGentlemanText,        TEXT_CINNABARPOKECENTER_GENTLEMAN
 	dw_const CinnabarPokecenterLinkReceptionistText, TEXT_CINNABARPOKECENTER_LINK_RECEPTIONIST
+	dw_const MoveReminderText, 		 TEXT_CINNABARPOKECENTER_MOVE_REMINDER
+	dw_const MoveDeleterText, 		 TEXT_CINNABARPOKECENTER_MOVE_DELETER
 
 CinnabarPokecenterNurseText:
 	script_pokecenter_nurse

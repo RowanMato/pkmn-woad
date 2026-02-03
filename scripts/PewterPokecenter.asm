@@ -8,6 +8,8 @@ PewterPokecenter_TextPointers:
 	dw_const PewterPokecenterGentlemanText,        TEXT_PEWTERPOKECENTER_GENTLEMAN
 	dw_const PewterPokecenterJigglypuffText,       TEXT_PEWTERPOKECENTER_JIGGLYPUFF
 	dw_const PewterPokecenterLinkReceptionistText, TEXT_PEWTERPOKECENTER_LINK_RECEPTIONIST
+	dw_const MoveReminderText, 		 TEXT_PEWTERPOKECENTER_MOVE_REMINDER
+	dw_const MoveDeleterText, 		 TEXT_PEWTERPOKECENTER_MOVE_DELETER
 
 PewterPokecenterNurseText:
 	script_pokecenter_nurse

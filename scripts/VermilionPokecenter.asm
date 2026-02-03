@@ -8,6 +8,8 @@ VermilionPokecenter_TextPointers:
 	dw_const VermilionPokecenterFishingGuruText,      TEXT_VERMILIONPOKECENTER_FISHING_GURU
 	dw_const VermilionPokecenterSailorText,           TEXT_VERMILIONPOKECENTER_SAILOR
 	dw_const VermilionPokecenterLinkReceptionistText, TEXT_VERMILIONPOKECENTER_LINK_RECEPTIONIST
+	dw_const MoveReminderText, 		 TEXT_VERMILIONPOKECENTER_MOVE_REMINDER
+	dw_const MoveDeleterText, 		 TEXT_VERMILIONPOKECENTER_MOVE_DELETER
 
 VermilionPokecenterNurseText:
 	script_pokecenter_nurse

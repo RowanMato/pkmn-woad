@@ -21,6 +21,8 @@ IndigoPlateauLobby_TextPointers:
 	dw_const IndigoPlateauLobbyCooltrainerFText,     TEXT_INDIGOPLATEAULOBBY_COOLTRAINER_F
 	dw_const IndigoPlateauLobbyClerkText,            TEXT_INDIGOPLATEAULOBBY_CLERK
 	dw_const IndigoPlateauLobbyLinkReceptionistText, TEXT_INDIGOPLATEAULOBBY_LINK_RECEPTIONIST
+	dw_const MoveReminderText, 		 TEXT_INDIGOPLATEAULOBBY_MOVE_REMINDER
+	dw_const MoveDeleterText, 		 TEXT_INDIGOPLATEAULOBBY_MOVE_DELETER
 
 IndigoPlateauLobbyNurseText:
 	script_pokecenter_nurse

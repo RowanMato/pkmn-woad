@@ -8,6 +8,8 @@ LavenderPokecenter_TextPointers:
 	dw_const LavenderPokecenterGentlemanText,        TEXT_LAVENDERPOKECENTER_GENTLEMAN
 	dw_const LavenderPokecenterLittleGirlText,       TEXT_LAVENDERPOKECENTER_LITTLE_GIRL
 	dw_const LavenderPokecenterLinkReceptionistText, TEXT_LAVENDERPOKECENTER_LINK_RECEPTIONIST
+	dw_const MoveReminderText, 		 TEXT_LAVENDERPOKECENTER_MOVE_REMINDER
+	dw_const MoveDeleterText, 		 TEXT_LAVENDERPOKECENTER_MOVE_DELETER
 
 LavenderPokecenterLinkReceptionistText:
 	script_cable_club_receptionist
