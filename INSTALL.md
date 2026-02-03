@@ -1,3 +1,5 @@
+These instructions are un-edited from the current build of **pokered** used at the time of the creation of this project.
+
 # Instructions
 
 These instructions explain how to set up the tools required to build **pokered**, including [**rgbds**](https://github.com/gbdev/rgbds), which assembles the source files into a ROM.

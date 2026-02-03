@@ -1,44 +1,26 @@
-# Pokémon Red and Blue [![Build Status][ci-badge]][ci]
+# Pocket Monsters: World Adventures [![Build Status][ci-badge]][ci]
 
-This is a disassembly of Pokémon Red and Blue with GBC/Yellow Colors.
+Documentation and credits can be found at: (https://pkmn-woad.carrd.co/)[https://pkmn-woad.carrd.co/]
 
-Credits for making this SPECIFIC version happen:
+This project is based on [this disassembly](https://github.com/CreamElDudJafar/pokered-yellow-colors) of Pokémon Red and Blue with GBC/Yellow Colors.
+
+Credits for making the GBC/Yellow Colors base-ROM:
 Jojobear13: Game: ShinPokeRed (Originally backporting Pokemon Yellow Functions)
 Vortyne/Vortiene: Game: PureRGB (Also backported Pokemon Yellow Functions)
 RainbowMetalPigeon
 ZetaPhoenix
 Engezerstorung
 
-
-Tutorials Used:
-https://github.com/pret/pokeyellow/wiki/Free-some-space-in-BANK-1E (RainbowMetalPigeon and Vortiene)
-https://github.com/pret/pokered/wiki/Free-MORE-some-space-in-the-Home-BANK (ZetaPhoenix, Engezerstorung and Vortiene)
-
-
 It builds the following ROMs:
 
-- Pokemon Red (UE) [S][!].gb `sha1: ea9bcae617fdf159b045185467ae58b2e4a48b9a`
-- Pokemon Blue (UE) [S][!].gb `sha1: d7037c83e1ae5b39bde3c30787637ba1d4c48ce2`
-- BLUEMONS.GB (debug build) `sha1: 5b1456177671b79b263c614ea0e7cc9ac542e9c4`
-- dmgapae0.e69.patch `sha1: 0fb5f743696adfe1dbb2e062111f08f9bc5a293a`
-- dmgapee0.e68.patch `sha1: ed4be94dc29c64271942c87f2157bca9ca1019c7`
+- Pocket Monsters: World Adventures - Red Version (UE) [S][!].gb `sha1: ea9bcae617fdf159b045185467ae58b2e4a48b9a`
+- Pocket Monsters: World Adventures - Blue Version (UE) [S][!].gb `sha1: d7037c83e1ae5b39bde3c30787637ba1d4c48ce2`
+- Pocket Monsters: World Adventures - Green Version (UE) [S][!].gb `sha1: d7037c83e1ae5b39bde3c30787637ba1d4c48ce2`
 
 To set up the repository, see [**INSTALL.md**](INSTALL.md).
 
 
 ## See also
 
-- [**Wiki**][wiki] (includes [tutorials][tutorials])
-- [**Symbols**][symbols]
-- [**Tools**][tools]
-
-You can find us on [Discord (pret, #pokered)](https://discord.gg/d5dubZ3).
-
-For other pret projects, see [pret.github.io](https://pret.github.io/).
-
-[wiki]: https://github.com/pret/pokered/wiki
-[tutorials]: https://github.com/pret/pokered/wiki/Tutorials
-[symbols]: https://github.com/pret/pokered/tree/symbols
-[tools]: https://github.com/pret/gb-asm-tools
-[ci]: https://github.com/pret/pokered/actions
-[ci-badge]: https://github.com/pret/pokered/actions/workflows/main.yml/badge.svg
+- [**Report Issues**][issues]
+- [**Documentation**][https://pkmn-woad.carrd.co/]
