@@ -22,5 +22,5 @@ To set up the repository, see [**INSTALL.md**](INSTALL.md).
 
 ## See also
 
-- [**Report Issues**](issues)
+- [**Report Issues**](https://github.com/RowanMato/pkmn-woad/issues)
 - [**Documentation**](https://pkmn-woad.carrd.co/)
