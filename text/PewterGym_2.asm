@@ -10,6 +10,10 @@ _PewterGymBrockPostBattleAdviceText::
 	para "Go to the GYM in"
 	line "CERULEAN and test"
 	cont "your abilities!"
+
+	para "If you ever become"
+	line "champion, visit"
+	cont "me for a rematch!"
 	done
 
 _PewterGymBrockWaitTakeThisText::

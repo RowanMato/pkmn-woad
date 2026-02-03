@@ -65,6 +65,12 @@ _CinnabarGymBlaineTM38ExplanationText::
 	para "CHARMELEON or"
 	line "PONYTA would be"
 	cont "good bets!"
+
+	para "If you're aiming"
+	line "to become champ,"
+	para "come battle me"
+	line "again if you make"
+	cont "it there!"
 	done
 
 _CinnabarGymBlaineTM38NoRoomText::
@@ -213,4 +219,43 @@ _CinnabarGymGymGuideChampInMakingText::
 _CinnabarGymGymGuideBeatBlaineText::
 	text "<PLAYER>! You beat"
 	line "that fire brand!"
+	done
+
+_CinnabarGymRematchPreBattleText::
+	text "Ah, you look like"
+	line "you've grown!"
+
+	para "It's nice to see a"
+	line "new champion! Ha!"
+
+	para "So what do you"
+	line "say? Want to show"
+	cont "me your moves?"
+	done
+
+_CinnabarGymRematchAcceptedText::
+	text "Let's turn up"
+	line "the heat!"
+	done
+
+_CinnabarGymRematchRefusedText::
+	text "Can't handle the"
+	line "heat, huh?"
+	done
+
+_CinnabarGymRematchDefeatedText::
+	text "Your"
+	line "flames burn far"
+	cont "hotter than mine!"
+	prompt
+
+_CinnabarGymRematchPostBattleText::
+	text "BLAINE: It does an"
+	line "old man like me"
+	cont "good to see young"
+	cont "trainers succeed."
+
+	para "Don't ever let that"
+	line "fire inside you"
+	cont "burn out."
 	done

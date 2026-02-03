@@ -44,6 +44,7 @@ PewterGymBrockPostBattle:
 	ld [wJoyIgnore], a
 	CheckEvent EVENT_PLAYER_IS_CHAMPION
 	jr z, PewterGymScriptReceiveTM34
+	SetEvent EVENT_BEAT_BROCK_R2
 	ld a, TEXT_PEWTERGYM_REMATCH_POST_BATTLE
 	ldh [hTextID], a
 	call DisplayTextID
@@ -155,7 +156,6 @@ PewterGymBrockText:
 	ld [wCurOpponent], a
 	ld a, 2
 	ld [wTrainerNo], a
-	SetEvent EVENT_BEAT_BROCK_R2
 	jr .endBattle
 .refused
 	ld hl, .PreBattleRematchRefusedText

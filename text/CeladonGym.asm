@@ -218,3 +218,47 @@ _CeladonGymAfterBattleText8::
 	para "Wait 'til next"
 	line "time!"
 	done
+
+_CeladonGymRematchPreBattleText::
+	text "I have tended to"
+	line "my garden while"
+	cont "you were away."
+
+	para "Seeing my plants"
+	line "grow, I have to"
+	cont "wonder if you've"
+	cont "grown too."
+
+	para "Would you please"
+	line "battle me again?"
+	done
+
+_CeladonGymRematchAcceptedText::
+	text "Thank you for this"
+	line "opportunity."
+	done
+
+_CeladonGymRematchRefusedText::
+	text "I will gladly wait"
+	line "to see you again."
+	done
+
+_CeladonGymRematchDefeatedText::
+	text "So"
+	line "overwhelming!"
+	prompt
+
+_CeladonGymRematchPostBattleText::
+	text "ERIKA: #MON"
+	line "and plants both"
+	cont "need care to grow"
+	cont "stronger."
+
+	para "It's clear that"
+	line "you care greatly"
+	cont "for your #MON."
+
+	para "I can tell that's"
+	line "the source of"
+	cont "your strength."
+	done

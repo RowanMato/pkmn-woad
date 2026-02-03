@@ -238,3 +238,49 @@ _ViridianGymGuidePostBattleText::
 	line "GIOVANNI was the"
 	cont "GYM LEADER here?"
 	done
+
+_ViridianGymRematchPreBattleText::
+	text "I have abandoned"
+	line "TEAM ROCKET."
+
+	para "From now on, I"
+	line "will devote my"
+	cont "efforts towards"
+	cont "running this GYM."
+
+	para "Will you remind me"
+	line "how powerful you"
+	cont "are, <PLAYER>?"
+	done
+
+_ViridianGymRematchAcceptedText::
+	text "Show me the effort"
+	line "that shaped you!"
+	done
+
+_ViridianGymRematchRefusedText::
+	text "I will await your"
+	line "next challenge."
+	done
+
+_ViridianGymRematchDefeatedText::
+	text "Defeated"
+	line "by you again..."
+
+	para "It's humbling."
+	prompt
+
+_ViridianGymRematchPostBattleText::
+	text "GIOVANNI: To think"
+	line "I once believed"
+	cont "I could beat you."
+
+	para "I was wrong to"
+	line "underestimate you"
+	cont "back when we met."
+
+	para "I will continue"
+	line "to improve myself"
+	cont "that I can hope"
+	cont "to match you."
+	done

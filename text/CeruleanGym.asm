@@ -130,3 +130,44 @@ _CeruleanGymGymGuideBeatMistyText::
 	line "we make a pretty"
 	cont "darn good team!"
 	done
+
+_CeruleanGymRematchPreBattleText::
+	text "It looks like you"
+	line "have been busy."
+
+	para "I've been working"
+	line "hard as well."
+
+	para "I'd love to see"
+	line "how you've grown."
+
+	para "Want to show me"
+	line "your skills?"
+	done
+
+_CeruleanGymRematchAcceptedText::
+	text "Can you go with"
+	line "the flow?"
+	done
+
+_CeruleanGymRematchRefusedText::
+	text "Show up for a"
+	line "fight anytime."
+	done
+
+_CeruleanGymRematchDefeatedText::
+	text "You"
+	line "haven't been"
+	cont "slacking off!"
+	prompt
+
+_CeruleanGymRematchPostBattleText::
+	text "MISTY: It's clear"
+	line "to me that you've"
+	cont "found your own"
+	cont "style of battle."
+
+	para "No wonder you were"
+	line "able to become"
+	cont "champion."
+	done

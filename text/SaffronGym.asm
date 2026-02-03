@@ -234,3 +234,55 @@ _SaffronGymYoungster4AfterBattleText::
 	line "used telepathy to"
 	cont "read your mind!"
 	done
+
+_SaffronGymRematchPreBattleText::
+	text "I knew you'd come"
+	line "back here."
+
+	para "After our first"
+	line "battle, I saw a"
+	cont "vision of your"
+	cont "champion match."
+
+	para "I also saw the"
+	line "rematch between"
+	cont "you and I."
+
+	para "It does not end"
+	line "in your favor."
+
+	para "Are you willing to"
+	line "challenge what I"
+	cont "have foretold?"
+	done
+
+_SaffronGymRematchAcceptedText::
+	text "Steady your mind"
+	line "and emotions."
+	done
+
+_SaffronGymRematchRefusedText::
+	text "Wise choice."
+
+	para "I have already"
+	line "seen the results"
+	cont "of our battle."
+	done
+
+_SaffronGymRematchDefeatedText::
+	text "This"
+	line "is not the result"
+	cont "I predicted..."
+	prompt
+
+_SaffronGymRematchPostBattleText::
+	text "SABRINA: Ignoring"
+	line "my predictions, I"
+	cont "should have known"
+	cont "you'd defeat me."
+
+	para "You clearly have"
+	line "your own gift."
+
+	para "I admire that."
+	done
