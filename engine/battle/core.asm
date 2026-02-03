@@ -6950,7 +6950,7 @@ InitBattleCommon:
 
 LoadGhostPic:
 	ld hl, wMonHSpriteDim
-	ld a, $66
+	ld a, $77
 	ld [hli], a   ; write sprite dimensions
 	ld bc, GhostPic
 	ld a, c
@@ -6967,7 +6967,7 @@ LoadGhostPic:
 	ld [hli], a
 	ld a, $93;"T"
 	ld [hli], a
-	ld [hl], -1;"@"
+	ld [hl], "@";"@"
 	ld a, [wCurPartySpecies]
 	push af
 	ld a, MON_GHOST
