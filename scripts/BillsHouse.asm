@@ -12,9 +12,21 @@ BillsHouse_ScriptPointers:
 	dw_const BillsHouseBillExitsMachineScript,     SCRIPT_BILLSHOUSE_BILL_EXITS_MACHINE
 	dw_const BillsHouseCleanupScript,              SCRIPT_BILLSHOUSE_CLEANUP
 	dw_const BillsHousePCScript,                   SCRIPT_BILLSHOUSE_PC
+;	dw_const BillsHousePostBattleScript,					 SCRIPT_BILLSHOUSE_POST_BATTLE
 
 BillsHouseDefaultScript:
 	ret
+
+;BillsHousePostBattleScript:
+;	ld a, [wIsInBattle]
+;	cp $ff
+;	jp z, CeladonGymResetScripts
+;	ld a, PAD_CTRL_PAD
+;	ld [wJoyIgnore], a
+;	ld a, TEXT_CELADONGYM_REMATCH_POST_BATTLE
+;	ldh [hTextID], a
+;	call DisplayTextID
+;	jp CeladonGymResetScripts
 
 BillsHousePokemonWalkToMachineScript:
 	ld a, [wSpritePlayerStateData1FacingDirection]
@@ -207,10 +219,92 @@ BillsHouseBillSSTicketText:
 
 BillsHouseBillCheckOutMyRarePokemonText:
 	text_asm
+	CheckEvent EVENT_BEAT_E4_R2
+	jr nz, .MewCheck
+.default
 	ld hl, .Text
 	call PrintText
 	jp TextScriptEnd
 
 .Text:
 	text_far _BillsHouseBillCheckOutMyRarePokemonText
+	text_end
+
+.MewCheck:
+	ld hl, wPokedexOwned
+	ld c, DEX_MEW - 1; const for Mew's Dex number
+;	dec a
+;	ld c, a
+	ld b, FLAG_TEST
+	predef FlagActionPredef
+	ld a, c
+	and a
+	jr nz, .MewCaught
+	jp .NoMew ; run the regular text if you don't have Mew caught
+
+.NoMew:
+	ld hl, .NoMewText
+	call PrintText
+	jp .done
+
+.MewCaught: ; Mew is caught, so ask for battle
+	CheckEvent EVENT_BILL_SAW_MEW
+	jr nz, .BillBattle
+	SetEvent EVENT_BILL_SAW_MEW
+	ld hl, .NoticesMewOwO
+	call PrintText
+.BillBattle:
+	ld hl, .PreBattleText
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .refused
+	ld hl, .PreBattleAcceptedText
+	call PrintText
+	call Delay3
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	ld hl, BillDefeatedText
+	ld de, BillDefeatedText
+	call SaveEndBattleTextPointers
+	ld a, OPP_BILL
+	ld [wCurOpponent], a
+	ld a, $1
+	ld [wTrainerNo], a
+	jr .endBattle
+.refused
+	ld hl, .declined_text
+	call PrintText
+	jr .done
+.endBattle
+	ld a, SCRIPT_BILLSHOUSE_DEFAULT
+	ld [wBillsHouseCurScript], a
+	ld [wCurMapScript], a
+.done
+	jp TextScriptEnd
+
+.PreBattleText:
+	text_far _BillsHouseChallengeText
+	text_end
+
+.PreBattleAcceptedText:
+	text_far _BillsHouseAcceptedBattleText
+	text_end
+
+.declined_text:
+	text_far _BillsHouseRefusedBattleText
+	text_end
+
+.NoticesMewOwO:
+	text_far _BillsHouseMewText
+	text_end
+
+.NoMewText:
+	text_far _BillNoMewText
+	text_end
+
+BillDefeatedText:
+	text_far _BillDefeatedText
 	text_end
