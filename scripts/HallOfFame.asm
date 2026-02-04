@@ -130,6 +130,78 @@ HallOfFameOakCongratulationsScript:
 	jp nc, .notR2
 	SetEvent EVENT_BEAT_E4_R2
 	SetEvent EVENT_CAN_BATTLE_OAK
+;	; Try to respawn failed legendaries
+;	; If the legend isn't marked as Owned in the Dex, it'll respawn
+;	ld hl, wPokedexOwned
+;	ld c, DEX_ARTICUNO - 1
+;	ld b, FLAG_TEST
+;	predef FlagActionPredef
+;	ld a, c
+;	and a
+;	jr nz, .ArticunoCaught
+;.NoArticuno:
+;	ld a, HS_ARTICUNO
+;	ld [wMissableObjectIndex], a
+;	predef ShowObject
+;	ResetEvent EVENT_BEAT_ARTICUNO
+;.ArticunoCaught:
+;
+;	ld hl, wPokedexOwned
+;	ld c, DEX_MEW - 1
+;	ld b, FLAG_TEST
+;	predef FlagActionPredef
+;	ld a, c
+;	and a
+;	jr nz, .MewCaught
+;.NoMew:
+;	ld a, HS_MEW
+;	ld [wMissableObjectIndex], a
+;	predef ShowObject
+;	ResetEvent EVENT_BEAT_MEW
+;.MewCaught:
+;
+;	ld hl, wPokedexOwned
+;	ld c, DEX_ZAPDOS - 1
+;	ld b, FLAG_TEST
+;	predef FlagActionPredef
+;	ld a, c
+;	and a
+;	jr nz, .ZapdosCaught
+;.NoZapdos:
+;	ld a, HS_ZAPDOS
+;	ld [wMissableObjectIndex], a
+;	predef ShowObject
+;	ResetEvent EVENT_BEAT_ZAPDOS
+;.ZapdosCaught:
+;
+;	ld hl, wPokedexOwned
+;	ld c, DEX_MOLTRES - 1
+;	ld b, FLAG_TEST
+;	predef FlagActionPredef
+;	ld a, c
+;	and a
+;	jr nz, .MoltresCaught
+;.NoMoltres:
+;	ld a, HS_MOLTRES
+;	ld [wMissableObjectIndex], a
+;	predef ShowObject
+;	ResetEvent EVENT_BEAT_MOLTRES
+;.MoltresCaught:
+;
+;	ld hl, wPokedexOwned
+;	ld c, DEX_MEWTWO - 1
+;	ld b, FLAG_TEST
+;	predef FlagActionPredef
+;	ld a, c
+;	and a
+;	jr nz, .MewtwoCaught
+;.NoMewtwo:
+;	ld a, HS_MEWTWO
+;	ld [wMissableObjectIndex], a
+;	predef ShowObject
+;	ResetEvent EVENT_BEAT_MEWTWO
+;.MewtwoCaught:
+;
 .notR2
 	ld a, SCRIPT_HALLOFFAME_RESET_EVENTS_AND_SAVE
 	ld [wHallOfFameCurScript], a
