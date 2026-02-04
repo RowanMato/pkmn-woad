@@ -176,6 +176,7 @@ StatusScreen:
 	ld d, $0
 	call PrintStatsBox
 	call PrintMonShiny_StatusScreen
+	call PrintMonLite_StatusScreen
 	call Delay3
 	call GBPalNormal
 	hlcoord 1, 0
@@ -242,6 +243,14 @@ PrintMonShiny_StatusScreen:
 	ret z
 	coord hl, 18, 2
 	ld [hl], "<SHINY>"
+	ret
+
+PrintMonLite_StatusScreen:
+	ld de, wLoadedMonDVs
+	farcall IsMonLite
+	ret nc
+	coord hl, 0, 0
+	ld [hl], $E9
 	ret
 
 ; Draws a line starting from hl high b and wide c

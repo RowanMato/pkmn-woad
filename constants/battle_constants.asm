@@ -69,7 +69,7 @@ DEF SLP_MASK EQU %111 ; 0-7 turns
 DEF MAX_STAT_VALUE EQU 999
 
 ; trainer dvs
-DEF ATKDEFDV_TRAINER EQU $98
+DEF ATKDEFDV_TRAINER EQU $99;changed from $98 to prevent all trainers from having Lite-Shiny DVs
 DEF SPDSPCDV_TRAINER EQU $88
 
 ; wDamageMultipliers

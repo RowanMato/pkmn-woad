@@ -1974,6 +1974,9 @@ DrawEnemyHUDAndHPBar:
 	coord hl, 9, 1;shiny icon coords
 	ld de, wEnemyMonDVs
 	call PrintMonShiny
+	coord hl, 0, 0;lite icon coords
+	ld de, wEnemyMonDVs
+	call PrintMonLite
 	coord hl, 4, 1
 	push hl
 	inc hl
@@ -2095,6 +2098,19 @@ PrintMonShiny:
 	ld a, "<SHINY>"
 	jr .ok
 .notShiny
+	ld a, " "
+.ok
+	pop hl
+	ld [hl], a
+	ret
+
+PrintMonLite:
+	push hl
+	farcall IsMonLite
+	jr nc, .notLite
+	ld a, $E9
+	jr .ok
+.notLite
 	ld a, " "
 .ok
 	pop hl

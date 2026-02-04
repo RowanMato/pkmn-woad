@@ -17,6 +17,42 @@ IsMonShiny:
 	xor a
 	ret
 
+IsMonLite:
+	push de
+	pop hl
+;	ld h, d
+;	ld l, e
+; Attack
+	ld a, [hl]
+	and 1 << FRZ;equal to 5
+	jr nz, .notLiteEarly
+
+	push de
+; Defense
+	ld a, [hli]
+	and $f
+	ld d, a
+; Speed
+	ld a, [hl]
+	and $f0
+	swap a
+	cp d
+	jr nz, .notLite
+	ld a, [hl]
+	and $f
+	cp d
+	jr nz, .notLite
+	; YES
+	pop de
+	scf
+	ret
+
+.notLite
+	pop de
+.notLiteEarly
+	xor a
+	ret
+
 _EvolutionSetWholeScreenPalette:
 	ld hl, wShinyMonFlag
 	res 0, [hl]
