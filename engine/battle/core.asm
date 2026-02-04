@@ -115,6 +115,15 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	ldh [rOBP1], a
 .notDmg
 	call Delay3
+	ld de, wEnemyMonDVs
+	farcall IsMonShiny
+	ld hl, wShinyMonFlag
+	jr nz, .shiny
+	res 0, [hl]
+	jr .setPal
+.shiny
+	set 0, [hl]
+.setPal
 	ld b, SET_PAL_BATTLE
 	call RunPaletteCommand
 	call HideSprites
@@ -1472,6 +1481,13 @@ EnemySendOutFirstMon:
 	ldh [hStartTileID], a
 	hlcoord 15, 6
 	predef AnimateSendingOutMon
+	ld de, wEnemyMonDVs
+	farcall IsMonShiny
+	jr z, .noFlash
+	ld hl, wShinyMonFlag
+	set 1, [hl]
+	farcall PlayShinySparkleAnimation
+.noFlash
 	ld a, [wEnemyMonSpecies2]
 	call PlayCry
 	call DrawEnemyHUDAndHPBar
@@ -1802,6 +1818,13 @@ SendOutMon:
 	call PlayMoveAnimation
 	hlcoord 4, 11
 	predef AnimateSendingOutMon
+	ld de, wBattleMonDVs
+	farcall IsMonShiny
+	jr z, .noFlash
+	ld hl, wShinyMonFlag
+	res 1, [hl]
+	farcall PlayShinySparkleAnimation
+.noFlash
 	ld a, [wCurPartySpecies]
 	call PlayCry
 	call PrintEmptyString
@@ -1867,6 +1890,9 @@ DrawPlayerHUDAndHPBar:
 	hlcoord 10, 7
 	call CenterMonName
 	call PlaceString
+	coord hl, 18, 8;shiny icon coords
+	ld de, wBattleMonDVs
+	call PrintMonShiny
 	ld hl, wBattleMonSpecies
 	ld de, wLoadedMon
 	ld bc, wBattleMonDVs - wBattleMonSpecies
@@ -1877,7 +1903,7 @@ DrawPlayerHUDAndHPBar:
 	call CopyData
 	hlcoord 14, 8
 	push hl
-	inc hl
+;	inc hl
 	ld de, wLoadedMonStatus
 	call PrintStatusConditionNotFainted
 	pop hl
@@ -1922,6 +1948,7 @@ DrawEnemyHUDAndHPBar:
 	lb bc, 4, 12
 	call ClearScreenArea
 	callfar PlaceEnemyHUDTiles
+; handle Owned ball icon
 	push hl
 	ld a, [wEnemyMonSpecies2]
 	ld [wPokedexNum], a
@@ -1939,11 +1966,15 @@ DrawEnemyHUDAndHPBar:
 	ld [hl], $72 ; Poké Ball icon in font_battle_extra.png
 .notOwned
 	pop hl
+; end of Owned ball icon handling
 	ld de, wEnemyMonNick
 	hlcoord 1, 0
 	call CenterMonName
 	call PlaceString
-	hlcoord 4, 1
+	coord hl, 9, 1;shiny icon coords
+	ld de, wEnemyMonDVs
+	call PrintMonShiny
+	coord hl, 4, 1
 	push hl
 	inc hl
 	ld de, wEnemyMonStatus
@@ -2055,6 +2086,19 @@ CenterMonName:
 	jr nz, .loop
 .done
 	pop de
+	ret
+
+PrintMonShiny:
+	push hl
+	farcall IsMonShiny
+	jr z, .notShiny
+	ld a, "<SHINY>"
+	jr .ok
+.notShiny
+	ld a, " "
+.ok
+	pop hl
+	ld [hl], a
 	ret
 
 DisplayBattleMenu::

@@ -80,6 +80,9 @@ INCLUDE "engine/events/hidden_objects/pokemon_stuff.asm"
 SECTION "Font Graphics", ROMX
 
 INCLUDE "gfx/font.asm"
+EXPBarGraphics::                 INCBIN "gfx/exp_bar.2bpp"
+ShinySparkleGraphics::           INCBIN "gfx/shiny_sparkle.2bpp"
+EXPBarShinySparkleGraphicsEnd::
 
 
 SECTION "Battle Engine 1", ROMX

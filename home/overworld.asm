@@ -491,8 +491,8 @@ WarpFound2::
 ; this is for handling "outside" maps that can't have the 0xFF destination map
 	ld a, [wCurMap]
 	ld [wLastMap], a
-	ld a, [wCurMapWidth]
-	ld [wUnusedLastMapWidth], a
+;	ld a, [wCurMapWidth] ; never called
+;	ld [wUnusedLastMapWidth], a ; never called
 	ldh a, [hWarpDestinationMap]
 	ld [wCurMap], a
 	cp ROCK_TUNNEL_1F
@@ -2006,8 +2006,8 @@ LoadPlayerSpriteGraphicsCommon::
 ; function to load data from the map header
 LoadMapHeader::
 	farcall MarkTownVisitedAndLoadMissableObjects
-	ld a, [wCurMapTileset]
-	ld [wUnusedCurMapTilesetCopy], a
+;	ld a, [wCurMapTileset]
+;	ld [wUnusedCurMapTilesetCopy], a
 	ld a, [wCurMap]
 	call SwitchToMapRomBank
 	ld a, [wCurMapTileset]
@@ -2304,7 +2304,7 @@ LoadMapData::
 	ldh [hSCY], a
 	ldh [hSCX], a
 	ld [wWalkCounter], a
-	ld [wUnusedCurMapTilesetCopy], a
+;	ld [wUnusedCurMapTilesetCopy], a
 	ld [wWalkBikeSurfStateCopy], a
 	ld [wSpriteSetID], a
 	call LoadTextBoxTilePatterns

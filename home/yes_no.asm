@@ -1,5 +1,6 @@
 ; displays yes/no choice
 ; yes -> set carry
+YesNoChoicePokeCenter::
 YesNoChoice::
 	call SaveScreenTilesToBuffer1
 	call InitYesNoTextBoxParameters
@@ -18,13 +19,13 @@ InitYesNoTextBoxParameters::
 	lb bc, 8, 15
 	ret
 
-YesNoChoicePokeCenter::
-	call SaveScreenTilesToBuffer1
-	ld a, HEAL_CANCEL_MENU
-	ld [wTwoOptionMenuID], a
-	hlcoord 11, 6
-	lb bc, 8, 12
-	jr DisplayYesNoChoice
+;YesNoChoicePokeCenter::
+;	call SaveScreenTilesToBuffer1
+;	ld a, HEAL_CANCEL_MENU
+;	ld [wTwoOptionMenuID], a
+;	hlcoord 11, 6
+;	lb bc, 8, 12
+;	jr DisplayYesNoChoice
 
 ;WideYesNoChoice:: ; unreferenced
 ;	call SaveScreenTilesToBuffer1

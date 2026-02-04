@@ -354,7 +354,7 @@
 	charmap "わ", $dc
 	charmap "を", $dd
 	charmap "ん", $de
-	charmap "っ", $df
+	charmap "<SHINY>", $DF;"っ", $df
 	charmap "ゃ", $e0
 	charmap "ゅ", $e1
 	charmap "ょ", $e2

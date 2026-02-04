@@ -30,13 +30,37 @@ SetPal_Battle:
 	ld de, wPalPacket
 	ld bc, $10
 	call CopyData
+	ld hl, wShinyMonFlag
+	res 0, [hl]
+	ld a, [wBattleMonSpecies]
+	and a
+	jr z, .getPalID
+	ld de, wBattleMonDVs
+	farcall IsMonShiny
+	jr z, .getPalID
+	ld hl, wShinyMonFlag
+	set 0, [hl]
+.getPalID
 	ld a, [wPlayerBattleStatus3]
 	ld hl, wBattleMonSpecies
 	call DeterminePaletteID
 	ld b, a
+	push bc
+	ld hl, wShinyMonFlag
+	res 0, [hl]
+	ld a, [wEnemyMonSpecies2]
+	and a
+	jr z, .getPalID2
+	ld de, wEnemyMonDVs
+	farcall IsMonShiny
+	jr z, .getPalID2
+	ld hl, wShinyMonFlag
+	set 0, [hl]
+.getPalID2
 	ld a, [wEnemyBattleStatus3]
 	ld hl, wEnemyMonSpecies2
 	call DeterminePaletteID
+	pop bc
 	ld c, a
 	ld hl, wPalPacket + 1
 	ld a, [wPlayerHPBarColor]
@@ -291,7 +315,24 @@ DeterminePaletteIDOutOfBattle:
 	ld d, 0
 	ld hl, MonsterPalettes ; not just for Pokemon, Trainers use it too
 	add hl, de
+	ld [wCalculateWhoseStats], a
+	and a ; is the mon index 0?
 	ld a, [hl]
+	ret z
+	push bc
+	ld d, a
+	ld a, e
+	and a
+	ld a, d
+	jr z, .done
+	ld b, a
+	ld a, [wShinyMonFlag]
+	bit 0, a
+	ld a, b
+	jr z, .done
+	add PAL_SHINYMEWMON - PAL_MEWMON
+.done
+	pop bc
 	ret
 
 InitPartyMenuBlkPacket:
@@ -637,7 +678,7 @@ InitCGBPalettes:
 	ENDR
 	ret
 
-GetCGBBasePalAddress:: 
+GetCGBBasePalAddress::
 ; Input: a = palette ID
 ; Output: de = palette address
 	push hl
@@ -655,7 +696,7 @@ GetCGBBasePalAddress::
 	ld d, a
 	pop hl
 	ret
-	
+
 DMGPalToCGBPal::
 ; Populate wCGBPal with colors from a base palette, selected using one of the
 ; DMG palette registers.
@@ -734,9 +775,9 @@ TransferCurBGPData::
 	ENDR
 .done
 	pop de
-	ret	
+	ret
 
-BufferBGPPal:: 
+BufferBGPPal::
 ; Copy wCGBPal to palette a in wBGPPalsBuffer.
 ; a = indexed offset of wCGBBasePalPointers
 	push de
@@ -759,7 +800,7 @@ BufferBGPPal::
 	jr nz, .loop
 	pop de
 	ret
-	
+
 TransferBGPPals::
 ; Transfer the buffered BG palettes.
 	ldh a, [rLCDC]
@@ -813,7 +854,7 @@ TransferCurOBPData:
 	ENDR
 .done
 	pop de
-	ret	
+	ret
 
 TransferPalColorLCDEnabled:
 ; Transfer a palette color while the LCD is enabled.
@@ -835,9 +876,9 @@ TransferPalColorLCDDisabled:
 	ld a, [hli]
 	ld [de], a
 	ret
-	
-_UpdateCGBPal_BGP:: 
-	;prevent the BGmap from updating during vblank 
+
+_UpdateCGBPal_BGP::
+	;prevent the BGmap from updating during vblank
 	;because this is going to take a frame or two in order to fully run
 	;otherwise a partial update (like during a screen whiteout) can be distracting
 	ld hl, hFlagsFFFA
@@ -881,12 +922,12 @@ _UpdateCGBPal_OBP::
 				add index
 			ENDC
 		ENDC
-	
+
 		call TransferCurOBPData
 	ENDR
 
 	ret
-	
+
 TranslatePalPacketToBGMapAttributes::
 ; translate the SGB pals for blk packets into something usable for the CGB
 	push hl
@@ -971,7 +1012,7 @@ CopySGBBorderTiles:
 TransferMonPal:
 	ldh a, [hCGB]
 	and a
-	ret z 
+	ret z
 	ld a, e
 	push af
 	ld a, d
@@ -980,7 +1021,7 @@ TransferMonPal:
 	cp NUM_POKEMON_INDEXES + 1
 	jr c, .isMon
 	sub NUM_POKEMON_INDEXES + 1
-.back	
+.back
 	call GetCGBBasePalAddress
 	pop af
 	cp CONVERT_BGP
@@ -993,7 +1034,7 @@ TransferMonPal:
 .do_bgp
 	pop af
 	jp TransferCurBGPData
-.isMon	
+.isMon
 	call DeterminePaletteIDOutOfBattle
 	jr .back
 

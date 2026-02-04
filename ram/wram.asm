@@ -1796,7 +1796,9 @@ wYBlockCoord:: db
 wXBlockCoord:: db
 
 wLastMap:: db
-wUnusedLastMapWidth:: db
+wShinyMonFlag:: db ;wUnusedLastMapWidth:: db
+; Bit 0 is set if the mon should be shiny
+; Bit 1 is set for enemy mon animation, reset for player mon animation
 
 wCurMapHeader::
 wCurMapTileset:: db

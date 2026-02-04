@@ -123,6 +123,15 @@ StatusScreen:
 	predef DrawHP
 	ld hl, wStatusScreenHPBarColor
 	call GetHealthBarColor
+	ld de, wLoadedMonDVs
+	farcall IsMonShiny
+	ld hl, wShinyMonFlag
+	jr nz, .shiny
+	res 0, [hl]
+	jr .setPal
+.shiny
+	set 0, [hl]
+.setPal
 	ld b, SET_PAL_STATUS_SCREEN
 	call RunPaletteCommand
 	hlcoord 16, 6
@@ -166,6 +175,7 @@ StatusScreen:
 	call PrintNumber ; ID Number
 	ld d, $0
 	call PrintStatsBox
+	call PrintMonShiny_StatusScreen
 	call Delay3
 	call GBPalNormal
 	hlcoord 1, 0
@@ -225,6 +235,14 @@ StatusText:
 
 OKText:
 	db "OK@"
+
+PrintMonShiny_StatusScreen:
+	ld de, wLoadedMonDVs
+	farcall IsMonShiny
+	ret z
+	coord hl, 18, 2
+	ld [hl], "<SHINY>"
+	ret
 
 ; Draws a line starting from hl high b and wide c
 DrawLineBox:
