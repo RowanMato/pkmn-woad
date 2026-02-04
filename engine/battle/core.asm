@@ -6964,6 +6964,8 @@ DetermineWildOpponent:
 	ret nz
 InitBattleCommon:
 	callfar CGBSetCPU1xSpeed
+	xor a
+	ld [wNextEncounterSpecies], a
 	ld a, [wMapPalOffset]
 	push af
 	ld hl, wLetterPrintingDelayFlags

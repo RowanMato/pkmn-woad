@@ -11,10 +11,10 @@ EnterMap::
 	farcall ClearVariablesOnEnterMap
 	ld hl, wStatusFlags2
 	bit BIT_WILD_ENCOUNTER_COOLDOWN, [hl]
-	jr z, .skipGivingThreeStepsOfNoRandomBattles
-	ld a, 3 ; minimum number of steps between battles
+	jr z, .skipGivingTwoStepsOfNoRandomBattles
+	ld a, 2 ; minimum number of steps between battles
 	ld [wNumberOfNoRandomBattleStepsLeft], a
-.skipGivingThreeStepsOfNoRandomBattles
+.skipGivingTwoStepsOfNoRandomBattles
 	ld hl, wStatusFlags4
 	bit BIT_BATTLE_OVER_OR_BLACKOUT, [hl]
 	res BIT_BATTLE_OVER_OR_BLACKOUT, [hl]

@@ -10,7 +10,10 @@ TryDoWildEncounter:
 	callfar IsPlayerStandingOnDoorTileOrWarpTile
 	jr nc, .notStandingOnDoorOrWarpTile
 .CantEncounter
-	ld a, $1
+;	ld a, $1
+	xor a
+	ld [wNextEncounterSpecies], a
+	inc a
 	and a
 	ret
 .notStandingOnDoorOrWarpTile
@@ -50,8 +53,11 @@ TryDoWildEncounter:
 	jr z, .CantEncounter2
 	ld a, [wGrassRate]
 .CanEncounter
-; compare encounter chance with a random number to determine if there will be an encounter
 	ld b, a
+	ld a, [wNextEncounterSpecies]
+	and a
+	jr nz, .WillEncounterIfNotRepelled
+; compare encounter chance with a random number to determine if there will be an encounter
 	ldh a, [hRandomAdd]
 	cp b
 	jr nc, .CantEncounter2
@@ -79,19 +85,19 @@ TryDoWildEncounter:
 	ld b, 0
 	add hl, bc
 	ld a, [hli]
-	ld [wCurEnemyLevel], a
+	ld [wNextEncounterLevel], a
 	ld a, [hl]
-	ld [wCurPartySpecies], a
-	ld [wEnemyMonSpecies2], a
+;	ld [wCurPartySpecies], a
+	ld [wNextEncounterSpecies], a
 	ld a, [wRepelRemainingSteps]
 	and a
-	jr z, .willEncounter
+	jr z, .willEncounterNext
 	ld a, [wPartyMon1Level]
 	ld b, a
-	ld a, [wCurEnemyLevel]
+	ld a, [wNextEncounterLevel]
 	cp b
 	jr c, .CantEncounter2 ; repel prevents encounters if the leading party mon's level is higher than the wild mon
-	jr .willEncounter
+	jr .willEncounterNext
 .lastRepelStep
 	ld [wRepelRemainingSteps], a
 	ld a, TEXT_REPEL_WORE_OFF
@@ -99,10 +105,27 @@ TryDoWildEncounter:
 	call EnableAutoTextBoxDrawing
 	call DisplayTextID
 .CantEncounter2
+	xor a
+	ld [wNextEncounterSpecies], a
+.willEncounterNext
 	ld a, $1
 	and a
 	ret
+.WillEncounterIfNotRepelled
+	ld a, [wRepelRemainingSteps]
+	and a
+	jr z, .willEncounter
+	ld a, [wPartyMon1Level]
+	ld b, a
+	ld a, [wNextEncounterLevel]
+	cp b
+	jr c, .CantEncounter2 ; repel prevents encounters if the leading party mon's level is higher than the wild mon
 .willEncounter
+	ld a, [wNextEncounterLevel]
+	ld [wCurEnemyLevel], a
+	ld a, [wNextEncounterSpecies]
+	ld [wCurPartySpecies], a
+	ld [wEnemyMonSpecies2], a
 	xor a
 	ret
 
