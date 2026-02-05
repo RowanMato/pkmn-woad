@@ -364,11 +364,24 @@ _OaksLabScientistText::
 	done
 
 _OakPreBattleText::
-	text "dummy"
+	text "OAK: Ah, <PLAYER>!"
+	line "Nice to see you."
+
+	para "After watching you"
+	line "become CHAMPION"
+	cont "again, I had a"
+	cont "favor to ask you."
+
+	para "Would you battle"
+	line "me?"
 	done
 
 _OakBattleAcceptedText::
-	text "dummy"
+	text "OAK: I'm sure I'm"
+	line "rusty from years"
+	cont "of resigning to"
+	cont "research, but"
+	cont "don't hold back!"
 	done
 
 _ProfOakDefeatedText::
