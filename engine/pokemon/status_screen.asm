@@ -242,7 +242,7 @@ PrintMonShiny_StatusScreen:
 	farcall IsMonShiny
 	ret z
 	coord hl, 18, 2
-	ld [hl], "<SHINY>"
+	ld [hl], $DF;"<SHINY>"
 	ret
 
 PrintMonLite_StatusScreen:

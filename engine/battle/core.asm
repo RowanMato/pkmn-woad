@@ -2095,10 +2095,10 @@ PrintMonShiny:
 	push hl
 	farcall IsMonShiny
 	jr z, .notShiny
-	ld a, "<SHINY>"
+	ld a, $DF ; <SHINY>
 	jr .ok
 .notShiny
-	ld a, " "
+	ld a, $7F ; blank tile
 .ok
 	pop hl
 	ld [hl], a
@@ -2111,7 +2111,7 @@ PrintMonLite:
 	ld a, $E9
 	jr .ok
 .notLite
-	ld a, " "
+	ld a, $7F ; blank tile
 .ok
 	pop hl
 	ld [hl], a
@@ -7029,7 +7029,7 @@ LoadGhostPic:
 	ld [hli], a
 	ld a, $93;"T"
 	ld [hli], a
-	ld [hl], "@";"@"
+	ld [hl], $50;"@"
 	ld a, [wCurPartySpecies]
 	push af
 	ld a, MON_GHOST
