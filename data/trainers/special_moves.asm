@@ -505,7 +505,7 @@ SpecialTrainerMoves:
 	db 6, 4, EARTHQUAKE
 	db 0
 
-	db PROF_OAK, 1 ; VENUSAUR
+	db PROF_OAK, 2 ; VENUSAUR
 	db 1, 1, ICE_BEAM
 	db 1, 2, THUNDERBOLT
 	db 1, 3, PSYCHIC_M
@@ -532,7 +532,7 @@ SpecialTrainerMoves:
 	db 6, 4, PSYCHIC_M
 	db 0
 
-	db PROF_OAK, 2 ; CHARIZARD
+	db PROF_OAK, 3 ; CHARIZARD
 	db 1, 1, ICE_BEAM
 	db 1, 2, THUNDERBOLT
 	db 1, 3, PSYCHIC_M
@@ -559,7 +559,7 @@ SpecialTrainerMoves:
 	db 6, 4, PSYCHIC_M
 	db 0
 
-	db PROF_OAK, 3 ; BLASTOISE
+	db PROF_OAK, 4 ; BLASTOISE
 	db 1, 1, ICE_BEAM
 	db 1, 2, THUNDERBOLT
 	db 1, 3, PSYCHIC_M
@@ -586,7 +586,7 @@ SpecialTrainerMoves:
 	db 6, 4, PSYCHIC_M
 	db 0
 
-	db BILL, 1
+	db BILL, 2
 	db 1, 1, SURF
 	db 1, 2, HYPER_BEAM
 	db 1, 3, REST

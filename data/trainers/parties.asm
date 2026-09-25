@@ -82,7 +82,7 @@ YoungsterData:
 
 BugCatcherData:
 ; Viridian Forest
-	db 6, WEEDLE, CATERPIE, 0
+	db 6, WEEDLE, CATERPIE, 0 ; BUGGED. don't use!
 	db 7, WEEDLE, KAKUNA, WEEDLE, 0
 	db 9, WEEDLE, 0
 ; Route 3
@@ -97,8 +97,8 @@ BugCatcherData:
 ; Route 6
 	db 16, WEEDLE, CATERPIE, PARAS, 0 ; replaced a Weedle
 	db 20, BUTTERFREE, 0
-; Unused
-	db 18, METAPOD, CATERPIE, VENONAT, 0
+; REPLACED THE FIRST PARTY, (was Unused)
+	db 6, WEEDLE, CATERPIE, 0;18, METAPOD, CATERPIE, VENONAT, 0
 ; Route 9
 	db 19, BEEDRILL, BEEDRILL, 0
 	db 20, CATERPIE, WEEDLE, VENONAT, 0
@@ -134,7 +134,7 @@ LassData:
 
 SailorData:
 ; SS Anne Stern
-	db 18, MACHOP, SHELLDER, 0
+	db 18, MACHOP, SHELLDER, 0 ; BUGGED
 	db 17, MACHOP, TENTACOOL, 0
 ; SS Anne B1F Rooms
 	db 21, SHELLDER, 0
@@ -144,9 +144,11 @@ SailorData:
 	db 20, MACHOP, 0
 ; Vermilion Gym
 	db 21, PIKACHU, PIKACHU, 0
+; SS Anne Stern (Fixed)
+	db 18, MACHOP, SHELLDER, 0
 
 JrTrainerMData:
-; Pewter Gym
+; Pewter Gym ; BUGGED Do not use!
 	db 11, DIGLETT, SANDSHREW, 0
 ; Route 24/Route 25
 	db 14, RATTATA, EKANS, 0
@@ -155,8 +157,8 @@ JrTrainerMData:
 ; Route 6
 	db 20, SQUIRTLE, 0
 	db 16, SPEAROW, RATICATE, 0
-; Unused
-	db 18, DIGLETT, DIGLETT, SANDSHREW, 0
+; Replacement for the first one. Was unused before.
+	db 11, DIGLETT, SANDSHREW, 0;18, DIGLETT, DIGLETT, SANDSHREW, 0
 ; Route 9
 	db 21, GROWLITHE, CHARMANDER, 0
 	db 19, RATTATA, DIGLETT, EKANS, SANDSHREW, 0
@@ -213,6 +215,8 @@ PokemaniacData:
 	db 40, CHARMELEON, LAPRAS, LICKITUNG, 0
 ; Rock Tunnel 1F
 	db 23, CUBONE, SLOWPOKE, 0
+; FIXED Replacement for 1st
+	db 30, RHYHORN, LICKITUNG, 0
 
 SuperNerdData:
 ; Mt. Moon 1F
@@ -224,7 +228,7 @@ SuperNerdData:
 	db 22, GRIMER, MUK, GRIMER, 0
 	db 26, KOFFING, 0
 ; Unused
-	db 22, KOFFING, MAGNEMITE, WEEZING, 0
+	db 11, MAGNEMITE, VOLTORB, 0; REPLACED 1st ;	db 22, KOFFING, MAGNEMITE, WEEZING, 0
 	db 20, MAGNEMITE, MAGNEMITE, KOFFING, MAGNEMITE, 0
 	db 24, MAGNEMITE, VOLTORB, 0
 ; Cinnabar Gym
@@ -255,6 +259,8 @@ HikerData:
 	db 19, GEODUDE, MACHOP, GEODUDE, GEODUDE, 0
 	db 20, ONIX, ONIX, GEODUDE, 0
 	db 21, GEODUDE, GRAVELER, 0
+; FIXED
+	db 10, GEODUDE, GEODUDE, ONIX, 0
 
 BikerData:
 ; Route 13
@@ -286,6 +292,8 @@ BikerData:
 	db 26, KOFFING, KOFFING, GRIMER, KOFFING, 0
 	db 28, GRIMER, GRIMER, KOFFING, 0
 	db 29, KOFFING, MUK, 0
+; FIXED
+	db 28, KOFFING, KOFFING, KOFFING, 0
 
 BurglarData:
 ; Unused
@@ -395,7 +403,7 @@ BeautyData:
 	db 29, PIDGEOTTO, WIGGLYTUFF, 0
 	db 29, BULBASAUR, IVYSAUR, 0
 ; Unused
-	db 33, WEEPINBELL, BELLSPROUT, WEEPINBELL, 0
+	db 21, ODDISH, BELLSPROUT, ODDISH, BELLSPROUT, 0 ; FIXED ; db 33, WEEPINBELL, BELLSPROUT, WEEPINBELL, 0
 ; Route 19
 	db 27, POLIWAG, GOLDEEN, SEAKING, GOLDEEN, POLIWAG, 0
 	db 30, GOLDEEN, SEAKING, 0
@@ -409,6 +417,7 @@ PsychicData:
 	db 34, MR_MIME, KADABRA, 0
 	db 33, SLOWPOKE, SLOWPOKE, SLOWBRO, 0
 	db 38, SLOWBRO, 0
+	db 31, KADABRA, SLOWPOKE, MR_MIME, KADABRA, 0 ; FIXED
 
 RockerData:
 ; Vermilion Gym
@@ -427,7 +436,7 @@ JugglerData:
 ; Victory Road 2F
 	db 48, MR_MIME, 0
 ; Unused
-	db 33, HYPNO, 0
+	db 29, KADABRA, MR_MIME, 0 ; FIXED ;	db 33, HYPNO, 0
 ; Fuchsia Gym
 	db 38, HYPNO, 0
 	db 34, DROWZEE, KADABRA, 0
@@ -442,7 +451,7 @@ TamerData:
 ; Victory Road 2F
 	db 44, PERSIAN, GOLDUCK, 0
 ; Unused
-	db 42, RHYHORN, PRIMEAPE, ARBOK, TAUROS, 0
+	db 34, SANDSLASH, ARBOK, 0 ; FIXED db 42, RHYHORN, PRIMEAPE, ARBOK, TAUROS, 0
 
 BirdKeeperData:
 ; Route 13
@@ -462,7 +471,7 @@ BirdKeeperData:
 ; Route 20
 	db 30, FEAROW, FEAROW, PIDGEOTTO, 0
 ; Unused
-	db 39, PIDGEOTTO, PIDGEOTTO, PIDGEY, PIDGEOTTO, 0
+	db 29, PIDGEY, PIDGEOTTO, 0 ; FIXED db 39, PIDGEOTTO, PIDGEOTTO, PIDGEY, PIDGEOTTO, 0
 	db 42, FARFETCHD, FEAROW, 0
 ; Route 14
 	db 28, PIDGEY, DODUO, PIDGEOTTO, 0
@@ -483,6 +492,8 @@ BlackbeltData:
 	db 38, MACHOKE, MACHOP, MACHOKE, 0
 ; Victory Road 2F
 	db 43, MACHOKE, MACHOP, MACHOKE, 0
+; FIXED
+	db 37, HITMONLEE, HITMONCHAN, 0
 
 Rival1Data:
 	db 5, SQUIRTLE, 0
@@ -498,6 +509,8 @@ Rival1Data:
 	db $FF, 18, PIDGEOTTO, 15, ABRA, 15, RATTATA, 17, CHARMANDER, 0
 
 ProfOakData:
+; dummy buffer for 1st index bug avoidance
+	db $FF, 10, MEW, 0
 ; PKMN:WoAd Team
 	db $FF, 88, PORYGON, 87, KINGLER, 87, PINSIR, 88, TAUROS, 89, VENUSAUR, 90, MEW, 0
 	db $FF, 88, PORYGON, 87, KINGLER, 87, PINSIR, 88, TAUROS, 89, CHARIZARD, 90, MEW, 0
@@ -508,6 +521,9 @@ ProfOakData:
 	db $FF, 66, TAUROS, 67, EXEGGUTOR, 68, ARCANINE, 69, CHARIZARD, 70, GYARADOS, 0
 
 BillData:
+; dummy buffer for 1st index bug avoidance
+	db $FF, 10, MEW, 0
+; Real team
 	db $FF, 100, DRAGONITE, 100, CHANSEY, 100, ARTICUNO, 100, ZAPDOS, 100, MOLTRES, 100, MEWTWO, 0
 
 ScientistData:
@@ -546,6 +562,8 @@ GiovanniData:
 	db $FF, 45, RHYHORN, 42, DUGTRIO, 44, NIDOQUEEN, 45, NIDOKING, 50, RHYDON, 0
 ; Rematch
 	db $FF, 70, NIDOKING, 70, MAROWAK, 70, KANGASKHAN, 70, RHYDON, 75, PERSIAN, 0
+; Bug Fix
+	db $FF, 25, ONIX, 24, RHYHORN, 29, KANGASKHAN, 0
 
 RocketData:
 ; Mt. Moon B2F
@@ -579,7 +597,7 @@ RocketData:
 	db 26, KOFFING, DROWZEE, 0
 	db 23, ZUBAT, RATTATA, RATICATE, ZUBAT, 0
 ; Unused
-	db 26, DROWZEE, KOFFING, 0
+	db 13, RATTATA, ZUBAT, 0 ; FIXED ; db 26, DROWZEE, KOFFING, 0
 ; Silph Co. 2F
 	db 29, CUBONE, ZUBAT, 0
 	db 25, GOLBAT, ZUBAT, ZUBAT, RATICATE, ZUBAT, 0
@@ -617,7 +635,7 @@ CooltrainerMData:
 	db 43, EXEGGUTOR, CLOYSTER, ARCANINE, 0
 	db 43, KINGLER, TENTACRUEL, BLASTOISE, 0
 ; Unused
-	db 45, KINGLER, STARMIE, 0
+	db 39, NIDORINO, NIDOKING, 0 ; FIXED ;	db 45, KINGLER, STARMIE, 0
 ; Victory Road 1F
 	db 42, IVYSAUR, WARTORTLE, CHARMELEON, CHARIZARD, 0
 ; Unused
@@ -635,7 +653,7 @@ CooltrainerFData:
 	db 43, BELLSPROUT, WEEPINBELL, VICTREEBEL, 0
 	db 43, PARASECT, DEWGONG, CHANSEY, 0
 ; Unused
-	db 46, VILEPLUME, BUTTERFREE, 0
+	db 24, WEEPINBELL, GLOOM, IVYSAUR, 0 ; FIXED ; db 46, VILEPLUME, BUTTERFREE, 0
 ; Victory Road 1F
 	db 44, PERSIAN, NINETALES, 0
 ; Unused
@@ -690,7 +708,7 @@ GentlemanData:
 ; SS Anne 2F Rooms/Vermilion Gym
 	db 23, PIKACHU, 0
 ; Unused
-	db 48, PRIMEAPE, 0
+	db 18, GROWLITHE, GROWLITHE, 0 ; FIXED ;	db 48, PRIMEAPE, 0
 ; SS Anne 2F Rooms
 	db 17, GROWLITHE, PONYTA, 0
 
