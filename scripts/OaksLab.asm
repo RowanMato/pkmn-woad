@@ -409,15 +409,15 @@ OaksLabRivalStartBattleScript:
 	ld a, [wRivalStarter]
 	cp STARTER2
 	jr nz, .not_squirtle
-	ld a, $1
+	ld a, $2
 	jr .done
 .not_squirtle
 	cp STARTER3
 	jr nz, .not_bulbasaur
-	ld a, $2
+	ld a, $3
 	jr .done
 .not_bulbasaur
-	ld a, $3
+	ld a, $4
 .done
 	ld [wTrainerNo], a
 	ld a, OAKSLAB_RIVAL
