@@ -78,7 +78,7 @@ YoungsterData:
 	db 17, RATTATA, RATTATA, RATICATE, 0
 	db 18, NIDORAN_M, NIDORINO, 0
 ; Unused
-	db 17, SPEAROW, RATTATA, RATTATA, SPEAROW, 0
+	db 11, RATTATA, EKANS, 0 ; FIXED ;	db 17, SPEAROW, RATTATA, RATTATA, SPEAROW, 0
 
 BugCatcherData:
 ; Viridian Forest
@@ -131,6 +131,8 @@ LassData:
 ; Celadon Gym
 	db 23, BELLSPROUT, WEEPINBELL, 0
 	db 23, ODDISH, GLOOM, 0
+; FIXED
+	db 9, PIDGEY, PIDGEY, 0
 
 SailorData:
 ; SS Anne Stern
@@ -172,7 +174,7 @@ JrTrainerFData:
 	db 16, RATTATA, PIKACHU, 0
 	db 16, PIDGEY, PIDGEY, PIDGEY, 0
 ; Unused
-	db 22, BULBASAUR, 0
+	db 19, GOLDEEN, 0 ; FIXED ; 	db 22, BULBASAUR, 0
 ; Route 9
 	db 18, ODDISH, BELLSPROUT, ODDISH, BELLSPROUT, 0
 	db 23, MEOWTH, SQUIRTLE, 0 ; added Squirtle
