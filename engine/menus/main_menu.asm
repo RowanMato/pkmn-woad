@@ -27,6 +27,9 @@ MainMenu:
 	call RunDefaultPaletteCommand
 	call LoadTextBoxTilePatterns
 	call LoadFontTilePatterns
+	hlcoord 0, $11
+	ld de, VersionText
+	call PlaceString
 	ld hl, wStatusFlags5
 	set BIT_NO_TEXT_DELAY, [hl]
 	ld a, [wSaveFileStatus]
@@ -339,6 +342,9 @@ SpecialEnterMap::
 	and a
 	ret nz
 	jp EnterMap
+
+VersionText:
+	db "v1.1@"
 
 ContinueText:
 	db "CONTINUE"
